@@ -33,7 +33,7 @@ public class UserLogin extends javax.swing.JFrame {
 
         transparent.setBackground(new java.awt.Color(241, 238, 238));
 
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Group 37070.png"))); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Group 37070.png"))); // NOI18N
 
         login.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         login.setText("Login");
@@ -79,7 +79,7 @@ public class UserLogin extends javax.swing.JFrame {
         userName.setForeground(new java.awt.Color(255, 255, 255));
         userName.setText("Email");
 
-        icons.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Frame 37274.png"))); // NOI18N
+        icons.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Frame 37274.png"))); // NOI18N
 
         continueWith.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
         continueWith.setText("or continue with");
@@ -100,6 +100,11 @@ public class UserLogin extends javax.swing.JFrame {
             .addGroup(transparentLayout.createSequentialGroup()
                 .addGroup(transparentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(transparentLayout.createSequentialGroup()
+                        .addGap(154, 154, 154)
+                        .addComponent(account)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(register, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(transparentLayout.createSequentialGroup()
                         .addGap(128, 128, 128)
                         .addGroup(transparentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(textField, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -111,11 +116,6 @@ public class UserLogin extends javax.swing.JFrame {
                     .addGroup(transparentLayout.createSequentialGroup()
                         .addGap(178, 178, 178)
                         .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, transparentLayout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(account)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(register, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(transparentLayout.createSequentialGroup()
                         .addGap(217, 217, 217)
                         .addComponent(continueWith))
@@ -147,7 +147,7 @@ public class UserLogin extends javax.swing.JFrame {
                 .addComponent(icons, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addGroup(transparentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(register, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(register, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(account))
                 .addGap(95, 95, 95))
         );
@@ -155,7 +155,7 @@ public class UserLogin extends javax.swing.JFrame {
         getContentPane().add(transparent, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 530, 480));
 
         mainLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mainLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/background.png"))); // NOI18N
+        mainLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/background.png"))); // NOI18N
         getContentPane().add(mainLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 600));
 
         pack();
