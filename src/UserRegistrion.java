@@ -2,14 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
-public class UserRegistration {
+public class UserRegistrion {
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Moviemate - Register");
-        frame.setSize(1600,800);
+        frame.setSize(1600, 800);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);
         frame.getContentPane().setBackground(Color.RED);
@@ -45,7 +46,6 @@ public class UserRegistration {
         };
 
         int y = 80;
-        JTextField[] inputs = new JTextField[labels.length];
 
         for (int i = 0; i < labels.length; i++) {
             JLabel lbl = new JLabel(labels[i]);
@@ -53,13 +53,56 @@ public class UserRegistration {
             panel.add(lbl);
 
             if (labels[i].toLowerCase().contains("password")) {
-                inputs[i] = new JPasswordField(placeholders[i]);
+                JPasswordField pwd = new JPasswordField(placeholders[i]);
+                pwd.setForeground(Color.GRAY);
+                pwd.setEchoChar((char) 0);
+                pwd.setBounds(100, y + 20, 300, 25);
+
+                String placeholder = placeholders[i];
+                pwd.addFocusListener(new FocusAdapter() {
+                    public void focusGained(FocusEvent e) {
+                        if (String.valueOf(pwd.getPassword()).equals(placeholder)) {
+                            pwd.setText("");
+                            pwd.setEchoChar('●');
+                            pwd.setForeground(Color.BLACK);
+                        }
+                    }
+
+                    public void focusLost(FocusEvent e) {
+                        if (String.valueOf(pwd.getPassword()).isEmpty()) {
+                            pwd.setEchoChar((char) 0);
+                            pwd.setText(placeholder);
+                            pwd.setForeground(Color.GRAY);
+                        }
+                    }
+                });
+
+                panel.add(pwd);
             } else {
-                inputs[i] = new JTextField(placeholders[i]);
+                JTextField txt = new JTextField(placeholders[i]);
+                txt.setForeground(Color.GRAY);
+                txt.setBounds(100, y + 20, 300, 25);
+
+                String placeholder = placeholders[i];
+                txt.addFocusListener(new FocusAdapter() {
+                    public void focusGained(FocusEvent e) {
+                        if (txt.getText().equals(placeholder)) {
+                            txt.setText("");
+                            txt.setForeground(Color.BLACK);
+                        }
+                    }
+
+                    public void focusLost(FocusEvent e) {
+                        if (txt.getText().isEmpty()) {
+                            txt.setText(placeholder);
+                            txt.setForeground(Color.GRAY);
+                        }
+                    }
+                });
+
+                panel.add(txt);
             }
 
-            inputs[i].setBounds(100, y + 20, 300, 25);
-            panel.add(inputs[i]);
             y += 60;
         }
 
