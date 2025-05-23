@@ -6,6 +6,8 @@ import database.MySqlConnection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class LoginDoa {
     MySqlConnection mysql= new MySqlConnection();
@@ -16,7 +18,14 @@ public class LoginDoa {
         try(PreparedStatement pstmt = conn.prepareStatement(sql)){
             pstmt.setString(1, loginRequest.getEmail());
             pstmt.setString(2, loginRequest.getPassword());
-            ResultSet result = pstmt.executeQuery();
+            try (ResultSet result = pstmt.executeQuery()) {
+            if (result.next()) { 
+             
+                
+            }
+        }
+
+
         }catch(SQLException ex){
             System.out.println(ex);
         }finally{
@@ -24,6 +33,19 @@ public class LoginDoa {
         }
         return null;
     }
+    
+    public boolean checkUser(Login user){
+        Connection conn = mysql.openConnection();
+        String sql = "SELECT * FROM users where username= ?";
+        try(PreparedStatement pstm = conn.prepareStatement(sql)){
+            pstm.setString(1, user.getEmail());
+            ResultSet result = pstm.executeQuery();
+            return result.next();
+        }catch(SQLException ex){
+            Logger.getLogger(LoginDoa.class.getName()).log(Level.SEVERE, null,ex);
+        }
+        return false;
+        }    
     
     
         
