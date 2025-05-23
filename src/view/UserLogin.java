@@ -23,7 +23,7 @@ public class UserLogin extends javax.swing.JFrame {
         passwordField = new javax.swing.JPasswordField();
         password = new javax.swing.JLabel();
         textField = new javax.swing.JTextField();
-        userName = new javax.swing.JLabel();
+        email = new javax.swing.JLabel();
         icons = new javax.swing.JLabel();
         continueWith = new javax.swing.JLabel();
         register = new javax.swing.JButton();
@@ -75,10 +75,10 @@ public class UserLogin extends javax.swing.JFrame {
             }
         });
 
-        userName.setBackground(new java.awt.Color(0, 0, 0));
-        userName.setFont(new java.awt.Font("sansserif", 1, 10)); // NOI18N
-        userName.setForeground(new java.awt.Color(255, 255, 255));
-        userName.setText("Email");
+        email.setBackground(new java.awt.Color(0, 0, 0));
+        email.setFont(new java.awt.Font("sansserif", 1, 10)); // NOI18N
+        email.setForeground(new java.awt.Color(255, 255, 255));
+        email.setText("Email");
 
         icons.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Frame 37274.png"))); // NOI18N
 
@@ -109,7 +109,7 @@ public class UserLogin extends javax.swing.JFrame {
                         .addGap(128, 128, 128)
                         .addGroup(transparentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(textField, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(password)
                             .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -133,7 +133,7 @@ public class UserLogin extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(login)
                 .addGap(21, 21, 21)
-                .addComponent(userName)
+                .addComponent(email)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -165,7 +165,7 @@ public class UserLogin extends javax.swing.JFrame {
 
     private void textFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldFocusGained
         // TODO add your handling code here:
-        if (textField.getText().equals("Enter your username")){
+        if (textField.getText().equals("Enter your email")){
             textField.setText("");
         }
     }//GEN-LAST:event_textFieldFocusGained
@@ -173,7 +173,7 @@ public class UserLogin extends javax.swing.JFrame {
     private void textFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldFocusLost
         // TODO add your handling code here:
         if (textField.getText().isEmpty()){
-            textField.setText("Enter your username");
+            textField.setText("Enter your email");
         }
     }//GEN-LAST:event_textFieldFocusLost
 
@@ -212,6 +212,7 @@ public class UserLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel account;
     private javax.swing.JLabel continueWith;
+    private javax.swing.JLabel email;
     private javax.swing.JLabel icons;
     private javax.swing.JLabel login;
     private javax.swing.JButton loginButton;
@@ -222,7 +223,6 @@ public class UserLogin extends javax.swing.JFrame {
     private javax.swing.JButton register;
     private javax.swing.JTextField textField;
     private javax.swing.JPanel transparent;
-    private javax.swing.JLabel userName;
     // End of variables declaration//GEN-END:variables
 
 

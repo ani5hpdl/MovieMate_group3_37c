@@ -52,7 +52,7 @@
                           <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="textField" min="-2" pref="241" max="-2" attributes="0"/>
-                              <Component id="userName" min="-2" pref="41" max="-2" attributes="0"/>
+                              <Component id="email" min="-2" pref="41" max="-2" attributes="0"/>
                               <Component id="password" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="passwordField" alignment="0" min="-2" pref="241" max="-2" attributes="0"/>
                               <Component id="loginButton" alignment="0" min="-2" pref="241" max="-2" attributes="0"/>
@@ -84,7 +84,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="login" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                  <Component id="userName" min="-2" max="-2" attributes="0"/>
+                  <Component id="email" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="textField" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -170,7 +170,7 @@
             <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="textFieldFocusLost"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="userName">
+        <Component class="javax.swing.JLabel" name="email">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
