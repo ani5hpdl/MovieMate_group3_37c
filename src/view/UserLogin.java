@@ -2,6 +2,7 @@
 package view;
 
 import java.awt.Color;
+import java.awt.event.ActionListener;
 
 public class UserLogin extends javax.swing.JFrame {
 
@@ -223,4 +224,17 @@ public class UserLogin extends javax.swing.JFrame {
     private javax.swing.JPanel transparent;
     private javax.swing.JLabel userName;
     // End of variables declaration//GEN-END:variables
+
+
+public void addUserLoginListener(ActionListener listener){
+   loginButton.addActionListener(listener);
+}
+
+public javax.swing.JTextField gettextField(){
+   return textField;
+}
+
+public javax.swing.JPasswordField getpasswordField(){
+  return passwordField;
+ }
 }
