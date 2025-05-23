@@ -1,13 +1,13 @@
 package Model;
 
 public class Login {
-    private String userName;
-    public String getUserName() {
-        return userName;
+    private String email;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     private String password;
@@ -20,8 +20,8 @@ public class Login {
         this.password = password;
     }
 
-    public Login(String userName, String password){
-        this.userName = userName;
+    public Login(String email, String password){
+        this.email = email;
         this.password = password;
     }
 }
