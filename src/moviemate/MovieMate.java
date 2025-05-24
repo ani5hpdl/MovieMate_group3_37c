@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package moviemate;
+import Controller.UserRegisterController;
 import database.*;
+import view.UserRegister;
 /**
  *
  * @author anish
@@ -16,5 +18,9 @@ public class MovieMate {
         }else{
             System.out.println("Failed to connect to database");
         }
+        
+        UserRegister UserRegisterForm = new UserRegister();
+        UserRegisterController controller = new UserRegisterController(UserRegisterForm);
+        controller.open();
     }
 }

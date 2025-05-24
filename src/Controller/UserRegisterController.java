@@ -1,0 +1,63 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Controller;
+
+import Doa.UserRegisterDao;
+import Model.UserRegisterModel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+import view.UserRegister;
+
+/**
+ *
+ * @author anish
+ */
+public class UserRegisterController {
+    private final UserRegisterDao user = new UserRegisterDao();
+    private final UserRegister userView;
+    
+    public UserRegisterController(UserRegister userView){
+        this.userView = userView;
+        userView.addAdduserListener(new AddUserListener());
+    }
+    
+    public void open(){
+        this.userView.setVisible(true);
+    }
+    
+    public void close(){
+        this.userView.dispose();
+    }
+    
+    class AddUserListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            UserRegisterDao userDao = new UserRegisterDao();
+            try{
+                String FullName = userView.getnameField().getText();
+                String Email = userView.getemailField().getText();
+                String NewPassword = userView.getpasswordField().getText();
+                String ConfirmPassword = userView.getpasswordField().getText();
+                int ContactNumber = Integer.parseInt(userView.getnumberField().getText());
+                String Address = userView.getaddressField().getText();
+                
+                UserRegisterModel user = new UserRegisterModel(FullName,Email,ContactNumber,Address,NewPassword,ConfirmPassword);
+                boolean check = userDao.CheckUser(user);
+                if(check){
+                    JOptionPane.showMessageDialog(userView,"User Already Exists");
+                }else{
+                    userDao.UserRegisterDao(user);
+                }
+            }catch(Exception ex){
+                System.out.println("Error Adding User"+ ex.getMessage());
+            }
+        }
+    }
+    
+    
+    
+}

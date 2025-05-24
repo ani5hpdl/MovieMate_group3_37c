@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.event.ActionListener;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -30,19 +32,19 @@ public class UserRegister extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        FullName = new javax.swing.JTextField();
+        Email = new javax.swing.JTextField();
+        Address = new javax.swing.JTextField();
+        ContactNumber = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jPasswordField2 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        NewPassword = new javax.swing.JPasswordField();
+        ConfirmPassword = new javax.swing.JPasswordField();
+        Register = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -53,18 +55,23 @@ public class UserRegister extends javax.swing.JFrame {
 
         jLabel1.setText("jLabel1");
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\second sem\\New Folder\\image 11.png")); // NOI18N
         jLabel11.setText("jLabel11");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        Address.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddressActionPerformed(evt);
+            }
+        });
+
         jLabel2.setText("Email");
 
         jLabel3.setText("Full Name");
 
-        jLabel4.setText("Addresh");
+        jLabel4.setText("Address");
 
         jLabel5.setText("Contact number");
 
@@ -74,19 +81,17 @@ public class UserRegister extends javax.swing.JFrame {
         jLabel7.setBackground(new java.awt.Color(255, 51, 51));
         jLabel7.setText("Confirm password");
 
-        jButton1.setBackground(new java.awt.Color(255, 0, 51));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Register");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Register.setBackground(new java.awt.Color(255, 0, 51));
+        Register.setForeground(new java.awt.Color(255, 255, 255));
+        Register.setText("Register");
+        Register.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                RegisterActionPerformed(evt);
             }
         });
 
         jLabel8.setBackground(new java.awt.Color(255, 51, 51));
         jLabel8.setText("or conitnue with");
-
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\second sem\\New Folder\\Group 37070 (1).png")); // NOI18N
 
         jLabel10.setText("Register");
         jLabel10.setMaximumSize(new java.awt.Dimension(40, 24));
@@ -113,13 +118,13 @@ public class UserRegister extends javax.swing.JFrame {
                                 .addComponent(jLabel5)
                                 .addComponent(jLabel4)
                                 .addComponent(jLabel2)
-                                .addComponent(jTextField4)
-                                .addComponent(jTextField3)
-                                .addComponent(jTextField2)
-                                .addComponent(jTextField1)
-                                .addComponent(jPasswordField1)
-                                .addComponent(jPasswordField2)
-                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))
+                                .addComponent(ContactNumber)
+                                .addComponent(Address)
+                                .addComponent(Email)
+                                .addComponent(FullName)
+                                .addComponent(NewPassword)
+                                .addComponent(ConfirmPassword)
+                                .addComponent(Register, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(23, 23, 23)
                                 .addComponent(jLabel9))))
@@ -140,29 +145,29 @@ public class UserRegister extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(FullName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ContactNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(NewPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ConfirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Register, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -172,8 +177,6 @@ public class UserRegister extends javax.swing.JFrame {
                     .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35))
         );
-
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\second sem\\New Folder\\image 11.png")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -203,9 +206,13 @@ public class UserRegister extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_RegisterActionPerformed
+
+    private void AddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddressActionPerformed
 
     /**
      * @param args the command line arguments
@@ -243,7 +250,13 @@ public class UserRegister extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField Address;
+    private javax.swing.JPasswordField ConfirmPassword;
+    private javax.swing.JTextField ContactNumber;
+    private javax.swing.JTextField Email;
+    private javax.swing.JTextField FullName;
+    private javax.swing.JPasswordField NewPassword;
+    private javax.swing.JButton Register;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -260,11 +273,30 @@ public class UserRegister extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
+    public void addAdduserListener(ActionListener listener){
+        Register.addActionListener(listener);
+    }
 
+    public javax.swing.JTextField getemailField(){
+        return Email;
+    }
+    
+
+    public javax.swing.JPasswordField getpasswordField(){
+        return NewPassword;
+    }
+    
+
+    public javax.swing.JTextField getnameField(){
+        return FullName;
+    }
+    
+    public javax.swing.JTextField getaddressField(){
+        return Address;
+    }
+    
+    public javax.swing.JTextField getnumberField(){
+        return ContactNumber;
+    }
+}
