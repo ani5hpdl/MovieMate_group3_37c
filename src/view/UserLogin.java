@@ -36,14 +36,17 @@ public class UserLogin extends javax.swing.JFrame {
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Group 37070.png"))); // NOI18N
 
-        login.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        login.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         login.setText("Login");
 
-        account.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
+        account.setFont(new java.awt.Font("Consolas", 0, 10)); // NOI18N
         account.setText("Don't have an account yet?");
 
+        loginButton.setBackground(new java.awt.Color(153, 153, 255));
+        loginButton.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         loginButton.setText("Sign In");
 
+        passwordField.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         passwordField.setText("Enter your password");
         passwordField.setToolTipText("");
         passwordField.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -61,10 +64,10 @@ public class UserLogin extends javax.swing.JFrame {
         });
 
         password.setBackground(new java.awt.Color(0, 0, 0));
-        password.setFont(new java.awt.Font("sansserif", 1, 10)); // NOI18N
-        password.setForeground(new java.awt.Color(255, 255, 255));
+        password.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         password.setText("Password");
 
+        textField.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         textField.setText("Enter your email");
         textField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -76,16 +79,15 @@ public class UserLogin extends javax.swing.JFrame {
         });
 
         email.setBackground(new java.awt.Color(0, 0, 0));
-        email.setFont(new java.awt.Font("sansserif", 1, 10)); // NOI18N
-        email.setForeground(new java.awt.Color(255, 255, 255));
+        email.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         email.setText("Email");
 
         icons.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Frame 37274.png"))); // NOI18N
 
-        continueWith.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
+        continueWith.setFont(new java.awt.Font("Consolas", 0, 10)); // NOI18N
         continueWith.setText("or continue with");
 
-        register.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        register.setFont(new java.awt.Font("Consolas", 1, 10)); // NOI18N
         register.setText("Register here");
         register.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         register.addActionListener(new java.awt.event.ActionListener() {
@@ -121,9 +123,9 @@ public class UserLogin extends javax.swing.JFrame {
                         .addGap(217, 217, 217)
                         .addComponent(continueWith))
                     .addGroup(transparentLayout.createSequentialGroup()
-                        .addGap(228, 228, 228)
-                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(147, Short.MAX_VALUE))
+                        .addGap(218, 218, 218)
+                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
         transparentLayout.setVerticalGroup(
             transparentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,7 +158,7 @@ public class UserLogin extends javax.swing.JFrame {
         getContentPane().add(transparent, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 530, 480));
 
         mainLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mainLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/background.png"))); // NOI18N
+        mainLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/FPP.jpg"))); // NOI18N
         getContentPane().add(mainLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 600));
 
         pack();
