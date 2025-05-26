@@ -20,12 +20,12 @@ public class LoginDoa {
             pstmt.setString(2, loginRequest.getPassword());
             try (ResultSet result = pstmt.executeQuery()) {
             if (result.next()) { 
-             
-                
+               Login user = new Login(
+                   result.getString("email"),
+                   result.getString("password")
+               );   
             }
         }
-
-
         }catch(SQLException ex){
             System.out.println(ex);
         }finally{
@@ -45,11 +45,5 @@ public class LoginDoa {
             Logger.getLogger(LoginDoa.class.getName()).log(Level.SEVERE, null,ex);
         }
         return false;
-        }    
-    
-    
-        
-    
-
-    
+        }      
 }
