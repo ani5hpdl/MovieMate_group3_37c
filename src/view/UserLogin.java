@@ -36,7 +36,7 @@ public class UserLogin extends javax.swing.JFrame {
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Group 37070.png"))); // NOI18N
 
-        login.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        login.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         login.setText("Login");
 
         account.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
@@ -65,7 +65,7 @@ public class UserLogin extends javax.swing.JFrame {
         password.setForeground(new java.awt.Color(255, 255, 255));
         password.setText("Password");
 
-        textField.setText("Enter your username");
+        textField.setText("Enter your email");
         textField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 textFieldFocusGained(evt);
