@@ -49,7 +49,13 @@ public class UserRegisterController {
                 boolean check = userDao.CheckUser(user);
                 if(check){
                     JOptionPane.showMessageDialog(userView,"User Already Exists");
-                }else{
+                }else if(!Email.contains("@")){
+                    JOptionPane.showMessageDialog(userView,"Enter a Valid Email");
+                }
+                else if(!NewPassword.equals(ConfirmPassword)){
+                    JOptionPane.showMessageDialog(userView,"Password doesnot Match");
+                }
+                else{
                     userDao.UserRegisterDao(user);
                 }
             }catch(Exception ex){
