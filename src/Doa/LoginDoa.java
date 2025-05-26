@@ -14,7 +14,7 @@ public class LoginDoa {
     
     public Login signin(Login loginRequest){
         Connection conn = mysql.openConnection();
-        String sql = "SELECT * FROM users where userName = ? and password = ?";
+        String sql = "SELECT * FROM users where email = ? and password = ?";
         try(PreparedStatement pstmt = conn.prepareStatement(sql)){
             pstmt.setString(1, loginRequest.getEmail());
             pstmt.setString(2, loginRequest.getPassword());
@@ -36,7 +36,7 @@ public class LoginDoa {
     
     public boolean checkUser(Login user){
         Connection conn = mysql.openConnection();
-        String sql = "SELECT * FROM users where username= ?";
+        String sql = "SELECT * FROM users where email= ?";
         try(PreparedStatement pstm = conn.prepareStatement(sql)){
             pstm.setString(1, user.getEmail());
             ResultSet result = pstm.executeQuery();
