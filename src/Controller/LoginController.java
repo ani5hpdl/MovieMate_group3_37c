@@ -27,6 +27,7 @@ public class LoginController {
     
     class AddUserListener implements ActionListener{
         
+        @Override
         public void actionPerformed(ActionEvent e){
             try{
                 String userName = loginScreen.gettextField().getText();
