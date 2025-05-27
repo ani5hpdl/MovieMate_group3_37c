@@ -3,10 +3,25 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Controller/AddMovieController.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Doa/MovieDao.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/MovieData.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/AdminPanel.java</file>
+=======
+<<<<<<< HEAD
+            <file>file:/D:/MovieMate_group3_37c/src/Controller/New.java</file>
+            <file>file:/D:/MovieMate_group3_37c/src/Database/MySqlConnection.java</file>
+            <file>file:/D:/MovieMate_group3_37c/src/view/New.java</file>
+            <file>file:/D:/MovieMate_group3_37c/src/Model/DashboardDao.java</file>
+            <file>file:/D:/MovieMate_group3_37c/src/view/dashboard.java</file>
+=======
+            <file>file:/C:/Users/lenovo/Documents/NetBeansProjects/MovieMate_group3_37c/src/Database/Database.java</file>
+            <file>file:/C:/Users/lenovo/Documents/NetBeansProjects/MovieMate_group3_37c/src/Database/MySqlConnection.java</file>
+            <file>file:/C:/Users/lenovo/Documents/NetBeansProjects/MovieMate_group3_37c/src/view/AdminPannel.java</file>
+            <file>file:/C:/Users/lenovo/Documents/NetBeansProjects/MovieMate_group3_37c/src/view/AdminPannel2.java</file>
+>>>>>>> be8dfa0f01c8fbb1db4710a52c05bd3407972246
+>>>>>>> 247e975873e892c09564c4cd5fe80cf5d53ee626
         </group>
     </open-files>
 </project-private>
