@@ -1,13 +1,14 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package view;
 
 /**
  *
- * @author it solution
+ * @author NITRO
  */
+<<<<<<< HEAD
 public class dashboard extends javax.swing.JFrame {
 
     /**
@@ -492,4 +493,8 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JToggleButton jToggleButton2;
     // End of variables declaration//GEN-END:variables
+=======
+public class dashboard {
+    
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
 }

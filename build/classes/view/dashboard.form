@@ -28,6 +28,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
@@ -78,6 +79,51 @@
                           <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
+=======
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jTextField1" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="jPanel7" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jPanel9" max="32767" attributes="0"/>
+                                  <Component id="jPanel3" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jPanel10" max="32767" attributes="0"/>
+                                  <Component id="jPanel4" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jPanel11" max="32767" attributes="0"/>
+                                  <Component id="jPanel5" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                                      <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="24" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabel11" min="-2" pref="131" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
                   </Group>
               </Group>
           </Group>
@@ -85,6 +131,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
           <Group type="102" alignment="0" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
@@ -127,6 +174,40 @@
               </Group>
           </Group>
           <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+=======
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+              <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jPanel6" max="32767" attributes="0"/>
+                  <Component id="jPanel5" max="32767" attributes="0"/>
+                  <Component id="jPanel4" max="32767" attributes="0"/>
+                  <Component id="jPanel3" max="32767" attributes="0"/>
+                  <Component id="jPanel2" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="jPanel11" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jPanel10" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jPanel7" max="32767" attributes="0"/>
+                      <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel9" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="10" max="32767" attributes="0"/>
+              <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+          </Group>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
       </Group>
     </DimensionLayout>
   </Layout>
@@ -208,7 +289,11 @@
                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton4" min="-2" max="-2" attributes="0"/>
                   </Group>
+<<<<<<< HEAD
                   <EmptySpace pref="355" max="32767" attributes="0"/>
+=======
+                  <EmptySpace max="32767" attributes="0"/>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton3" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -222,7 +307,11 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD
               <Image iconType="3" name="/view/Assets/Group 37071.png"/>
+=======
+              <Image iconType="3" name="/view/Group 37071.png"/>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel1"/>
           </Properties>
@@ -230,7 +319,11 @@
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD
               <Image iconType="3" name="/view/Assets/Frame 37267.png"/>
+=======
+              <Image iconType="3" name="/view/Frame 37267.png"/>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel4"/>
           </Properties>
@@ -238,7 +331,11 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD
               <Image iconType="3" name="/view/Assets/Frame 37268.png"/>
+=======
+              <Image iconType="3" name="/view/Frame 37268.png"/>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel2"/>
           </Properties>
@@ -246,7 +343,11 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD
               <Image iconType="3" name="/view/Assets/Frame 37269.png"/>
+=======
+              <Image iconType="3" name="/view/Frame 37269.png"/>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel5"/>
           </Properties>
@@ -254,7 +355,11 @@
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD
               <Image iconType="3" name="/view/Assets/Frame 37266.png"/>
+=======
+              <Image iconType="3" name="/view/Frame 37266.png"/>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel6"/>
           </Properties>
@@ -262,7 +367,11 @@
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD
               <Image iconType="3" name="/view/Assets/Frame 37270.png"/>
+=======
+              <Image iconType="3" name="/view/Frame 37270.png"/>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel7"/>
           </Properties>
@@ -367,23 +476,76 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
+<<<<<<< HEAD
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel9" min="-2" pref="37" max="-2" attributes="0"/>
                   <EmptySpace pref="124" max="32767" attributes="0"/>
+=======
+                  <Component id="jLabel3" min="-2" pref="161" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel8" min="-2" pref="83" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel9" min="-2" pref="37" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jLabel10" min="-2" pref="55" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
                   <EmptySpace min="-2" pref="247" max="-2" attributes="0"/>
                   <Component id="jLabel9" pref="28" max="32767" attributes="0"/>
+=======
+                  <Component id="jLabel3" min="-2" pref="219" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel9" pref="27" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
+<<<<<<< HEAD
+=======
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/view/Rectangle 17.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="jLabel3"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/view/Killers Of T....png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="jLabel8"/>
+          </Properties>
+        </Component>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -392,8 +554,41 @@
             <Property name="text" type="java.lang.String" value="jLabel9"/>
           </Properties>
         </Component>
+<<<<<<< HEAD
       </SubComponents>
     </Container>
+=======
+        <Component class="javax.swing.JLabel" name="jLabel10">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/view/Frame 39.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="jLabel10"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel3">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="0" red="0" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
     <Container class="javax.swing.JPanel" name="jPanel4">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -404,12 +599,20 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
               <EmptySpace min="0" pref="173" max="32767" attributes="0"/>
+=======
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
               <EmptySpace min="0" pref="281" max="32767" attributes="0"/>
+=======
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
           </Group>
         </DimensionLayout>
       </Layout>
@@ -424,12 +627,20 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
               <EmptySpace min="0" pref="168" max="32767" attributes="0"/>
+=======
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
               <EmptySpace min="0" pref="244" max="32767" attributes="0"/>
+=======
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
           </Group>
         </DimensionLayout>
       </Layout>
@@ -444,7 +655,11 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
               <EmptySpace min="0" pref="159" max="32767" attributes="0"/>
+=======
+              <EmptySpace min="0" pref="147" max="32767" attributes="0"/>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -469,7 +684,11 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+=======
+              <EmptySpace min="0" pref="263" max="32767" attributes="0"/>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
           </Group>
         </DimensionLayout>
       </Layout>
@@ -499,6 +718,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
               <EmptySpace min="0" pref="157" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
@@ -553,6 +773,9 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <EmptySpace min="0" pref="157" max="32767" attributes="0"/>
+=======
+              <EmptySpace min="0" pref="150" max="32767" attributes="0"/>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -572,7 +795,11 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+=======
+              <EmptySpace min="0" pref="143" max="32767" attributes="0"/>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -582,7 +809,11 @@
         </DimensionLayout>
       </Layout>
     </Container>
+<<<<<<< HEAD
     <Container class="javax.swing.JPanel" name="jPanel12">
+=======
+    <Container class="javax.swing.JPanel" name="jPanel11">
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="0" red="0" type="rgb"/>
@@ -592,15 +823,33 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
               <EmptySpace min="0" pref="168" max="32767" attributes="0"/>
+=======
+              <EmptySpace min="0" pref="154" max="32767" attributes="0"/>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+=======
+              <EmptySpace min="0" pref="255" max="32767" attributes="0"/>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
           </Group>
         </DimensionLayout>
       </Layout>
     </Container>
+<<<<<<< HEAD
+=======
+    <Component class="javax.swing.JLabel" name="jLabel11">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/view/Frame 352.png"/>
+        </Property>
+      </Properties>
+    </Component>
+>>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
   </SubComponents>
 </Form>
