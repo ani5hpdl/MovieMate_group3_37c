@@ -9,6 +9,7 @@ package Model;
  * @author NITRO
  */
 public class DashboardDao {
+    
     private String title;
     private String genre;
     private String language;
@@ -24,6 +25,10 @@ public class DashboardDao {
         this.date = date;
         this.coverImage = coverImage;
         this.moreImage = moreImage;
+    }
+
+    private DashboardDao() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     // Getter and Setter for title
@@ -79,4 +84,10 @@ public class DashboardDao {
     public void setMoreImage(String moreImage) {
         this.moreImage = moreImage;
     }
+    
+public static void main(String[] args) {
+    DashboardDao dashboardDao = new DashboardDao();
+}
+
+
 }

@@ -4,6 +4,8 @@
  */
 package view;
 
+import java.awt.Color;
+
 /**
  *
  * @author NITRO
@@ -26,123 +28,116 @@ public class UserDetail extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        txtFullName = new javax.swing.JTextField();
+        username = new javax.swing.JLabel();
+        email = new javax.swing.JLabel();
+        txtusername = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        phonenumber = new javax.swing.JLabel();
         txtPhoneNumber = new javax.swing.JTextField();
-        cmbCountryCode = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        update = new javax.swing.JButton();
+        profile = new javax.swing.JLabel();
+        profilesetting = new javax.swing.JLabel();
+        logo = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Full name :");
+        username.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        username.setText("Username :");
+        getContentPane().add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 291, -1));
 
-        jLabel2.setText("Email :");
+        email.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        email.setText("Email :");
+        getContentPane().add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 291, -1));
 
-        txtFullName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFullNameActionPerformed(evt);
+        txtusername.setForeground(new java.awt.Color(153, 153, 153));
+        txtusername.setText("Enter your username");
+        txtusername.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtusernameFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtusernameFocusLost(evt);
             }
         });
+        txtusername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtusernameActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 190, -1));
 
+        txtEmail.setForeground(new java.awt.Color(153, 153, 153));
+        txtEmail.setText("Enter your email");
+        txtEmail.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtEmailFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtEmailFocusLost(evt);
+            }
+        });
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
             }
         });
+        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 190, -1));
 
-        jLabel3.setText("Phone Number :");
+        phonenumber.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        phonenumber.setText("Phone Number :");
+        getContentPane().add(phonenumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, -1, -1));
 
+        txtPhoneNumber.setForeground(new java.awt.Color(153, 153, 153));
+        txtPhoneNumber.setText("Enter your number");
+        txtPhoneNumber.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtPhoneNumberFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPhoneNumberFocusLost(evt);
+            }
+        });
         txtPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPhoneNumberActionPerformed(evt);
             }
         });
+        getContentPane().add(txtPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 350, 190, -1));
 
-        cmbCountryCode.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+1 (USA)", "+44 (UK)", "+91 (India)", "+61 (Australia)", "+81 (Japan)", " " }));
-        cmbCountryCode.addActionListener(new java.awt.event.ActionListener() {
+        update.setBackground(new java.awt.Color(153, 153, 153));
+        update.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        update.setText("Update");
+        update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbCountryCodeActionPerformed(evt);
+                updateActionPerformed(evt);
             }
         });
+        getContentPane().add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 400, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setText("Update");
+        profile.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        profile.setText("Profile");
+        getContentPane().add(profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 100, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setText("Profile");
+        profilesetting.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        profilesetting.setForeground(new java.awt.Color(153, 153, 153));
+        profilesetting.setText("Manage your profile settings");
+        getContentPane().add(profilesetting, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel5.setText("Manage your profile settings");
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assets/logo.png"))); // NOI18N
+        logo.setText("jLabel6");
+        getContentPane().add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 159, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
-        jLabel6.setText("jLabel6");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton1)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addComponent(txtEmail)
-                        .addComponent(txtFullName)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(cmbCountryCode, 0, 1, Short.MAX_VALUE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtPhoneNumber)))
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(259, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addGap(30, 30, 30)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtFullName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbCountryCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assets/background.jpeg"))); // NOI18N
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtFullNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFullNameActionPerformed
+    private void txtusernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFullNameActionPerformed
+    }//GEN-LAST:event_txtusernameActionPerformed
 
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
@@ -153,10 +148,76 @@ public class UserDetail extends javax.swing.JFrame {
         
     }//GEN-LAST:event_txtPhoneNumberActionPerformed
 
-    private void cmbCountryCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCountryCodeActionPerformed
+    private void txtusernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtusernameFocusGained
         // TODO add your handling code here:
+        if (txtusername.getText().equals("Enter your username")){
+            
+                txtusername.setText("");
+                txtusername.setForeground(new Color(153,153,153));
+            }
+ 
+        
+    }//GEN-LAST:event_txtusernameFocusGained
 
-    }//GEN-LAST:event_cmbCountryCodeActionPerformed
+    private void txtEmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusGained
+        // TODO add your handling code here:
+        if (txtEmail.getText().equals("Enter your email")){
+            
+                txtEmail.setText("");
+                txtEmail.setForeground(new Color(153,153,153));
+            
+ 
+        }
+    }//GEN-LAST:event_txtEmailFocusGained
+
+    private void txtPhoneNumberFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPhoneNumberFocusGained
+        // TODO add your handling code here:
+        if (txtPhoneNumber.getText().equals("Enter your number")){
+            
+                txtPhoneNumber.setText("");
+                txtPhoneNumber.setForeground(new Color(153,153,153));
+            
+ 
+        }
+    }//GEN-LAST:event_txtPhoneNumberFocusGained
+
+    private void txtusernameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtusernameFocusLost
+        // TODO add your handling code here:
+        if (txtusername.getText().equals("")){
+            
+                txtusername.setText("Enter your username");
+                txtusername.setForeground(new Color(153,153,153));
+            
+ 
+        }        
+    }//GEN-LAST:event_txtusernameFocusLost
+
+    private void txtEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusLost
+        // TODO add your handling code here:
+        if (txtEmail.getText().equals("")){
+            
+                txtEmail.setText("Enter your email");
+                txtEmail.setForeground(new Color(153,153,153));
+            
+ 
+        }        
+    }//GEN-LAST:event_txtEmailFocusLost
+
+    private void txtPhoneNumberFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPhoneNumberFocusLost
+        // TODO add your handling code here:
+        if (txtPhoneNumber.getText().equals("")){
+            
+                txtPhoneNumber.setText("Enter your number");
+                txtPhoneNumber.setForeground(new Color(153,153,153));
+            
+ 
+        }  
+    }//GEN-LAST:event_txtPhoneNumberFocusLost
+
+    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
+         // TODO add your handling code here:
+     System.exit(0);   
+    }//GEN-LAST:event_updateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,16 +255,16 @@ public class UserDetail extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> cmbCountryCode;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel background;
+    private javax.swing.JLabel email;
+    private javax.swing.JLabel logo;
+    private javax.swing.JLabel phonenumber;
+    private javax.swing.JLabel profile;
+    private javax.swing.JLabel profilesetting;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtFullName;
     private javax.swing.JTextField txtPhoneNumber;
+    private javax.swing.JTextField txtusername;
+    private javax.swing.JButton update;
+    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 }
