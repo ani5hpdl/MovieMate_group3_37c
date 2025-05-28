@@ -6,6 +6,7 @@ package Doa;
 
 import Database.MySqlConnection;
 import Model.MovieData;
+import Database.MySqlConnection;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 import java.sql.Connection;
