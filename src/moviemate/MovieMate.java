@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package moviemate;
+import Controller.LoginController;
 import database.*;
+import view.UserLogin;
 /**
  *
  * @author anish
@@ -17,4 +19,8 @@ public class MovieMate {
             System.out.println("Failed to connect to database");
         }
     }
+    UserLogin loginForm = new UserLogin();
+    LoginController controller = new LoginController(loginForm);
+    controller.open();
+            
 }
