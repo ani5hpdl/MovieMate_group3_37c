@@ -30,19 +30,37 @@ public class LoginController {
         @Override
         public void actionPerformed(ActionEvent e){
             try{
-                String userName = loginScreen.gettextField().getText();
+                String email = loginScreen.gettextField().getText();
                 String password = loginScreen.getpasswordField().getText();
-                Login userRequest = new Login(userName, password);
-                Login user  = new Login(userName, password);
-                boolean check = logindao.checkUser(user);
-                if(check){
-                    JOptionPane.showMessageDialog(loginScreen, "Invalid Credentials");
+                
+                Login user = new Login(email,password);
+                String error = ValidateLogin(user);
+                  if (error != null) {
+            JOptionPane.showMessageDialog(loginScreen, error);
+            return;
+        }
+             Login result = logindao.signin(user);
+                if(error != null){
+                    JOptionPane.showMessageDialog(loginScreen, "Login successfull");
                 }else{
-                    JOptionPane.showMessageDialog(loginScreen, "Login successful");
+                   JOptionPane.showMessageDialog(loginScreen, "Invalid Credentials"); 
                 }
             }catch (Exception ex){
                 System.out.println("Error adding user: " + ex.getMessage());
             }
         }
     }
+    public static String ValidateLogin(Login login){
+        String email = login.getEmail();
+        String password = login.getPassword();
+        
+        if (email == null || email.trim().isEmpty()){
+            return "Email is required";
+        }
+        if (password == null || password.trim().isEmpty()) {
+            return "Password is required.";
+        }
+        return null;
+    }
+    
 }
