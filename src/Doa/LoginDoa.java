@@ -20,7 +20,7 @@ public class LoginDoa {
             pstmt.setString(2, loginRequest.getPassword());
             try (ResultSet result = pstmt.executeQuery()) {
             if (result.next()) { 
-               Login user = new Login(
+                return new Login(
                    result.getString("email"),
                    result.getString("password")
                );   
@@ -39,10 +39,13 @@ public class LoginDoa {
         String sql = "SELECT * FROM users where email= ?";
         try(PreparedStatement pstm = conn.prepareStatement(sql)){
             pstm.setString(1, user.getEmail());
-            ResultSet result = pstm.executeQuery();
+            try(ResultSet result = pstm.executeQuery()){
             return result.next();
+            }
         }catch(SQLException ex){
             Logger.getLogger(LoginDoa.class.getName()).log(Level.SEVERE, null,ex);
+        }finally{
+            mysql.closeConnection(conn);
         }
         return false;
         }      
