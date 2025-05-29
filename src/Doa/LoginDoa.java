@@ -2,7 +2,7 @@ package Doa;
 
 import Model.Login;
 import java.sql.Connection;
-import database.MySqlConnection;
+import Database.MySqlConnection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.*;

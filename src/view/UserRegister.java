@@ -52,7 +52,6 @@ public class UserRegister extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
@@ -63,18 +62,55 @@ public class UserRegister extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        FullName.setText("Enter your full name");
+        FullName.setText("Enter your Full Name");
+        FullName.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                FullNameFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FullNameFocusLost(evt);
+            }
+        });
+        FullName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FullNameActionPerformed(evt);
+            }
+        });
 
-        Email.setText("Enter your email");
+        Email.setText("Enter your Email");
+        Email.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                EmailFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EmailFocusLost(evt);
+            }
+        });
 
         Address.setText("Enter your Address");
+        Address.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                AddressFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                AddressFocusLost(evt);
+            }
+        });
         Address.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddressActionPerformed(evt);
             }
         });
 
-        ContactNumber.setText("Enter your number");
+        ContactNumber.setText("Enter your Number");
+        ContactNumber.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                ContactNumberFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ContactNumberFocusLost(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Email");
@@ -96,10 +132,6 @@ public class UserRegister extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setText("Confirm password");
 
-        NewPassword.setText("erdfhghjjv j,hbh");
-
-        ConfirmPassword.setText("ghfcjghk.jlirytg");
-
         Register.setBackground(new java.awt.Color(255, 0, 51));
         Register.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Register.setForeground(new java.awt.Color(255, 255, 255));
@@ -113,17 +145,9 @@ public class UserRegister extends javax.swing.JFrame {
         jLabel8.setBackground(new java.awt.Color(255, 51, 51));
         jLabel8.setText("or conitnue with");
 
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\second sem\\New Folder\\Group 2212.png")); // NOI18N
-
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\second sem\\New Folder\\Vector.png")); // NOI18N
-
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\second sem\\New Folder\\Vector (1).png")); // NOI18N
-
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         jLabel10.setText("Register");
         jLabel10.setMaximumSize(new java.awt.Dimension(40, 24));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\second sem\\New Folder\\Group 37070 (1).png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -212,10 +236,6 @@ public class UserRegister extends javax.swing.JFrame {
                 .addGap(27, 27, 27))
         );
 
-        jLabel13.setText("jLabel13");
-
-        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\second sem\\New Folder\\image 11.png")); // NOI18N
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -225,24 +245,14 @@ public class UserRegister extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(170, 170, 170))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 381, Short.MAX_VALUE)
-                    .addComponent(jLabel13)
-                    .addGap(0, 381, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 807, Short.MAX_VALUE))
+                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 807, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(74, Short.MAX_VALUE)
+                .addContainerGap(98, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 341, Short.MAX_VALUE)
-                    .addComponent(jLabel13)
-                    .addGap(0, 340, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 697, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -259,6 +269,58 @@ public class UserRegister extends javax.swing.JFrame {
     private void AddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddressActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AddressActionPerformed
+
+    private void FullNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FullNameFocusGained
+        if(FullName.getText().equals("Enter your Full Name")){
+            FullName.setText("");
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_FullNameFocusGained
+
+    private void FullNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FullNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FullNameActionPerformed
+
+    private void FullNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FullNameFocusLost
+        if(FullName.getText().equals("")){
+            FullName.setText("Enter your Full Name");
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_FullNameFocusLost
+
+    private void EmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EmailFocusGained
+        if(Email.getText().equals("Enter your Email")){
+            Email.setText("");
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_EmailFocusGained
+
+    private void EmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EmailFocusLost
+        if(Email.getText().equals("")){
+            Email.setText("Enter your Email");
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_EmailFocusLost
+
+    private void AddressFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_AddressFocusGained
+        if(Address.getText().equals("Enter your Address")){
+            Address.setText("");
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_AddressFocusGained
+
+    private void AddressFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_AddressFocusLost
+        if(Address.getText().equals("")){
+            Address.setText("Enter your Address");
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_AddressFocusLost
+
+    private void ContactNumberFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ContactNumberFocusGained
+        if(ContactNumber.getText().equals("Enter your Number")){
+            ContactNumber.setText("");
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_ContactNumberFocusGained
+
+    private void ContactNumberFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ContactNumberFocusLost
+        if(ContactNumber.getText().equals("")){
+            ContactNumber.setText("Enter your Number");
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_ContactNumberFocusLost
 
     /**
      * @param args the command line arguments
@@ -310,7 +372,6 @@ public class UserRegister extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

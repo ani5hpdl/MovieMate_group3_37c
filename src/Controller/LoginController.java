@@ -30,11 +30,10 @@ public class LoginController {
         @Override
         public void actionPerformed(ActionEvent e){
             try{
-                String userName = loginScreen.gettextField().getText();
+                String email = loginScreen.getemailField().getText();
                 String password = loginScreen.getpasswordField().getText();
-                Login userRequest = new Login(userName, password);
-                Login user  = new Login(userName, password);
-                boolean check = logindao.checkUser(user);
+                Login userRequest = new Login(email, password);
+                boolean check = logindao.checkUser(userRequest);
                 if(check){
                     JOptionPane.showMessageDialog(loginScreen, "Invalid Credentials");
                 }else{

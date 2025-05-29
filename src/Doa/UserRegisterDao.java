@@ -7,7 +7,7 @@ package Doa;
 import Model.UserRegisterModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import database.MySqlConnection;
+import Database.MySqlConnection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.ResultSet;

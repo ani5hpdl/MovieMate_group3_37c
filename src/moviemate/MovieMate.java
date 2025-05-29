@@ -4,7 +4,7 @@
  */
 package moviemate;
 import Controller.UserRegisterController;
-import database.*;
+import Database.*;
 import view.UserRegister;
 /**
  *

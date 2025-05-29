@@ -41,13 +41,6 @@
               <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace min="0" pref="381" max="32767" attributes="0"/>
-                  <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="381" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-          <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
               <Component id="jLabel14" alignment="0" pref="807" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -55,18 +48,11 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="74" max="32767" attributes="0"/>
+              <EmptySpace pref="98" max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace min="0" pref="341" max="32767" attributes="0"/>
-                  <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="340" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-          <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jLabel14" min="-2" pref="697" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -186,26 +172,41 @@
       <SubComponents>
         <Component class="javax.swing.JTextField" name="FullName">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Enter your full name"/>
+            <Property name="text" type="java.lang.String" value="Enter your Full Name"/>
           </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FullNameFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FullNameFocusLost"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FullNameActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="Email">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Enter your email"/>
+            <Property name="text" type="java.lang.String" value="Enter your Email"/>
           </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="EmailFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="EmailFocusLost"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="Address">
           <Properties>
             <Property name="text" type="java.lang.String" value="Enter your Address"/>
           </Properties>
           <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="AddressFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="AddressFocusLost"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddressActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="ContactNumber">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Enter your number"/>
+            <Property name="text" type="java.lang.String" value="Enter your Number"/>
           </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ContactNumberFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ContactNumberFocusLost"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
@@ -262,14 +263,8 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JPasswordField" name="NewPassword">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="erdfhghjjv j,hbh"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JPasswordField" name="ConfirmPassword">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="ghfcjghk.jlirytg"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="Register">
           <Properties>
@@ -297,25 +292,10 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton2">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\momlo\OneDrive\Desktop\second sem\New Folder\Group 2212.png"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton3">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\momlo\OneDrive\Desktop\second sem\New Folder\Vector.png"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton4">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\momlo\OneDrive\Desktop\second sem\New Folder\Vector (1).png"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
         </Component>
@@ -331,25 +311,10 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel12">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\momlo\OneDrive\Desktop\second sem\New Folder\Group 37070 (1).png"/>
-            </Property>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabel13">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel13"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel14">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\momlo\OneDrive\Desktop\second sem\New Folder\image 11.png"/>
-        </Property>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>

@@ -20,9 +20,9 @@ public class UserLogin extends javax.swing.JFrame {
         login = new javax.swing.JLabel();
         account = new javax.swing.JLabel();
         loginButton = new javax.swing.JButton();
-        passwordField = new javax.swing.JPasswordField();
+        Password = new javax.swing.JPasswordField();
         password = new javax.swing.JLabel();
-        textField = new javax.swing.JTextField();
+        Email = new javax.swing.JTextField();
         email = new javax.swing.JLabel();
         icons = new javax.swing.JLabel();
         continueWith = new javax.swing.JLabel();
@@ -46,20 +46,19 @@ public class UserLogin extends javax.swing.JFrame {
         loginButton.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         loginButton.setText("Sign In");
 
-        passwordField.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
-        passwordField.setText("Enter your password");
-        passwordField.setToolTipText("");
-        passwordField.addFocusListener(new java.awt.event.FocusAdapter() {
+        Password.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        Password.setToolTipText("");
+        Password.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                passwordFieldFocusGained(evt);
+                PasswordFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                passwordFieldFocusLost(evt);
+                PasswordFocusLost(evt);
             }
         });
-        passwordField.addActionListener(new java.awt.event.ActionListener() {
+        Password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordFieldActionPerformed(evt);
+                PasswordActionPerformed(evt);
             }
         });
 
@@ -67,14 +66,14 @@ public class UserLogin extends javax.swing.JFrame {
         password.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         password.setText("Password");
 
-        textField.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
-        textField.setText("Enter your email");
-        textField.addFocusListener(new java.awt.event.FocusAdapter() {
+        Email.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        Email.setText("Enter your email");
+        Email.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                textFieldFocusGained(evt);
+                EmailFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                textFieldFocusLost(evt);
+                EmailFocusLost(evt);
             }
         });
 
@@ -110,10 +109,10 @@ public class UserLogin extends javax.swing.JFrame {
                     .addGroup(transparentLayout.createSequentialGroup()
                         .addGap(128, 128, 128)
                         .addGroup(transparentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textField, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(password)
-                            .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(icons, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(transparentLayout.createSequentialGroup()
@@ -137,11 +136,11 @@ public class UserLogin extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(email)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(password)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(loginButton)
                 .addGap(18, 18, 18)
@@ -165,42 +164,42 @@ public class UserLogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldFocusGained
+    private void EmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EmailFocusGained
         // TODO add your handling code here:
-        if (textField.getText().equals("Enter your email")){
-            textField.setText("");
+        if (Email.getText().equals("Enter your email")){
+            Email.setText("");
         }
-    }//GEN-LAST:event_textFieldFocusGained
+    }//GEN-LAST:event_EmailFocusGained
 
-    private void textFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldFocusLost
+    private void EmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EmailFocusLost
         // TODO add your handling code here:
-        if (textField.getText().isEmpty()){
-            textField.setText("Enter your email");
+        if (Email.getText().isEmpty()){
+            Email.setText("Enter your email");
         }
-    }//GEN-LAST:event_textFieldFocusLost
+    }//GEN-LAST:event_EmailFocusLost
 
     private void registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_registerActionPerformed
 
-    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
+    private void PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordFieldActionPerformed
+    }//GEN-LAST:event_PasswordActionPerformed
 
-    private void passwordFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFieldFocusGained
+    private void PasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFocusGained
         // TODO add your handling code here:
-        if (String.valueOf(passwordField.getPassword()).equals("Enter your password")){
-            passwordField.setText("");
+        if (String.valueOf(Password.getPassword()).equals("Enter your password")){
+            Password.setText("");
         }
-    }//GEN-LAST:event_passwordFieldFocusGained
+    }//GEN-LAST:event_PasswordFocusGained
 
-    private void passwordFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFieldFocusLost
+    private void PasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFocusLost
         // TODO add your handling code here:
-        if (String.valueOf(passwordField.getPassword()).isEmpty()) {
-            passwordField.setText("Enter your password");
+        if (String.valueOf(Password.getPassword()).isEmpty()) {
+            Password.setText("Enter your password");
     }
 
-    }//GEN-LAST:event_passwordFieldFocusLost
+    }//GEN-LAST:event_PasswordFocusLost
 
     public static void main(String args[]) {
 
@@ -212,6 +211,8 @@ public class UserLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Email;
+    private javax.swing.JPasswordField Password;
     private javax.swing.JLabel account;
     private javax.swing.JLabel continueWith;
     private javax.swing.JLabel email;
@@ -221,9 +222,7 @@ public class UserLogin extends javax.swing.JFrame {
     private javax.swing.JLabel logo;
     private javax.swing.JLabel mainLabel;
     private javax.swing.JLabel password;
-    private javax.swing.JPasswordField passwordField;
     private javax.swing.JButton register;
-    private javax.swing.JTextField textField;
     private javax.swing.JPanel transparent;
     // End of variables declaration//GEN-END:variables
 
@@ -232,11 +231,11 @@ public void addUserLoginListener(ActionListener listener){
    loginButton.addActionListener(listener);
 }
 
-public javax.swing.JTextField gettextField(){
-   return textField;
+public javax.swing.JTextField getemailField(){
+   return Email;
 }
 
 public javax.swing.JPasswordField getpasswordField(){
-  return passwordField;
+  return Password;
  }
 }

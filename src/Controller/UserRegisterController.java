@@ -9,6 +9,7 @@ import Model.UserRegisterModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import view.UserLogin;
 import view.UserRegister;
 
 /**
@@ -57,6 +58,12 @@ public class UserRegisterController {
                 }
                 else{
                     userDao.UserRegisterDao(user);
+                    JOptionPane.showMessageDialog(null,"Registration Sucessful Redirecting to Login...");
+                    
+                    userView.dispose();
+                    
+                    UserLogin loginPage = new UserLogin();
+                    loginPage.setVisible(true);
                 }
             }catch(Exception ex){
                 System.out.println("Error Adding User"+ ex.getMessage());
