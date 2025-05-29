@@ -26,54 +26,64 @@ public class OTPEntry extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        mainPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
+        Logo = new javax.swing.JLabel();
+        title = new javax.swing.JLabel();
+        subTitle = new javax.swing.JLabel();
+        numOtp = new javax.swing.JTextField();
+        verifyButton = new javax.swing.JButton();
+        mainLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        mainPanel.setLayout(null);
-        getContentPane().add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 323, -1, -1));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(199, 299, -1, -1));
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 305, -1, -1));
+        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Logo.png"))); // NOI18N
+        getContentPane().add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
 
-        jPanel1.setLayout(null);
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 142, -1, -1));
+        title.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        title.setText("Enter OTP");
+        getContentPane().add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Group 37070.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, -1));
+        subTitle.setFont(new java.awt.Font("Consolas", 0, 10)); // NOI18N
+        subTitle.setText("We have send an OTP to your email");
+        getContentPane().add(subTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        jLabel4.setText("Enter OTP");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, -1, -1));
+        numOtp.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        numOtp.setText("Enter your OTP code");
+        numOtp.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                numOtpFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                numOtpFocusLost(evt);
+            }
+        });
+        getContentPane().add(numOtp, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 190, 190, -1));
 
-        jLabel5.setFont(new java.awt.Font("Consolas", 0, 10)); // NOI18N
-        jLabel5.setText("We have send an OTP to your email");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, -1));
+        verifyButton.setBackground(new java.awt.Color(153, 153, 255));
+        verifyButton.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        verifyButton.setText("Verify");
+        getContentPane().add(verifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 131, -1));
 
-        jTextField1.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        jTextField1.setText("Enter your OTP code");
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 176, -1));
-
-        jButton1.setBackground(new java.awt.Color(153, 153, 255));
-        jButton1.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        jButton1.setText("Verify");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 131, -1));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/FPP.jpg"))); // NOI18N
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 0, 510, 400));
+        mainLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/FPP.jpg"))); // NOI18N
+        getContentPane().add(mainLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 0, 510, 400));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void numOtpFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_numOtpFocusGained
+        // TODO add your handling code here:
+        if (numOtp.getText().equals("Enter your OTP code")){
+            numOtp.setText("");
+        }
+    }//GEN-LAST:event_numOtpFocusGained
+
+    private void numOtpFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_numOtpFocusLost
+        // TODO add your handling code here:
+        if (numOtp.getText().isEmpty()){
+            numOtp.setText("Enter your OTP code");
+        }
+    }//GEN-LAST:event_numOtpFocusLost
 
     /**
      * @param args the command line arguments
@@ -111,15 +121,11 @@ public class OTPEntry extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JPanel mainPanel;
+    private javax.swing.JLabel Logo;
+    private javax.swing.JLabel mainLabel;
+    private javax.swing.JTextField numOtp;
+    private javax.swing.JLabel subTitle;
+    private javax.swing.JLabel title;
+    private javax.swing.JButton verifyButton;
     // End of variables declaration//GEN-END:variables
 }

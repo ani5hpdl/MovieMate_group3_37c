@@ -26,7 +26,6 @@ public class ResetPassword extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         logoFP = new javax.swing.JLabel();
         forgotPassword = new javax.swing.JLabel();
         enterEmail = new javax.swing.JLabel();
@@ -38,10 +37,7 @@ public class ResetPassword extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 22, -1, -1));
-
-        logoFP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Group 37070.png"))); // NOI18N
+        logoFP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Logo.png"))); // NOI18N
         getContentPane().add(logoFP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
 
         forgotPassword.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
@@ -91,12 +87,16 @@ public class ResetPassword extends javax.swing.JFrame {
 
     private void textEmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textEmailFocusGained
         // TODO add your handling code here:
-      
+      if (textEmail.getText().equals("Enter your email")){
+          textEmail.setText("");
+      }
     }//GEN-LAST:event_textEmailFocusGained
 
     private void textEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textEmailFocusLost
         // TODO add your handling code here:
-        
+        if (textEmail.getText().isEmpty()){
+            textEmail.setText("Enter your email");
+        }
     }//GEN-LAST:event_textEmailFocusLost
 
     /**
@@ -143,7 +143,6 @@ public class ResetPassword extends javax.swing.JFrame {
     private javax.swing.JLabel enterEmail;
     private javax.swing.JLabel forgotPassword;
     private javax.swing.JLabel image;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel logoFP;
     private javax.swing.JTextField textEmail;
     // End of variables declaration//GEN-END:variables

@@ -27,6 +27,7 @@ public class UserLogin extends javax.swing.JFrame {
         icons = new javax.swing.JLabel();
         continueWith = new javax.swing.JLabel();
         register = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         mainLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -34,7 +35,7 @@ public class UserLogin extends javax.swing.JFrame {
 
         transparent.setBackground(new java.awt.Color(241, 238, 238));
 
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Group 37070.png"))); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Logo.png"))); // NOI18N
 
         login.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         login.setText("Login");
@@ -45,6 +46,11 @@ public class UserLogin extends javax.swing.JFrame {
         loginButton.setBackground(new java.awt.Color(153, 153, 255));
         loginButton.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         loginButton.setText("Sign In");
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginButtonActionPerformed(evt);
+            }
+        });
 
         passwordField.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         passwordField.setText("Enter your password");
@@ -96,6 +102,14 @@ public class UserLogin extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setFont(new java.awt.Font("Consolas", 0, 10)); // NOI18N
+        jButton1.setText("Forgot Password?");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout transparentLayout = new javax.swing.GroupLayout(transparent);
         transparent.setLayout(transparentLayout);
         transparentLayout.setHorizontalGroup(
@@ -115,16 +129,17 @@ public class UserLogin extends javax.swing.JFrame {
                             .addComponent(password)
                             .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(icons, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(icons, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1)))
                     .addGroup(transparentLayout.createSequentialGroup()
                         .addGap(178, 178, 178)
                         .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(transparentLayout.createSequentialGroup()
-                        .addGap(217, 217, 217)
-                        .addComponent(continueWith))
-                    .addGroup(transparentLayout.createSequentialGroup()
                         .addGap(218, 218, 218)
-                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(transparentLayout.createSequentialGroup()
+                        .addGap(211, 211, 211)
+                        .addComponent(continueWith)))
                 .addContainerGap(125, Short.MAX_VALUE))
         );
         transparentLayout.setVerticalGroup(
@@ -142,11 +157,13 @@ public class UserLogin extends javax.swing.JFrame {
                 .addComponent(password)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(loginButton)
-                .addGap(18, 18, 18)
-                .addComponent(continueWith)
                 .addGap(16, 16, 16)
+                .addComponent(continueWith)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(icons, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addGroup(transparentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -202,6 +219,15 @@ public class UserLogin extends javax.swing.JFrame {
 
     }//GEN-LAST:event_passwordFieldFocusLost
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_loginButtonActionPerformed
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -216,6 +242,7 @@ public class UserLogin extends javax.swing.JFrame {
     private javax.swing.JLabel continueWith;
     private javax.swing.JLabel email;
     private javax.swing.JLabel icons;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel login;
     private javax.swing.JButton loginButton;
     private javax.swing.JLabel logo;

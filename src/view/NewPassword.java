@@ -26,59 +26,99 @@ public class NewPassword extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jPasswordField2 = new javax.swing.JPasswordField();
-        jButton2 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
+        Logo = new javax.swing.JLabel();
+        title = new javax.swing.JLabel();
+        subTitle = new javax.swing.JLabel();
+        newPassword = new javax.swing.JLabel();
+        reEnterPassword = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JPasswordField();
+        txtReEnterPassword = new javax.swing.JPasswordField();
+        loginButton = new javax.swing.JButton();
+        mainLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setLayout(null);
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 109, -1, -1));
+        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Logo.png"))); // NOI18N
+        getContentPane().add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 40, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Group 37070.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 40, -1, -1));
+        title.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        title.setText("Reset Password");
+        getContentPane().add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 122, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        jLabel2.setText("Reset Password");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 122, -1, -1));
+        subTitle.setFont(new java.awt.Font("Consolas", 0, 8)); // NOI18N
+        subTitle.setText("Please set your new Password");
+        getContentPane().add(subTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 157, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Consolas", 0, 8)); // NOI18N
-        jLabel3.setText("Please set your new Password");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 157, -1, -1));
+        newPassword.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        newPassword.setText("New Password");
+        getContentPane().add(newPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 185, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
-        jLabel4.setText("New Password");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 185, -1, -1));
+        reEnterPassword.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        reEnterPassword.setText("Re-enter Password");
+        getContentPane().add(reEnterPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 246, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
-        jLabel5.setText("Re-enter Password");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 246, -1, -1));
+        txtPassword.setText("Enter your new Password");
+        txtPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtPasswordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPasswordFocusLost(evt);
+            }
+        });
+        getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 206, 252, -1));
 
-        jPasswordField1.setText("Enter your new Password");
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 206, 252, -1));
+        txtReEnterPassword.setText("Re-enter your new password");
+        txtReEnterPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtReEnterPasswordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtReEnterPasswordFocusLost(evt);
+            }
+        });
+        getContentPane().add(txtReEnterPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 267, 252, -1));
 
-        jPasswordField2.setText("Re-enter your new password");
-        getContentPane().add(jPasswordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 267, 252, -1));
+        loginButton.setBackground(new java.awt.Color(153, 153, 255));
+        loginButton.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        loginButton.setText("Login");
+        getContentPane().add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 152, -1));
 
-        jButton2.setBackground(new java.awt.Color(153, 153, 255));
-        jButton2.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        jButton2.setText("Login ");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(181, 318, 152, -1));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/FPP.jpg"))); // NOI18N
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 400));
+        mainLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/FPP.jpg"))); // NOI18N
+        getContentPane().add(mainLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 380));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPasswordFocusGained
+        // TODO add your handling code here:
+        if (txtPassword.getText().equals("Enter your new Password")){
+            txtPassword.setText("");
+        }
+    }//GEN-LAST:event_txtPasswordFocusGained
+
+    private void txtPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPasswordFocusLost
+        // TODO add your handling code here:
+        if (txtPassword.getText().isEmpty()){
+            txtPassword.setText("Enter your new Password");
+        }
+    }//GEN-LAST:event_txtPasswordFocusLost
+
+    private void txtReEnterPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtReEnterPasswordFocusGained
+        // TODO add your handling code here:
+        if (txtReEnterPassword.getText().equals("Re-enter your new password")){
+            txtReEnterPassword.setText("");
+        }
+    }//GEN-LAST:event_txtReEnterPasswordFocusGained
+
+    private void txtReEnterPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtReEnterPasswordFocusLost
+        // TODO add your handling code here:
+        if (txtReEnterPassword.getText().isEmpty()){
+            txtReEnterPassword.setText("Re-enter your new password");
+        }
+    }//GEN-LAST:event_txtReEnterPasswordFocusLost
 
     /**
      * @param args the command line arguments
@@ -116,15 +156,14 @@ public class NewPassword extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
+    private javax.swing.JLabel Logo;
+    private javax.swing.JButton loginButton;
+    private javax.swing.JLabel mainLabel;
+    private javax.swing.JLabel newPassword;
+    private javax.swing.JLabel reEnterPassword;
+    private javax.swing.JLabel subTitle;
+    private javax.swing.JLabel title;
+    private javax.swing.JPasswordField txtPassword;
+    private javax.swing.JPasswordField txtReEnterPassword;
     // End of variables declaration//GEN-END:variables
 }
