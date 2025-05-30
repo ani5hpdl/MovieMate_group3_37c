@@ -6,6 +6,9 @@ package moviemate;
 import Controller.LoginController;
 import database.*;
 import view.UserLogin;
+import Controller.ResetPasswordController;
+import Doa.UserDao;
+import view.ResetPassword;
 /**
  *
  * @author anish
@@ -18,9 +21,15 @@ public class MovieMate {
         }else{
             System.out.println("Failed to connect to database");
         }
-    }
+    
     UserLogin loginForm = new UserLogin();
     LoginController controller = new LoginController(loginForm);
     controller.open();
+    
+   ResetPassword resetForm = new ResetPassword(); 
+   ResetPasswordController resetController = new ResetPasswordController(resetForm); 
+   resetController.open();
+        
+    }
             
 }

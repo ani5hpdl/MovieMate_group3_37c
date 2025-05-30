@@ -30,9 +30,11 @@ public class LoginController {
         @Override
         public void actionPerformed(ActionEvent e){
             try{
+                
                 String email = loginScreen.gettextField().getText();
                 String password = loginScreen.getpasswordField().getText();
-                
+                System.out.print(email);
+                System.out.print(password);
                 Login user = new Login(email,password);
                 String error = ValidateLogin(user);
                   if (error != null) {
@@ -40,7 +42,7 @@ public class LoginController {
             return;
         }
              Login result = logindao.signin(user);
-                if(error != null){
+                if(result == null){
                     JOptionPane.showMessageDialog(loginScreen, "Login successfull");
                 }else{
                    JOptionPane.showMessageDialog(loginScreen, "Invalid Credentials"); 
@@ -50,9 +52,9 @@ public class LoginController {
             }
         }
     }
-    public static String ValidateLogin(Login login){
-        String email = login.getEmail();
-        String password = login.getPassword();
+    public static String ValidateLogin(Login loginRequest){
+        String email = loginRequest.getEmail();
+        String password = loginRequest.getPassword();
         
         if (email == null || email.trim().isEmpty()){
             return "Email is required";
