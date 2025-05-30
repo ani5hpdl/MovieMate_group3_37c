@@ -4,20 +4,62 @@
  */
 package Model;
 
+/**
+ *
+ * @author it solution
+ */
+
+import java.util.List;
+
+
 
 
 public class MovieDetails {
+
+   
+    private Long id;
+
     private String title;
     private int duration; // in minutes
     private String director;
     private double rating;
-    private String genre;
+
+   
+    private List<String> genres;
+
+    
     private String synopsis;
 
-    // Constructor
+  
+    private List<String> cast;
+
+    
+    private List<String> photos;
+
+    // Constructors
     public MovieDetails() {}
 
+    public MovieDetails(String title, int duration, String director, double rating,
+                 List<String> genres, String synopsis, List<String> cast, List<String> photos) {
+        this.title = title;
+        this.duration = duration;
+        this.director = director;
+        this.rating = rating;
+        this.genres = genres;
+        this.synopsis = synopsis;
+        this.cast = cast;
+        this.photos = photos;
+    }
+
     // Getters and Setters
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -51,12 +93,12 @@ public class MovieDetails {
         this.rating = rating;
     }
 
-    public String getGenre() {
-        return genre;
+    public List<String> getGenres() {
+        return genres;
     }
 
-    public void setGenre(String genre) {
-        this.genre = genre;
+    public void setGenres(List<String> genres) {
+        this.genres = genres;
     }
 
     public String getSynopsis() {
@@ -67,7 +109,19 @@ public class MovieDetails {
         this.synopsis = synopsis;
     }
 
-   
-}
+    public List<String> getCast() {
+        return cast;
+    }
 
-   
+    public void setCast(List<String> cast) {
+        this.cast = cast;
+    }
+
+    public List<String> getPhotos() {
+        return photos;
+    }
+
+    public void setPhotos(List<String> photos) {
+        this.photos = photos;
+    }
+}
