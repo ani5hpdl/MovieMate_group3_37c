@@ -52,7 +52,7 @@ public class UserRegister extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -117,22 +117,22 @@ public class UserRegister extends javax.swing.JFrame {
         jLabel8.setBackground(new java.awt.Color(255, 51, 51));
         jLabel8.setText("or conitnue with");
 
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\second sem\\New Folder\\Group 2212.png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\test\\MovieMate_group3_37c\\src\\view\\Assets\\Group 2212.png")); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\second sem\\New Folder\\Vector.png")); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\test\\MovieMate_group3_37c\\src\\view\\Assets\\Vector.png")); // NOI18N
 
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\second sem\\New Folder\\Vector (1).png")); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\test\\MovieMate_group3_37c\\src\\view\\Assets\\Vector (1).png")); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         jLabel10.setText("Register");
         jLabel10.setMaximumSize(new java.awt.Dimension(40, 24));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\second sem\\New Folder\\Group 37070 (1).png")); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\test\\MovieMate_group3_37c\\src\\view\\Assets\\Group 37070 (1).png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -221,7 +221,7 @@ public class UserRegister extends javax.swing.JFrame {
                 .addGap(27, 27, 27))
         );
 
-        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\second sem\\New Folder\\image 11.png")); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\test\\MovieMate_group3_37c\\src\\view\\Assets\\image 11.png")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -232,9 +232,9 @@ public class UserRegister extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(182, 182, 182))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 816, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGap(0, 6, Short.MAX_VALUE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,9 +243,10 @@ public class UserRegister extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(115, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 732, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(42, Short.MAX_VALUE)))
         );
 
         pack();
@@ -317,7 +318,7 @@ public class UserRegister extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
