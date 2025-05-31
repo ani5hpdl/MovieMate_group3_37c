@@ -5,7 +5,7 @@
 package view;
 
 import java.awt.Color;
-
+import java.awt.event.ActionListener;
 /**
  *
  * @author NITRO
@@ -31,17 +31,17 @@ public class Profile extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        Fullname = new javax.swing.JLabel();
+        name = new javax.swing.JLabel();
         email = new javax.swing.JLabel();
-        phonenumber = new javax.swing.JLabel();
-        txtPhonenumber = new javax.swing.JTextField();
-        txtEmail = new javax.swing.JTextField();
-        txtname = new javax.swing.JTextField();
+        number = new javax.swing.JLabel();
+        Number = new javax.swing.JTextField();
+        Email = new javax.swing.JTextField();
+        fullname = new javax.swing.JTextField();
         profilepic = new javax.swing.JLabel();
         address = new javax.swing.JLabel();
-        txtaddress = new javax.swing.JTextField();
+        Address = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
-        profile = new javax.swing.JButton();
+        addProfile = new javax.swing.JButton();
         settings = new javax.swing.JButton();
         logout = new javax.swing.JButton();
         profileicon = new javax.swing.JLabel();
@@ -70,50 +70,53 @@ public class Profile extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255, 80));
 
-        Fullname.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        Fullname.setText("Full name:");
+        name.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        name.setText("Full name:");
 
         email.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         email.setText("Email:");
 
-        phonenumber.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        phonenumber.setText("Phone Number:");
+        number.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        number.setText("Phone Number:");
 
-        txtPhonenumber.setForeground(new java.awt.Color(153, 153, 153));
-        txtPhonenumber.setText("Enter your number");
-        txtPhonenumber.addFocusListener(new java.awt.event.FocusAdapter() {
+        Number.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        Number.setForeground(new java.awt.Color(153, 153, 153));
+        Number.setText("Enter your number");
+        Number.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                txtPhonenumberFocusGained(evt);
+                NumberFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                txtPhonenumberFocusLost(evt);
+                NumberFocusLost(evt);
             }
         });
 
-        txtEmail.setForeground(new java.awt.Color(153, 153, 153));
-        txtEmail.setText("Enter your email");
-        txtEmail.addFocusListener(new java.awt.event.FocusAdapter() {
+        Email.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        Email.setForeground(new java.awt.Color(153, 153, 153));
+        Email.setText("Enter your email");
+        Email.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                txtEmailFocusGained(evt);
+                EmailFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                txtEmailFocusLost(evt);
+                EmailFocusLost(evt);
             }
         });
-        txtEmail.addActionListener(new java.awt.event.ActionListener() {
+        Email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmailActionPerformed(evt);
+                EmailActionPerformed(evt);
             }
         });
 
-        txtname.setForeground(new java.awt.Color(153, 153, 153));
-        txtname.setText("Enter your fullname");
-        txtname.addFocusListener(new java.awt.event.FocusAdapter() {
+        fullname.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        fullname.setForeground(new java.awt.Color(153, 153, 153));
+        fullname.setText("Enter your fullname");
+        fullname.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                txtnameFocusGained(evt);
+                fullnameFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                txtnameFocusLost(evt);
+                fullnameFocusLost(evt);
             }
         });
 
@@ -122,15 +125,15 @@ public class Profile extends javax.swing.JFrame {
         address.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         address.setText("Address :");
 
-        txtaddress.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
-        txtaddress.setForeground(new java.awt.Color(153, 153, 153));
-        txtaddress.setText("Enter your address");
-        txtaddress.addFocusListener(new java.awt.event.FocusAdapter() {
+        Address.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        Address.setForeground(new java.awt.Color(153, 153, 153));
+        Address.setText("Enter your address");
+        Address.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                txtaddressFocusGained(evt);
+                AddressFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                txtaddressFocusLost(evt);
+                AddressFocusLost(evt);
             }
         });
 
@@ -144,21 +147,21 @@ public class Profile extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(phonenumber)
+                        .addComponent(number)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtPhonenumber, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Number, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Fullname, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(profilepic, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(fullname, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(address)
                         .addGap(18, 18, 18)
-                        .addComponent(txtaddress, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Address, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -168,21 +171,21 @@ public class Profile extends javax.swing.JFrame {
                 .addComponent(profilepic, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Fullname)
-                    .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(name)
+                    .addComponent(fullname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(email)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(phonenumber)
-                    .addComponent(txtPhonenumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(number)
+                    .addComponent(Number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(address)
-                    .addComponent(txtaddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(103, Short.MAX_VALUE))
+                    .addComponent(Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2);
@@ -190,8 +193,10 @@ public class Profile extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255,80));
 
-        profile.setText("My Profile");
+        addProfile.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        addProfile.setText("My Profile");
 
+        settings.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         settings.setText("Settings");
         settings.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -199,6 +204,7 @@ public class Profile extends javax.swing.JFrame {
             }
         });
 
+        logout.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         logout.setText("Log Out");
 
         profileicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assets/profile.png"))); // NOI18N
@@ -225,37 +231,36 @@ public class Profile extends javax.swing.JFrame {
                         .addGap(4, 4, 4)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(settings, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(profile, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                    .addComponent(addProfile, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(66, 66, 66)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(profile, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(profileicon, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(profileicon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(settings, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(settingicon, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(settingicon, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(settings, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(21, 21, 21)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(logout)
-                    .addComponent(logouticon))
-                .addContainerGap(64, Short.MAX_VALUE))
+                    .addComponent(logouticon)
+                    .addComponent(logout))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel3);
         jPanel3.setBounds(260, 180, 220, 250);
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\NITRO\\Downloads\\background.jpeg")); // NOI18N
-        jLabel2.setText("jLabel2");
         jLabel2.setMaximumSize(new java.awt.Dimension(1000, 500));
         jLabel2.setMinimumSize(new java.awt.Dimension(1000, 500));
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, -70, 1240, 620);
+        jLabel2.setBounds(0, -60, 1240, 620);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -264,81 +269,81 @@ public class Profile extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_settingsActionPerformed
 
-    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+    private void EmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmailActionPerformed
+    }//GEN-LAST:event_EmailActionPerformed
 
-    private void txtnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtnameFocusGained
+    private void fullnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fullnameFocusGained
         // TODO add your handling code here:
-        if (txtname.getText().equals("Enter your fullname"))
+        if (fullname.getText().equals("Enter your fullname"))
         {  
-                txtname.setText("");
-                txtname.setForeground(new Color(153,153,153));
+                fullname.setText("");
+                fullname.setForeground(new Color(153,153,153));
 }    
-    }//GEN-LAST:event_txtnameFocusGained
+    }//GEN-LAST:event_fullnameFocusGained
 
-    private void txtnameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtnameFocusLost
+    private void fullnameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fullnameFocusLost
         // TODO add your handling code here:
-        if (txtname.getText().equals("")){
+        if (fullname.getText().equals("")){
             
-                txtname.setText("Enter your fullname");
-                txtname.setForeground(new Color(153,153,153));
+                fullname.setText("Enter your fullname");
+                fullname.setForeground(new Color(153,153,153));
             }
-    }//GEN-LAST:event_txtnameFocusLost
+    }//GEN-LAST:event_fullnameFocusLost
 
-    private void txtEmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusGained
+    private void EmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EmailFocusGained
         // TODO add your handling code here:
-         if (txtEmail.getText().equals("Enter your email")){
+         if (Email.getText().equals("Enter your email")){
             
-                txtEmail.setText("");
-                txtEmail.setForeground(new Color(153,153,153));
+                Email.setText("");
+                Email.setForeground(new Color(153,153,153));
             }
-    }//GEN-LAST:event_txtEmailFocusGained
+    }//GEN-LAST:event_EmailFocusGained
 
-    private void txtEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusLost
+    private void EmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EmailFocusLost
         // TODO add your handling code here:
-         if (txtEmail.getText().equals("")){
+         if (Email.getText().equals("")){
             
-                txtEmail.setText("Enter your email");
-                txtEmail.setForeground(new Color(153,153,153));
+                Email.setText("Enter your email");
+                Email.setForeground(new Color(153,153,153));
             }
-    }//GEN-LAST:event_txtEmailFocusLost
+    }//GEN-LAST:event_EmailFocusLost
 
-    private void txtPhonenumberFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPhonenumberFocusGained
+    private void NumberFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NumberFocusGained
         // TODO add your handling code here:
-        if (txtPhonenumber.getText().equals("Enter your number")){
+        if (Number.getText().equals("Enter your number")){
             
-                txtPhonenumber.setText("");
-                txtPhonenumber.setForeground(new Color(153,153,153));
+                Number.setText("");
+                Number.setForeground(new Color(153,153,153));
             }
-    }//GEN-LAST:event_txtPhonenumberFocusGained
+    }//GEN-LAST:event_NumberFocusGained
 
-    private void txtPhonenumberFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPhonenumberFocusLost
+    private void NumberFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NumberFocusLost
         // TODO add your handling code here:
-         if (txtPhonenumber.getText().equals("")){
+         if (Number.getText().equals("")){
             
-                txtPhonenumber.setText("Enter your number");
-                txtPhonenumber.setForeground(new Color(153,153,153));
+                Number.setText("Enter your number");
+                Number.setForeground(new Color(153,153,153));
             }
-    }//GEN-LAST:event_txtPhonenumberFocusLost
+    }//GEN-LAST:event_NumberFocusLost
 
-    private void txtaddressFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtaddressFocusGained
+    private void AddressFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_AddressFocusGained
         // TODO add your handling code here:
-        if (txtaddress.getText().equals("Enter your address")){
+        if (Address.getText().equals("Enter your address")){
             
-                txtaddress.setText("");
-                txtaddress.setForeground(new Color(153,153,153));
+                Address.setText("");
+                Address.setForeground(new Color(153,153,153));
             }
-    }//GEN-LAST:event_txtaddressFocusGained
+    }//GEN-LAST:event_AddressFocusGained
 
-    private void txtaddressFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtaddressFocusLost
+    private void AddressFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_AddressFocusLost
         // TODO add your handling code here:
-        if (txtaddress.getText().equals("")){
+        if (Address.getText().equals("")){
             
-                txtaddress.setText("Enter your address");
-                txtaddress.setForeground(new Color(153,153,153));
+                Address.setText("Enter your address");
+                Address.setForeground(new Color(153,153,153));
             }
-    }//GEN-LAST:event_txtaddressFocusLost
+    }//GEN-LAST:event_AddressFocusLost
 
     /**
      * @param args the command line arguments
@@ -376,24 +381,44 @@ public class Profile extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Fullname;
+    private javax.swing.JTextField Address;
+    private javax.swing.JTextField Email;
+    private javax.swing.JTextField Number;
+    private javax.swing.JButton addProfile;
     private javax.swing.JLabel address;
     private javax.swing.JLabel email;
+    private javax.swing.JTextField fullname;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JButton logout;
     private javax.swing.JLabel logouticon;
-    private javax.swing.JLabel phonenumber;
-    private javax.swing.JButton profile;
+    private javax.swing.JLabel name;
+    private javax.swing.JLabel number;
     private javax.swing.JLabel profileicon;
     private javax.swing.JLabel profilepic;
     private javax.swing.JLabel settingicon;
     private javax.swing.JButton settings;
-    private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtPhonenumber;
-    private javax.swing.JTextField txtaddress;
-    private javax.swing.JTextField txtname;
     // End of variables declaration//GEN-END:variables
+
+ public void addProfileListener(ActionListener listener){
+        addProfile.addActionListener(listener);
+}
+ 
+ public javax.swing.JTextField getEmail(){
+    return Email;
+ }
+ 
+ public javax.swing.JTextField getNumber(){
+    return Number;
+ }
+ 
+ public javax.swing.JTextField getAddress(){
+    return Address;
+ }
+ 
+ public javax.swing.JTextField getfullname(){
+    return fullname;
+ }
 }
