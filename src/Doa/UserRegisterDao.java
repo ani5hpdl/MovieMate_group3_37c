@@ -31,8 +31,6 @@ public class UserRegisterDao {
             pstm.executeUpdate();
         }catch(Exception ex){
             Logger.getLogger(UserRegisterDao.class.getName()).log(Level.SEVERE,null,ex);
-        }finally{
-            mysql.closeConnection(conn);
         }
     }
     
@@ -46,8 +44,6 @@ public class UserRegisterDao {
             return result.next();
         }catch(Exception e){
             Logger.getLogger(UserRegisterDao.class.getName()).log(Level.SEVERE, null, e);
-        }finally{
-            mysql.closeConnection(conn);
         }
         return false;
     }
