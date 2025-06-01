@@ -10,13 +10,13 @@ import java.awt.event.ActionListener;
  *
  * @author NITRO
  */
-public class Profile extends javax.swing.JFrame {
+public class ProfileView extends javax.swing.JFrame {
 
 
     /**
      * Creates new form Profile
      */
-    public Profile() {
+    public ProfileView() {
         initComponents();
     }
 
@@ -40,16 +40,19 @@ public class Profile extends javax.swing.JFrame {
         profilepic = new javax.swing.JLabel();
         address = new javax.swing.JLabel();
         Address = new javax.swing.JTextField();
+        Update = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         addProfile = new javax.swing.JButton();
-        settings = new javax.swing.JButton();
-        logout = new javax.swing.JButton();
+        addSettings = new javax.swing.JButton();
+        addLogout = new javax.swing.JButton();
         profileicon = new javax.swing.JLabel();
         settingicon = new javax.swing.JLabel();
         logouticon = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(2000, 1000));
+        setMinimumSize(new java.awt.Dimension(1000, 500));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 255));
@@ -137,6 +140,9 @@ public class Profile extends javax.swing.JFrame {
             }
         });
 
+        Update.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        Update.setText("Update");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -163,6 +169,10 @@ public class Profile extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(Address, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(23, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Update)
+                .addGap(139, 139, 139))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,7 +195,9 @@ public class Profile extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(address)
                     .addComponent(Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addComponent(Update)
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2);
@@ -196,16 +208,16 @@ public class Profile extends javax.swing.JFrame {
         addProfile.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         addProfile.setText("My Profile");
 
-        settings.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        settings.setText("Settings");
-        settings.addActionListener(new java.awt.event.ActionListener() {
+        addSettings.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        addSettings.setText("Settings");
+        addSettings.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                settingsActionPerformed(evt);
+                addSettingsActionPerformed(evt);
             }
         });
 
-        logout.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        logout.setText("Log Out");
+        addLogout.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        addLogout.setText("Log Out");
 
         profileicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assets/profile.png"))); // NOI18N
 
@@ -230,9 +242,9 @@ public class Profile extends javax.swing.JFrame {
                         .addComponent(logouticon, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(4, 4, 4)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(settings, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addSettings, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(addProfile, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(addLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -245,11 +257,11 @@ public class Profile extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(settingicon, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(settings, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(addSettings, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(21, 21, 21)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(logouticon)
-                    .addComponent(logout))
+                    .addComponent(addLogout))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
 
@@ -265,9 +277,9 @@ public class Profile extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void settingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsActionPerformed
+    private void addSettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSettingsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_settingsActionPerformed
+    }//GEN-LAST:event_addSettingsActionPerformed
 
     private void EmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailActionPerformed
         // TODO add your handling code here:
@@ -362,20 +374,21 @@ public class Profile extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProfileView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProfileView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProfileView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProfileView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Profile().setVisible(true);
+                new ProfileView().setVisible(true);
             }
         });
     }
@@ -384,7 +397,10 @@ public class Profile extends javax.swing.JFrame {
     private javax.swing.JTextField Address;
     private javax.swing.JTextField Email;
     private javax.swing.JTextField Number;
+    private javax.swing.JButton Update;
+    private javax.swing.JButton addLogout;
     private javax.swing.JButton addProfile;
+    private javax.swing.JButton addSettings;
     private javax.swing.JLabel address;
     private javax.swing.JLabel email;
     private javax.swing.JTextField fullname;
@@ -392,20 +408,29 @@ public class Profile extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JButton logout;
     private javax.swing.JLabel logouticon;
     private javax.swing.JLabel name;
     private javax.swing.JLabel number;
     private javax.swing.JLabel profileicon;
     private javax.swing.JLabel profilepic;
     private javax.swing.JLabel settingicon;
-    private javax.swing.JButton settings;
     // End of variables declaration//GEN-END:variables
 
  public void addProfileListener(ActionListener listener){
         addProfile.addActionListener(listener);
 }
- 
+public void addSettingsListener(ActionListener listener) {
+    addSettings.addActionListener(listener);
+}
+
+public void addUpdateListener(ActionListener listener) {
+    Update.addActionListener(listener); // Replace `yourUpdateButton` with the actual button name
+}
+
+
+public void addLogoutListener(ActionListener listener) {
+    addLogout.addActionListener(listener);
+}
  public javax.swing.JTextField getEmail(){
     return Email;
  }

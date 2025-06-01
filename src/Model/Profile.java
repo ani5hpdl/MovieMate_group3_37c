@@ -21,10 +21,6 @@ public class Profile {
         this.address = address;
     }
 
-    public Profile() {
-    }
-
-
     public String getFullName() {
         return fullName;
     }
