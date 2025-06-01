@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package moviemate;
+import Controller.AddMovieController;
 import Database.*;
+import view.AdminPannel2;
 /**
  *
  * @author anish
@@ -16,5 +18,10 @@ public class MovieMate {
         }else{
             System.out.println("Failed to connect to database");
         }
+        
+        AdminPannel2 myprojform = new AdminPannel2();
+        myprojform.setVisible(true);
+        AddMovieController controller = new AddMovieController(myprojform);
+        controller.open();
     }
 }
