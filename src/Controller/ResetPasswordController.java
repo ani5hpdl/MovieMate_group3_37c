@@ -1,15 +1,15 @@
-
 package Controller;
+
 import Doa.UserDao;
 import Model.OTP;
 import Model.User;
 import view.ResetPassword;
+import view.OTPEntry;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 import javax.swing.JOptionPane;
-import view.OTPEntry;
 
 public class ResetPasswordController {
     private final UserDao userDao = new UserDao();
@@ -17,7 +17,6 @@ public class ResetPasswordController {
 
     public ResetPasswordController(ResetPassword resetView) {
         this.resetView = resetView;
-
         resetView.addUserListener(new SendCodeListener());
     }
 
@@ -40,21 +39,25 @@ public class ResetPasswordController {
             }
 
             String otpCode = String.format("%06d", new Random().nextInt(999999));
-
-            OTP otp = new OTP(email, otpCode);  
+            OTP otp = new OTP(email, otpCode);
 
             boolean generateOTP = userDao.generateOTP(otp);
+
             if (generateOTP) {
+                boolean emailSent = EmailUtil.sendOTPEmail(email, otpCode);
 
-                JOptionPane.showMessageDialog(resetView, "OTP sent to your email.");
-
-                close();
-                OTPEntry otpEntryView = new OTPEntry();
-                OTPEntryController otpEntryController = new OTPEntryController(otpEntryView, userDao, email);
-                otpEntryController.open();
+                if (emailSent) {
+                    close();
+                    OTPEntry otpEntryView = new OTPEntry();
+                    OTPEntryController otpEntryController = new OTPEntryController(otpEntryView, userDao, email);
+                    otpEntryController.open();
+                } else {
+                    JOptionPane.showMessageDialog(resetView, "Failed to send OTP email. Please try again.");
+                }
             } else {
-                JOptionPane.showMessageDialog(resetView, "Failed to send OTP. Please try again.");
+                JOptionPane.showMessageDialog(resetView, "Failed to generate OTP. Please try again.");
             }
         }
     }
-}    
+}
+ 

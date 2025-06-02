@@ -4,31 +4,35 @@ package Doa;
 import Model.OTP;
 import Model.User;
 import database.MySqlConnection;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+
 import java.sql.*;
-import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class UserDao {
     MySqlConnection mysql = new MySqlConnection();
     
-    public boolean generateOTP(OTP otp){
-        Connection conn = mysql.openConnection();
-        String sql = "UPDATE users SET otp = ?, otp_created_at = NOW() WHERE email = ?";
-        try(PreparedStatement ps = conn.prepareStatement(sql)){
-            ps.setString(1,otp.getCode());
-            ps.setString(2,otp.getEmail());
-            ps.executeUpdate();
-            return true;
-        } catch (SQLException ex) {
-            Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
-        }finally{
-            mysql.closeConnection(conn);
+    public boolean generateOTP(OTP otp) {
+    Connection conn = mysql.openConnection();
+    String sql = "UPDATE users SET otp = ?, otp_created_at = NOW() WHERE email = ?";
+    try (PreparedStatement ps = conn.prepareStatement(sql)) {
+        ps.setString(1, otp.getCode());
+        ps.setString(2, otp.getEmail());
+
+        int rowsUpdated = ps.executeUpdate();
+        if (rowsUpdated == 0) {
+            return false; 
         }
-        return false;
+        return true;
+    } catch (SQLException ex) {
+        Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
+    } finally {
+        mysql.closeConnection(conn);
     }
+    return false;
+}
+
+
     
     public boolean verifyOTP(OTP otp){
         Connection conn = mysql.openConnection();

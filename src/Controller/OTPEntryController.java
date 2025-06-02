@@ -51,7 +51,7 @@ public class OTPEntryController {
                 if (createdAt != null) {
                     long diff = System.currentTimeMillis() - createdAt.getTime();
 
-                    if (diff <= 5 * 60 * 1000) { 
+                    if (diff <= 60 * 60 * 1000) { 
                         JOptionPane.showMessageDialog(otpEntryView, "OTP Verified!");
 
                         close();

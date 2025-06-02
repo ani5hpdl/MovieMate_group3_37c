@@ -22,9 +22,9 @@ public class MovieMate {
             System.out.println("Failed to connect to database");
         }
     
-    UserLogin loginForm = new UserLogin();
-    LoginController controller = new LoginController(loginForm);
-    controller.open();
+//    UserLogin loginForm = new UserLogin();
+//    LoginController controller = new LoginController(loginForm);
+//    controller.open();
     
    ResetPassword resetForm = new ResetPassword(); 
    ResetPasswordController resetController = new ResetPasswordController(resetForm); 
