@@ -3,18 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package moviemate;
-import database.*;
+import Controller.ProfileController;
+import Doa.ProfileDao;
+import view.ProfileView;
+import Model.Profile;
+
 /**
  *
  * @author anish
  */
 public class MovieMate {
-    public static void main(String[] args) {
-        Database db = (Database) new MySqlConnection();
-        if(db.openConnection() != null){
-            System.out.println("Database connected Sucessfully");
-        }else{
-            System.out.println("Failed to connect to database");
-        }
+  public static void main(String[] args) {
+        ProfileView profileView = new ProfileView();
+        Profile profile = new Profile();
+        ProfileDao ProfileDao = new ProfileDao();
+        ProfileController Controller= new ProfileController( profileView);
     }
 }
+

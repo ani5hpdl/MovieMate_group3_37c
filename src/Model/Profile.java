@@ -9,24 +9,34 @@ package Model;
  * @author NITRO
  */
 public class Profile {
-    private String fullName;
+    private String fullname;
     private String email;
-    private String phoneNumber;
+    private String phonenumber;
     private String address;
+    private String password;
 
-    public Profile(String fullName, String email, String phoneNumber, String address) {
-        this.fullName = fullName;
+    public Profile(String fullname, String email, String phonenumber, String address, String password) {
+  
+        this.fullname = fullname;
         this.email = email;
-        this.phoneNumber = phoneNumber;
+        this.phonenumber = phonenumber;
         this.address = address;
+        this.password = password;
+    }
+     public String getPassword() {
+        return password;
     }
 
-    public String getFullName() {
-        return fullName;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
     }
 
     public String getEmail() {
@@ -37,12 +47,12 @@ public class Profile {
         this.email = email;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhonenumber() {
+        return phonenumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
     }
 
     public String getAddress() {
@@ -52,6 +62,5 @@ public class Profile {
     public void setAddress(String address) {
         this.address = address;
     }
+ 
 }
-
-
