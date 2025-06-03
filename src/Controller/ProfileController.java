@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Doa.ProfileDao;
-import Model.Profile;
+import Model.ProfileModel;
 import view.ProfileView;
 
 public class ProfileController {
@@ -40,7 +40,7 @@ public class ProfileController {
                     return;
                 }
 
-                Profile updatedProfile = new Profile(fullname, email, phonenumber, address,password);
+                ProfileModel updatedProfile = new ProfileModel(fullname, email, phonenumber, address,password);
                 boolean success = profileDao.updateProfile(updatedProfile);
 
                 if (success) {

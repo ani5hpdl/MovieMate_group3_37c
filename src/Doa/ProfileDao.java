@@ -4,7 +4,7 @@
  */
 package Doa;
 
-import Model.Profile;
+import Model.ProfileModel;
 import database.MySqlConnection;
 
 import java.sql.Connection;
@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 public class ProfileDao {
     MySqlConnection mysql = new MySqlConnection();
 
-    public boolean updateProfile(Profile profile) {
+    public boolean updateProfile(ProfileModel profile) {
         Connection conn = mysql.openConnection();
         String sql = "UPDATE profiles SET fullname = ?, phonenumber = ?, address = ?, password = ?, WHERE email = ?";
 

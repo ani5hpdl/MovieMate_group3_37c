@@ -6,7 +6,7 @@ package moviemate;
 import Controller.ProfileController;
 import Doa.ProfileDao;
 import view.ProfileView;
-import Model.Profile;
+import Model.ProfileModel;
 
 /**
  *
@@ -15,9 +15,9 @@ import Model.Profile;
 public class MovieMate {
   public static void main(String[] args) {
         ProfileView profileView = new ProfileView();
-        Profile profile = new Profile();
-        ProfileDao ProfileDao = new ProfileDao();
-        ProfileController Controller= new ProfileController( profileView);
+        ProfileModel profileModel = new ProfileModel();
+        ProfileDao profileDao = new ProfileDao();
+        ProfileController profileController= new ProfileController( profileView);
     }
 }
 

@@ -3,19 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Model;
-
 /**
  *
  * @author NITRO
  */
-public class Profile {
+public class ProfileModel {
     private String fullname;
     private String email;
     private String phonenumber;
     private String address;
     private String password;
 
-    public Profile(String fullname, String email, String phonenumber, String address, String password) {
+    public ProfileModel(String fullname, String email, String phonenumber, String address, String password) {
   
         this.fullname = fullname;
         this.email = email;
