@@ -132,7 +132,7 @@ public class UserRegister extends javax.swing.JFrame {
         jLabel10.setText("Register");
         jLabel10.setMaximumSize(new java.awt.Dimension(40, 24));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\test\\MovieMate_group3_37c\\src\\view\\Assets\\Group 37070 (1).png")); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\Downloads\\Frame 1000004204.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
