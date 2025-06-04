@@ -1,6 +1,16 @@
+# === Java compiled class files ===
+*.class
+*.rs
+
+# === Ant build output ===
+/build/
+/dist/
+
+# === NetBeans private settings (should NOT be versioned) ===
 /nbproject/private/
-<<<<<<< HEAD
-/build/
-=======
-/build/
->>>>>>> be8dfa0f01c8fbb1db4710a52c05bd3407972246
+
+
+# === OS-specific metadata ===
+.DS_Store
+
+
