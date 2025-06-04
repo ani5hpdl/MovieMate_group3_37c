@@ -2,7 +2,6 @@ package Controller;
 
 import Doa.UserDao;
 import Model.OTP;
-import Model.User;
 import view.ResetPassword;
 import view.OTPEntry;
 

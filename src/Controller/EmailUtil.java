@@ -13,8 +13,8 @@ import java.util.Properties;
 
 public class EmailUtil {
     public static boolean sendOTPEmail(String toEmail, String otpCode){
-        final String fromEmail = "paudelsejunpj@gmail.com";
-        final String appPassword = "owmokfonbxbhousx";
+        final String fromEmail = "moviemate94@gmail.com";
+        final String appPassword = "eyty gneo kbgi milk";
         
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
@@ -23,6 +23,7 @@ public class EmailUtil {
         props.put("mail.smtp.port", "587");
         
         Session session = Session.getInstance(props, new Authenticator(){
+            @Override
             protected PasswordAuthentication getPasswordAuthentication(){
                 return new PasswordAuthentication(fromEmail, appPassword);
                
