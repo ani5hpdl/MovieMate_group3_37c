@@ -8,6 +8,7 @@ import Controller.UserRegisterController;
 import Database.*;
 import view.UserLogin;
 import view.UserRegister;
+
 /**
  *
  * @author anish
@@ -25,5 +26,7 @@ public class MovieMate {
         UserRegisterController controller = new UserRegisterController(UserRegisterForm);
         controller.open();
         
+
     }
 }
+

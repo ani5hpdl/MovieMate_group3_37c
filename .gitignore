@@ -1,5 +1,5 @@
-/build/
-
-/nbproject/private/private.xml
-/dist/
+build/
+dist/
+nbproject/private/
+*.class
 
