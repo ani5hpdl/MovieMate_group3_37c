@@ -20,7 +20,7 @@ public class MySqlConnection implements Database {
         try{
             String username = "root";
 
-            String password = "Password@12";
+            String password = "qwerty1234";
 
             String database = "moviemate";
             Connection connection;
