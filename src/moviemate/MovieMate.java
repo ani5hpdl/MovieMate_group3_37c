@@ -4,14 +4,10 @@
  */
 package moviemate;
 import Controller.LoginController;
-import Controller.ProfileController;
 import Controller.UserRegisterController;
 import Database.*;
-import view.MainProfile;
-import view.UpdateProfile;
 import view.UserLogin;
 import view.UserRegister;
-
 /**
  *
  * @author anish
@@ -25,20 +21,9 @@ public class MovieMate {
             System.out.println("Failed to connect to database");
         }
         
-
-//        UserRegister UserRegisterForm = new UserRegister();
-//        UserRegisterController controller = new UserRegisterController(UserRegisterForm);
-//        controller.open();
-
-//        MainProfile UserRegisterForm = new MainProfile();
-//        ProfileController controller = new ProfileController(UserRegisterForm);
-//        controller.open();
+        UserRegister UserRegisterForm = new UserRegister();
+        UserRegisterController controller = new UserRegisterController(UserRegisterForm);
+        controller.open();
         
-        UpdateProfile UserRegisterForm = new UpdateProfile();
-        ProfileController controller = new ProfileController(UserRegisterForm);
-        controller.open1();
-
-
     }
 }
-

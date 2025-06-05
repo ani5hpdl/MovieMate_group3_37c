@@ -1,115 +1,70 @@
-// ─────────────────────────────────────────────────────────────────────────────
-// File: UserRegisterModel.java
-// Package: Model
-// ─────────────────────────────────────────────────────────────────────────────
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package Model;
 
-import java.time.LocalDateTime;
-
+/**
+ *
+ * @author anish
+ */
 public class UserRegisterModel {
-    private long id;
-    private String fullName;
-    private String email;
-    private String address;
-    private String contactNumber;
-    private String passwordHash;
-    private LocalDateTime createdAt;
-    private boolean isVerified;
-
-    // No‐arg constructor
-    public UserRegisterModel() { }
-
-    // Constructor for new user (before insertion – generated fields omitted)
-    public UserRegisterModel(String fullName,
-                             String email,
-                             String address,
-                             String contactNumber,
-                             String passwordHash) {
-        this.fullName       = fullName;
-        this.email          = email;
-        this.address        = address;
-        this.contactNumber  = contactNumber;
-        this.passwordHash   = passwordHash;
-        this.isVerified     = false;               // default on signup
-        this.createdAt      = LocalDateTime.now(); // can also be set by the database
+    private int id;
+    private String FullName;
+    private String Email;
+    private int ContactNumber; 
+    private String Address;
+    private String NewPassword;
+    private String ConfirmPassword;
+    
+    public UserRegisterModel(String FullName, String Email, int ContactNumber, String Address, String NewPassword, String ConfirmPassword){
+        this.FullName = FullName;
+        this.Email = Email;
+        this.ContactNumber = ContactNumber;
+        this.Address = Address;
+        this.NewPassword = NewPassword;
+        this.ConfirmPassword = ConfirmPassword;
     }
-
-    // Full constructor (including all mapped columns)
-    public UserRegisterModel(long id,
-                             String fullName,
-                             String email,
-                             String address,
-                             String contactNumber,
-                             String passwordHash,
-                             LocalDateTime createdAt,
-                             boolean isVerified) {
-        this.id             = id;
-        this.fullName       = fullName;
-        this.email          = email;
-        this.address        = address;
-        this.contactNumber  = contactNumber;
-        this.passwordHash   = passwordHash;
-        this.createdAt      = createdAt;
-        this.isVerified     = isVerified;
-    }
-
-    // ─── Getters and Setters ───────────────────────────────────────────────
-
-    public long getId() {
-        return id;
-    }
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getFullName() {
-        return fullName;
+        return FullName;
     }
+
     public void setFullName(String fullName) {
-        this.fullName = fullName;
+        FullName = fullName;
     }
 
     public String getEmail() {
-        return email;
+        return Email;
     }
     public void setEmail(String email) {
-        this.email = email;
+        Email = email;
     }
 
+    public int getContactNumber() {
+        return ContactNumber;
+    }
+    public void setContactNumber(int contactNumber) {
+        ContactNumber = contactNumber;
+    }
+    
     public String getAddress() {
-        return address;
+        return Address;
     }
     public void setAddress(String address) {
-        this.address = address;
+        Address = address;
     }
 
-    public String getContactNumber() {
-        return contactNumber;
+    public String getNewPassword() {
+        return NewPassword;
     }
-    public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
-    }
-
-    public String getPasswordHash() {
-        return passwordHash;
-    }
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
+    public void setNewPassword(String newPassword) {
+        NewPassword = newPassword;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
+    public String getConfirmPassword() {
+        return ConfirmPassword;
     }
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public boolean isVerified() {
-        return isVerified;
-    }
-    public void setVerified(boolean isVerified) {
-        this.isVerified = isVerified;
+    public void setConfirmPassword(String confirmPassword) {
+        ConfirmPassword = confirmPassword;
     }
 }
-

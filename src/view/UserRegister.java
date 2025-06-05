@@ -132,16 +132,6 @@ public class UserRegister extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setText("Confirm password");
 
-
-        NewPassword.setText("erdfhghjjv j,hbh");
-        NewPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NewPasswordActionPerformed(evt);
-            }
-        });
-
-        ConfirmPassword.setText("ghfcjghk.jlirytg");
-
         Register.setBackground(new java.awt.Color(255, 0, 51));
         Register.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Register.setForeground(new java.awt.Color(255, 255, 255));
@@ -155,22 +145,9 @@ public class UserRegister extends javax.swing.JFrame {
         jLabel8.setBackground(new java.awt.Color(255, 51, 51));
         jLabel8.setText("or conitnue with");
 
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\test\\MovieMate_group3_37c\\src\\view\\Assets\\Group 2212.png")); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\test\\MovieMate_group3_37c\\src\\view\\Assets\\Vector.png")); // NOI18N
-
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\test\\MovieMate_group3_37c\\src\\view\\Assets\\Vector (1).png")); // NOI18N
-
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         jLabel10.setText("Register");
         jLabel10.setMaximumSize(new java.awt.Dimension(40, 24));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\Downloads\\Frame 1000004204.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -259,35 +236,27 @@ public class UserRegister extends javax.swing.JFrame {
                 .addGap(27, 27, 27))
         );
 
-
-        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\momlo\\OneDrive\\Desktop\\test\\MovieMate_group3_37c\\src\\view\\Assets\\image 11.png")); // NOI18N
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(185, Short.MAX_VALUE)
+                .addContainerGap(188, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(182, 182, 182))
+                .addGap(170, 170, 170))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addGap(0, 6, Short.MAX_VALUE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 807, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(95, 95, 95)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(98, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addGap(53, 53, 53))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 732, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(42, Short.MAX_VALUE)))
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 697, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
@@ -352,7 +321,6 @@ public class UserRegister extends javax.swing.JFrame {
             ContactNumber.setText("Enter your Number");
         }// TODO add your handling code here:
     }//GEN-LAST:event_ContactNumberFocusLost
-
 
     /**
      * @param args the command line arguments
