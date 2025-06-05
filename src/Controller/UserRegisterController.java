@@ -64,6 +64,9 @@ public class UserRegisterController {
                     
                     UserLogin loginPage = new UserLogin();
                     loginPage.setVisible(true);
+                    UserLogin UserLoginForm = new UserLogin();
+                    LoginController controller = new LoginController(UserLoginForm);
+                    controller.open();
                 }
             }catch(Exception ex){
                 System.out.println("Error Adding User"+ ex.getMessage());

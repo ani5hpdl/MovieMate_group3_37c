@@ -3,8 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package moviemate;
+import Controller.LoginController;
 import Controller.UserRegisterController;
 import Database.*;
+import view.UserLogin;
 import view.UserRegister;
 /**
  *
@@ -22,5 +24,6 @@ public class MovieMate {
         UserRegister UserRegisterForm = new UserRegister();
         UserRegisterController controller = new UserRegisterController(UserRegisterForm);
         controller.open();
+        
     }
 }
