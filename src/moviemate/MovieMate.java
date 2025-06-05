@@ -8,6 +8,12 @@ import Controller.UserRegisterController;
 import Database.*;
 import view.UserLogin;
 import view.UserRegister;
+
+import Controller.AddMovieController;
+import Controller.AdminPanelController;
+import Database.*;
+import view.AdminPanel;
+import view.AdminPannel2;
 /**
  *
  * @author anish
@@ -21,9 +27,20 @@ public class MovieMate {
             System.out.println("Failed to connect to database");
         }
         
+
         UserRegister UserRegisterForm = new UserRegister();
         UserRegisterController controller = new UserRegisterController(UserRegisterForm);
         controller.open();
         
+
+//        AdminPannel2 myprojform = new AdminPannel2();
+//        myprojform.setVisible(true);
+//        AddMovieController controller = new AddMovieController(myprojform);
+//        controller.open();
+        
+        // AdminPanel adminpanel = new AdminPanel();
+        // AdminPanelController controller =new AdminPanelController(adminpanel);
+        // controller.open();
+
     }
 }
