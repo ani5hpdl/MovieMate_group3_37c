@@ -24,26 +24,28 @@ public class NewPassword extends javax.swing.JFrame {
         mainLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(500, 400));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Logo.png"))); // NOI18N
-        getContentPane().add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 40, -1, -1));
+        getContentPane().add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
 
         title.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         title.setText("Reset Password");
-        getContentPane().add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 122, -1, -1));
+        getContentPane().add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, -1, -1));
 
         subTitle.setFont(new java.awt.Font("Consolas", 0, 8)); // NOI18N
         subTitle.setText("Please set your new Password");
-        getContentPane().add(subTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 157, -1, -1));
+        getContentPane().add(subTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, -1));
 
         newPassword.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         newPassword.setText("New Password");
-        getContentPane().add(newPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 185, -1, -1));
+        getContentPane().add(newPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, -1, -1));
 
         reEnterPassword.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         reEnterPassword.setText("Re-enter Password");
-        getContentPane().add(reEnterPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 246, -1, -1));
+        getContentPane().add(reEnterPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, -1, -1));
 
         txtPassword.setText("Enter your new Password");
         txtPassword.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -54,7 +56,7 @@ public class NewPassword extends javax.swing.JFrame {
                 txtPasswordFocusLost(evt);
             }
         });
-        getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 206, 252, -1));
+        getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 252, -1));
 
         txtReEnterPassword.setText("Re-enter your new password");
         txtReEnterPassword.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -65,12 +67,12 @@ public class NewPassword extends javax.swing.JFrame {
                 txtReEnterPasswordFocusLost(evt);
             }
         });
-        getContentPane().add(txtReEnterPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 267, 252, -1));
+        getContentPane().add(txtReEnterPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 252, -1));
 
         resetButton.setBackground(new java.awt.Color(153, 153, 255));
         resetButton.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         resetButton.setText("Reset");
-        getContentPane().add(resetButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 152, -1));
+        getContentPane().add(resetButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 152, -1));
 
         mainLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/FPP.jpg"))); // NOI18N
         getContentPane().add(mainLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 380));
