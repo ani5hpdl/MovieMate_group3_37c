@@ -14,6 +14,7 @@ import Controller.AdminPanelController;
 import Database.*;
 import view.AdminPanel;
 import view.AdminPannel2;
+
 /**
  *
  * @author anish
@@ -42,5 +43,7 @@ public class MovieMate {
         // AdminPanelController controller =new AdminPanelController(adminpanel);
         // controller.open();
 
+
     }
+            
 }

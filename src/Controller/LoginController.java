@@ -41,10 +41,24 @@ public class LoginController {
                     JOptionPane.showMessageDialog(loginScreen, "Login successful");
                 }else{
                     JOptionPane.showMessageDialog(loginScreen, "Invalid Credentials");
+
                 }
             }catch (Exception ex){
                 System.out.println("Error adding user: " + ex.getMessage());
             }
         }
     }
+    public static String ValidateLogin(Login loginRequest){
+        String email = loginRequest.getEmail();
+        String password = loginRequest.getPassword();
+        
+        if (email == null || email.trim().isEmpty()){
+            return "Email is required";
+        }
+        if (password == null || password.trim().isEmpty()) {
+            return "Password is required.";
+        }
+        return null;
+    }
+    
 }
