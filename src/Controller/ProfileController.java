@@ -5,53 +5,78 @@ import java.awt.event.ActionListener;
 
 import Doa.ProfileDao;
 import Model.ProfileModel;
+import view.MainProfile;
 import view.ProfileView;
+import view.UpdateProfile;
 
 public class ProfileController {
 
     private final ProfileDao profileDao = new ProfileDao();
-    private final ProfileView profileView;
+    private  MainProfile profileView;
+    private  UpdateProfile updateprofile;
 
-    public ProfileController(ProfileView profileView) {
+    public ProfileController(MainProfile profileView) {
         this.profileView = profileView;
-
-        profileView.addUpdateListener(new UpdateProfileListener());
+        loadUserProfile(1);
+    }
+    public ProfileController(UpdateProfile updateprofile) {
+        this.updateprofile = updateprofile;
+        loadEditUser(1);
+        updateprofile.addUpdateUserListener(new UpdateUserListener());
     }
 
     public void open() {
         this.profileView.setVisible(true);
+        
+    }
+    public void open1() {
+        this.updateprofile.setVisible(true);
+        
     }
 
     public void close() {
         this.profileView.dispose();
     }
+     public void close1() {
+        this.updateprofile.dispose();
+    }
 
-    class UpdateProfileListener implements ActionListener {
+    public ProfileModel fetchUserProfile(int userid){
+        return profileDao.getUserById(userid);
+    }
+    public static void main(String[] args) {
+        System.out.println("Here");
+    }
+    public void loadUserProfile(int userid){
+//        ProfileController controller = new ProfileController(profileView);
+        ProfileModel profile = this.fetchUserProfile(userid);
+        
+        if(profile != null){
+            profileView.getaddressField().setText(profile.getAddress());
+            profileView.getemailField().setText(profile.getEmail());
+            profileView.getaddressField().setText(profile.getAddress());
+            profileView.getcontactnumberField().setText(profile.getPhonenumber());
+            profileView.getfullnameField().setText(profile.getFullname());
+        }
+    }
+    public void loadEditUser(int userid){
+        ProfileModel profile = this.fetchUserProfile(userid);
+        
+        if(profile != null){
+            updateprofile.getaddressField().setText(profile.getAddress());
+            updateprofile.getemailField().setText(profile.getEmail());
+            updateprofile.getaddressField().setText(profile.getAddress());
+            updateprofile.getcontactnumberField().setText(profile.getPhonenumber());
+            updateprofile.getfullnameField().setText(profile.getFullname());
+        }
+    }
+    
+    class UpdateUserListener implements ActionListener{
+
         @Override
         public void actionPerformed(ActionEvent e) {
-            try {
-                String fullname = profileView.getfullname().getText();
-                String email = profileView.getemail().getText();
-                String phonenumber = profileView.getphonenumber().getText();
-                String address = profileView.getaddress().getText();
-                String password = profileView.getpassword().getText();
-                if (fullname.isEmpty() || email.isEmpty() || phonenumber.isEmpty() || address.isEmpty()|| password.isEmpty()) {
-                    profileView.showMessage("All fields must be filled.");
-                    return;
-                }
-
-                ProfileModel updatedProfile = new ProfileModel(fullname, email, phonenumber, address,password);
-                boolean success = profileDao.updateProfile(updatedProfile);
-
-                if (success) {
-                    profileView.showMessage("Profile updated successfully!");
-                } else {
-                    profileView.showMessage("Failed to update profile.");
-                }
-
-            } catch (Exception ex) {
-                profileView.showMessage("Error: " + ex.getMessage());
-            }
+            
         }
+        
     }
 }
