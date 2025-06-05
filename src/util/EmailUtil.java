@@ -14,6 +14,9 @@ import jakarta.mail.Session;
 import jakarta.mail.Transport;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
+import java.io.UnsupportedEncodingException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class EmailUtil {
 
@@ -58,7 +61,11 @@ public class EmailUtil {
 
         // 3) Construct the message
         Message message = new MimeMessage(session);
-        message.setFrom(new InternetAddress(FROM_EMAIL, FROM_NAME));
+        try {
+            message.setFrom(new InternetAddress(FROM_EMAIL, FROM_NAME));
+        } catch (UnsupportedEncodingException ex) {
+            Logger.getLogger(EmailUtil.class.getName()).log(Level.SEVERE, null, ex);
+        }
         message.setRecipients(
             Message.RecipientType.TO,
             InternetAddress.parse(recipientEmail)

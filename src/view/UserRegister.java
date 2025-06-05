@@ -354,4 +354,16 @@ public class UserRegister extends javax.swing.JFrame {
     public javax.swing.JTextField getnumberField(){
         return ContactNumber;
     }
+
+        /**
+     * Returns the JPasswordField used for the “Confirm Password” input.
+     * @return 
+     */
+    public javax.swing.JPasswordField getConfirmPasswordField() {
+        return ConfirmPassword;
+    }
+
+    public Object getPasswordField() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

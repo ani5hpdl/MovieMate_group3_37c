@@ -7,9 +7,6 @@
  *
  * @author momlo
  */
-class PasswordAuthentication {
-
-    PasswordAuthentication(String from, String password) {
-    }
+class nameField {
     
 }

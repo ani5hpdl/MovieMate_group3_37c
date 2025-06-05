@@ -9,13 +9,15 @@ import Doa.UserDAO;
 import Doa.VerificationTokenDAO;
 import Model.UserRegisterModel;
 import Model.VerificationToken;
+import jakarta.mail.MessagingException;
 import util.EmailUtil;
 
-import javax.mail.MessagingException;
+//import javax.mail.MessagingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -24,7 +26,6 @@ public class ResendServlet extends HttpServlet {
     private final UserDAO userDao = new UserDAO();
     private final VerificationTokenDAO tokenDao = new VerificationTokenDAO();
 
-    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String email = request.getParameter("email");
@@ -82,8 +83,7 @@ public class ResendServlet extends HttpServlet {
                 "<h3>A new verification link has been sent to “" + email + "”.</h3>" +
                 "<p>Please check your inbox (and spam folder).</p>"
             );
-        } catch (Exception ex) {
-            ex.printStackTrace();
+        } catch (IOException | SQLException ex) {
             response.setContentType("text/html");
             response.getWriter().write(
                 "<h3>An unexpected error occurred while resending verification.</h3>"

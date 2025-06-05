@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 
 @WebServlet("/verify")
@@ -20,12 +21,10 @@ public class VerifyServlet extends HttpServlet {
     private final VerificationTokenDAO tokenDao = new VerificationTokenDAO();
     private final UserDAO userDao = new UserDAO();
 
-    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String token = request.getParameter("token");
         if (token == null || token.isEmpty()) {
-            // No token provided
             response.setContentType("text/html");
             response.getWriter().write("<h3>Invalid verification link.</h3>");
             return;
@@ -34,7 +33,6 @@ public class VerifyServlet extends HttpServlet {
         try {
             VerificationToken vToken = tokenDao.findByToken(token);
             if (vToken == null) {
-                // Token not found (invalid or already used)
                 response.setContentType("text/html");
                 response.getWriter().write("<h3>Invalid or already‐used verification link.</h3>");
                 return;
@@ -42,12 +40,11 @@ public class VerifyServlet extends HttpServlet {
 
             // Check if expired
             if (vToken.getExpiresAt().isBefore(LocalDateTime.now())) {
-                // Token expired
                 response.setContentType("text/html");
                 response.getWriter().write(
                     "<h3>Your verification link has expired.</h3>" +
                     "<p><a href=\"resend?email="
-                      + userDao.findById(vToken.getUserId()).getEmail()
+                      + userDao.findByEmail(userDao.findById(vToken.getUserId()).getEmail()).getEmail()
                       + "\">Click here to resend a new verification email.</a></p>"
                 );
                 return;
@@ -64,12 +61,9 @@ public class VerifyServlet extends HttpServlet {
                 "<h3>Thank you! Your email has been verified.</h3>" +
                 "<p><a href=\"/login.html\">Proceed to login</a></p>"
             );
-        } catch (Exception ex) {
-            ex.printStackTrace();
+        } catch (IOException | SQLException ex) {
             response.setContentType("text/html");
-            response.getWriter().write(
-                "<h3>An error occurred during verification.</h3>"
-            );
+            response.getWriter().write("<h3>An error occurred during verification.</h3>");
         }
     }
 }

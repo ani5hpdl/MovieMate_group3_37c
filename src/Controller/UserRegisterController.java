@@ -10,12 +10,15 @@ import Doa.VerificationTokenDAO;
 import Model.UserRegisterModel;
 import Model.VerificationToken;
 import util.EmailUtil;
+import view.Emailverification;      // <— Import the Swing “Resend” form
 import view.UserRegister;
 
-import javax.mail.MessagingException;
+import jakarta.mail.MessagingException;
+import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -29,7 +32,7 @@ public class UserRegisterController {
         this.userDao = new UserDAO();
         this.tokenDao = new VerificationTokenDAO();
 
-        // Attach listener to the “Register” button (or whatever it’s called in your view)
+        // Attach listener to the “Register” button in the Swing form
         this.view.addAdduserListener(new AddUserListener());
     }
 
@@ -48,41 +51,61 @@ public class UserRegisterController {
                 // 1) Read fields from the Swing form
                 String fullName        = view.getnameField().getText().trim();
                 String email           = view.getemailField().getText().trim();
-                String password        = new String(view.getpasswordField().getPassword());          // getPassword() if it's JPasswordField
-                String confirmPassword = new String(view.getconfirmPasswordField().getPassword());   // assume view has a confirmPasswordField
+                String password        = new String(view.getpasswordField().getPassword());
+                String confirmPassword = new String(view.getConfirmPasswordField().getPassword());
                 String address         = view.getaddressField().getText().trim();
                 String contactNumber   = view.getnumberField().getText().trim();
 
                 // 2) Basic validation
-                if (fullName.isEmpty() || email.isEmpty() || password.isEmpty() ||
-                    confirmPassword.isEmpty() || address.isEmpty() || contactNumber.isEmpty()) {
-                    JOptionPane.showMessageDialog(view, "All fields are required.", "Validation Error",
-                                                  JOptionPane.ERROR_MESSAGE);
+                if (fullName.isEmpty()
+                    || email.isEmpty()
+                    || password.isEmpty()
+                    || confirmPassword.isEmpty()
+                    || address.isEmpty()
+                    || contactNumber.isEmpty()) {
+                    JOptionPane.showMessageDialog(
+                        view,
+                        "All fields are required.",
+                        "Validation Error",
+                        JOptionPane.ERROR_MESSAGE
+                    );
                     return;
                 }
-
                 if (!email.contains("@") || !email.contains(".")) {
-                    JOptionPane.showMessageDialog(view, "Enter a valid email address.", "Validation Error",
-                                                  JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(
+                        view,
+                        "Enter a valid email address.",
+                        "Validation Error",
+                        JOptionPane.ERROR_MESSAGE
+                    );
                     return;
                 }
-
                 if (!password.equals(confirmPassword)) {
-                    JOptionPane.showMessageDialog(view, "Passwords do not match.", "Validation Error",
-                                                  JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(
+                        view,
+                        "Passwords do not match.",
+                        "Validation Error",
+                        JOptionPane.ERROR_MESSAGE
+                    );
                     return;
                 }
 
                 // 3) Check if the user already exists
                 if (userDao.findByEmail(email) != null) {
-                    JOptionPane.showMessageDialog(view, "A user with that email already exists.",
-                                                  "Registration Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(
+                        view,
+                        "A user with that email already exists.",
+                        "Registration Error",
+                        JOptionPane.ERROR_MESSAGE
+                    );
                     return;
                 }
 
                 // 4) Hash the password using BCrypt
-                String hashedPassword = org.mindrot.jbcrypt.BCrypt.hashpw(password,
-                                                    org.mindrot.jbcrypt.BCrypt.gensalt(12));
+                String hashedPassword = org.mindrot.jbcrypt.BCrypt.hashpw(
+                    password,
+                    org.mindrot.jbcrypt.BCrypt.gensalt(12)
+                );
 
                 // 5) Create a UserRegisterModel (isVerified defaults to false)
                 UserRegisterModel newUser = new UserRegisterModel(
@@ -108,32 +131,49 @@ public class UserRegisterController {
                 try {
                     EmailUtil.sendVerificationEmail(email, tokenString);
                 } catch (MessagingException mex) {
-                    // If email fails, optionally delete the user or inform them to retry
-                    JOptionPane.showMessageDialog(view,
+                    JOptionPane.showMessageDialog(
+                        view,
                         "Registration succeeded, but sending verification email failed:\n"
                         + mex.getMessage(),
-                        "Email Error", JOptionPane.ERROR_MESSAGE);
+                        "Email Error",
+                        JOptionPane.ERROR_MESSAGE
+                    );
                     return;
                 }
 
-                // 10) Notify the user and clear the form (or close)
-                JOptionPane.showMessageDialog(view,
-                    "Registration successful!\nA verification link has been sent to your email.\n"
-                    + "Please check your inbox and click the link to verify your account.",
-                    "Registration Complete", JOptionPane.INFORMATION_MESSAGE);
+                // 10) Notify the user they’re registered
+                JOptionPane.showMessageDialog(view, """
+                                                    Registration successful!
+                                                    A verification link has been sent to your email.
+                                                    You will now be taken to the Resend Verification page.""",
+                    "Registration Complete",
+                    JOptionPane.INFORMATION_MESSAGE
+                );
 
-                // Optionally clear form fields or close window:
-                view.clearForm();  // implement this in your UserRegister view
-                // or: close();
+                // 11) Clear the registration form
+                //view.clearForm();
+
+                // 12) Immediately open the “Resend Verification” Swing window, passing the same email
+                Emailverification resendForm = new Emailverification(email);
+                resendForm.setVisible(true);
+
+                // 13) Close the registration window
+                view.dispose();
 
             } catch (NumberFormatException nfex) {
-                JOptionPane.showMessageDialog(view, "Contact number must be numeric.",
-                                              "Input Error", JOptionPane.ERROR_MESSAGE);
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(view,
+                JOptionPane.showMessageDialog(
+                    view,
+                    "Contact number must be numeric.",
+                    "Input Error",
+                    JOptionPane.ERROR_MESSAGE
+                );
+            } catch (HeadlessException | SQLException ex) {
+                JOptionPane.showMessageDialog(
+                    view,
                     "An unexpected error occurred:\n" + ex.getMessage(),
-                    "Error", JOptionPane.ERROR_MESSAGE);
-                ex.printStackTrace();
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE
+                );
             }
         }
     }
