@@ -81,11 +81,6 @@ public class UserRegisterController {
                     UserLogin UserLoginForm = new UserLogin();
                     LoginController controller = new LoginController(UserLoginForm);
                     controller.open();
-
-                if (!password.equals(confirmPassword)) {
-                    JOptionPane.showMessageDialog(view, "Passwords do not match.", "Validation Error",
-                                                  JOptionPane.ERROR_MESSAGE);
-                    return;
                 }
 
                 // 3) Check if the user already exists

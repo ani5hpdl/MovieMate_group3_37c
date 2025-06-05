@@ -25,6 +25,7 @@ public class MovieMate {
             System.out.println("Failed to connect to database");
         }
         
+
 //        UserRegister UserRegisterForm = new UserRegister();
 //        UserRegisterController controller = new UserRegisterController(UserRegisterForm);
 //        controller.open();
@@ -36,6 +37,7 @@ public class MovieMate {
         UpdateProfile UserRegisterForm = new UpdateProfile();
         ProfileController controller = new ProfileController(UserRegisterForm);
         controller.open1();
+
 
     }
 }
