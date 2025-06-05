@@ -19,11 +19,7 @@ public class MySqlConnection implements Database {
     public Connection openConnection() {
         try{
             String username = "root";
-<<<<<<< HEAD
-            String password = "jagadambasteel";
-=======
             String password = "Password@12";
->>>>>>> 617d787d00e647e88752dbf26c2eb8293b657f72
             String database = "moviemate";
             Connection connection;
             connection = DriverManager.getConnection(
