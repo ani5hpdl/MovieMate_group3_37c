@@ -4,7 +4,6 @@
  */
 package Doa;
 
-import Database.MySqlConnection;
 import Model.MovieData;
 import Database.MySqlConnection;
 import java.util.logging.Logger;
@@ -12,6 +11,10 @@ import java.util.logging.Level;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 
 /**
@@ -33,7 +36,7 @@ public class MovieDao {
             pstm.setInt(4, movie.getDuration());
             pstm.setString(5, movie.getGenre());
             pstm.setString(6, movie.getLanguage());
-            pstm.setDouble(7, movie.getRating());
+            pstm.setInt(7, (int) movie.getRating());
             pstm.setString(8, movie.getSynopsis());
             pstm.setDate(9, new Date(movie.getReleaseDate().getTime())); 
             pstm.setString(10, movie.getShowTime());
@@ -80,5 +83,37 @@ public class MovieDao {
 
     return null; // No errors
 }
+    public List<MovieData> getAllMovies(){
+        List<MovieData> movies = new ArrayList<>();
+        Connection conn = mysql.openConnection();
+        String sql = "SELECT * FROM moviedata";
+        
+        try(PreparedStatement pstmt = conn.prepareStatement(sql);
+                ResultSet result = pstmt.executeQuery()){
+            while(result.next()){
+                MovieData moviedata = new MovieData(
+                        result.getString("title"),
+                        result.getString("director"),
+                        result.getString("cast"),
+                        result.getInt("duration"),
+                        result.getString("genre"),
+                        result.getString("language"),
+                        result.getInt("rating"),
+                        result.getString("synopsis"),
+                        result.getDate("release_date"),
+                        result.getString("showtime"),
+                        result.getString("poster_path"),
+                        result.getString("more_image_path")
+                );
+                movies.add(moviedata);
+                
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }finally{
+            mysql.closeConnection(conn);
+        }
+        return movies;
+    }
 
 }

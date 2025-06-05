@@ -9,7 +9,9 @@ import Model.MovieData;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import view.AdminPanel;
 
 
 /**
@@ -24,6 +26,25 @@ public class AddMovieController {
         this.addmovie = addmovie;
         addmovie.addAddMovieListener(new AddMovieListener());
         addmovie.addCancelMovieListener(new CancelMovieListener());
+        
+//        addmovie.addImageListener(new AddImageListener());
+//        addmovie.addMoreImageListener(new MoreImageListener());
+        
+        addmovie.getMainImageButton().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                openFileChooser1();
+
+            }
+        });
+        
+        addmovie.getMoreImageButton().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                openFileChooser2();
+
+            }
+        });
     }
     public void open(){
         this.addmovie.setVisible(true);
@@ -31,6 +52,8 @@ public class AddMovieController {
     public void close(){
         this.addmovie.dispose();
     }
+
+    
     
     class AddMovieListener implements ActionListener{
 
@@ -44,7 +67,7 @@ public class AddMovieController {
                 int duration = (int) addmovie.getDurationSpinner().getValue();
                 String genre = (String) addmovie.getGenreComboBox().getSelectedItem();
                 String language = (String) addmovie.getLanguageComboBox().getSelectedItem();
-                double rating = (double) addmovie.getRatingSpinner().getValue();
+                int rating = (int) addmovie.getRatingSpinner().getValue();
                 String synopsis = addmovie.getSynopsisField().getText();
                 Date releaseDate = addmovie.getReleaseDatePicker().getDate();
                 String showTime = (String) addmovie.getShowTimeComboBox().getSelectedItem();
@@ -60,6 +83,11 @@ public class AddMovieController {
                 if (check == null) {
                     movieDao.MovieDao(movieData);
                     JOptionPane.showMessageDialog(addmovie, "Movie inserted successfully.");
+                    
+                    AdminPanel adminpanel = new AdminPanel();
+                    AdminPanelController controller =new AdminPanelController(adminpanel);
+                    controller.open();
+                    
                 } else {
                     JOptionPane.showMessageDialog(addmovie, check);
                 }
@@ -71,7 +99,7 @@ public class AddMovieController {
         
     }
     class CancelMovieListener implements ActionListener{
-
+ 
         @Override
         public void actionPerformed(ActionEvent e) {
             addmovie.dispose();
@@ -79,4 +107,29 @@ public class AddMovieController {
         }
         
     }
+    
+    private void openFileChooser1() {
+        JFileChooser jFileChooser = new JFileChooser();
+        jFileChooser.setDialogTitle("Select the image");
+
+        int result = jFileChooser.showOpenDialog(addmovie);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            String productImage = jFileChooser.getSelectedFile().getAbsolutePath();
+            addmovie.getMainImageButton().setText(productImage);
+
+        }
+    }
+    private void openFileChooser2() {
+        JFileChooser jFileChooser = new JFileChooser();
+        jFileChooser.setDialogTitle("Select the image");
+
+        int result = jFileChooser.showOpenDialog(addmovie);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            String productImage = jFileChooser.getSelectedFile().getAbsolutePath();
+            addmovie.getMoreImageButton().setText(productImage);
+
+        }
+    }
+
+    
 }

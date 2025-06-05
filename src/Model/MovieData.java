@@ -64,7 +64,7 @@ public class MovieData {
     public void setLanguage(String language) { this.language = language; }
 
     public double getRating() { return rating; }
-    public void setRating(double rating) { this.rating = rating; }
+    public void setRating(int rating) { this.rating = rating; }
 
     public String getSynopsis() { return synopsis; }
     public void setSynopsis(String synopsis) { this.synopsis = synopsis; }

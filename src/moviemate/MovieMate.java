@@ -4,7 +4,9 @@
  */
 package moviemate;
 import Controller.AddMovieController;
+import Controller.AdminPanelController;
 import Database.*;
+import view.AdminPanel;
 import view.AdminPannel2;
 /**
  *
@@ -19,9 +21,13 @@ public class MovieMate {
             System.out.println("Failed to connect to database");
         }
         
-        AdminPannel2 myprojform = new AdminPannel2();
-        myprojform.setVisible(true);
-        AddMovieController controller = new AddMovieController(myprojform);
+//        AdminPannel2 myprojform = new AdminPannel2();
+//        myprojform.setVisible(true);
+//        AddMovieController controller = new AddMovieController(myprojform);
+//        controller.open();
+        
+        AdminPanel adminpanel = new AdminPanel();
+        AdminPanelController controller =new AdminPanelController(adminpanel);
         controller.open();
     }
 }
