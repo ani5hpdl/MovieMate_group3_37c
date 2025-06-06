@@ -4,3 +4,8 @@ nbproject/private/private.xml
 
 
 /dist/
+# Ignore Ant build directory
+/build/
+
+# Ignore NetBeans auto-generated build file if not manually edited
+/build.xml
