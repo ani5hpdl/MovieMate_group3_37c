@@ -56,6 +56,11 @@ public class NewPassword extends javax.swing.JFrame {
                 txtPasswordFocusLost(evt);
             }
         });
+        txtPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPasswordActionPerformed(evt);
+            }
+        });
         getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 252, -1));
 
         txtReEnterPassword.setText("Re-enter your new password");
@@ -108,6 +113,10 @@ public class NewPassword extends javax.swing.JFrame {
             txtReEnterPassword.setText("Re-enter your new password");
         }
     }//GEN-LAST:event_txtReEnterPasswordFocusLost
+
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPasswordActionPerformed
 
     public static void main(String args[]) {
 
