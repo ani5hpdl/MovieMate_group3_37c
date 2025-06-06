@@ -31,17 +31,16 @@ public class dashboard extends javax.swing.JFrame {
         homeLogo = new javax.swing.JLabel();
         profileLogo = new javax.swing.JLabel();
         transactionLogo = new javax.swing.JLabel();
-        historyLogo = new javax.swing.JLabel();
         homeButton = new javax.swing.JButton();
         profileButton = new javax.swing.JButton();
         transactionButton = new javax.swing.JButton();
         historyButton = new javax.swing.JButton();
         logoutButton = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
+        historyLogo = new javax.swing.JLabel();
         movie1 = new javax.swing.JPanel();
         movie2 = new javax.swing.JPanel();
         movie3 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
+        poster1 = new javax.swing.JLabel();
         movie4 = new javax.swing.JPanel();
         movie5 = new javax.swing.JPanel();
         movie6 = new javax.swing.JPanel();
@@ -63,19 +62,14 @@ public class dashboard extends javax.swing.JFrame {
         sidePanel.setFocusable(false);
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assets/Group 37071 (1).png"))); // NOI18N
-        logo.setText("jLabel1");
 
         homeLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assets/Frame 37266 (1).png"))); // NOI18N
-        homeLogo.setText("jLabel2");
 
         profileLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assets/Frame 37267 (1).png"))); // NOI18N
         profileLogo.setText("jLabel3");
 
         transactionLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assets/Frame 37268 (2).png"))); // NOI18N
         transactionLogo.setText("jLabel4");
-
-        historyLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assets/Frame 37269 (1).png"))); // NOI18N
-        historyLogo.setText("jLabel5");
 
         homeButton.setBackground(new java.awt.Color(0, 0, 51));
         homeButton.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
@@ -144,8 +138,8 @@ public class dashboard extends javax.swing.JFrame {
         logoutButton.setFocusPainted(false);
         logoutButton.setFocusable(false);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assets/history.png"))); // NOI18N
-        jLabel6.setText("jLabel6");
+        historyLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assets/history.png"))); // NOI18N
+        historyLogo.setText("jLabel6");
 
         javax.swing.GroupLayout sidePanelLayout = new javax.swing.GroupLayout(sidePanel);
         sidePanel.setLayout(sidePanelLayout);
@@ -169,13 +163,11 @@ public class dashboard extends javax.swing.JFrame {
                         .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(sidePanelLayout.createSequentialGroup()
                         .addGap(63, 63, 63)
-                        .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(sidePanelLayout.createSequentialGroup()
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, sidePanelLayout.createSequentialGroup()
+                                .addComponent(historyLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(historyButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(historyLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(historyButton))
                             .addGroup(sidePanelLayout.createSequentialGroup()
                                 .addComponent(transactionLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -206,9 +198,8 @@ public class dashboard extends javax.swing.JFrame {
                     .addComponent(transactionButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(historyLogo)
                     .addComponent(historyButton)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(historyLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(383, 383, 383)
                 .addComponent(logoutButton)
                 .addGap(108, 108, 108))
@@ -242,7 +233,7 @@ public class dashboard extends javax.swing.JFrame {
 
         movie3.setBackground(new java.awt.Color(0, 0, 51));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\it solution\\Downloads\\Frame 37297.png")); // NOI18N
+        poster1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assets/poster1.png"))); // NOI18N
 
         javax.swing.GroupLayout movie3Layout = new javax.swing.GroupLayout(movie3);
         movie3.setLayout(movie3Layout);
@@ -250,14 +241,14 @@ public class dashboard extends javax.swing.JFrame {
             movie3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(movie3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                .addComponent(poster1, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
                 .addGap(14, 14, 14))
         );
         movie3Layout.setVerticalGroup(
             movie3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(movie3Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jLabel7)
+                .addComponent(poster1)
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -327,7 +318,7 @@ public class dashboard extends javax.swing.JFrame {
         Nowshowing.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Nowshowing.setText("Now Showing");
 
-        upcoming.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        upcoming.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         upcoming.setText("Coming Soon");
 
         scrollButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\it solution\\Downloads\\Icon button.png")); // NOI18N
@@ -393,10 +384,10 @@ public class dashboard extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(sidePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(searchButton)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(searchlogoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(meButton))
+                            .addComponent(meButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(searchButton))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -480,8 +471,6 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel historyLogo;
     private javax.swing.JButton homeButton;
     private javax.swing.JLabel homeLogo;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel logo;
     private javax.swing.JButton logoutButton;
     private javax.swing.JButton meButton;
@@ -491,6 +480,7 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel movie4;
     private javax.swing.JPanel movie5;
     private javax.swing.JPanel movie6;
+    private javax.swing.JLabel poster1;
     private javax.swing.JButton profileButton;
     private javax.swing.JLabel profileLogo;
     private javax.swing.JButton scrollButton;
