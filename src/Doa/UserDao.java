@@ -3,7 +3,7 @@ package Doa;
 
 import Model.OTP;
 import Model.User;
-import database.MySqlConnection;
+import Database.MySqlConnection;
 
 import java.sql.*;
 import java.util.logging.Level;
@@ -14,7 +14,7 @@ public class UserDao {
     
     public boolean generateOTP(OTP otp) {
     Connection conn = mysql.openConnection();
-    String sql = "UPDATE users SET otp = ?, otp_created_at = NOW() WHERE email = ?";
+    String sql = "UPDATE user SET otp = ?, otp_created_at = NOW() WHERE email = ?";
     try (PreparedStatement ps = conn.prepareStatement(sql)) {
         ps.setString(1, otp.getCode());
         ps.setString(2, otp.getEmail());
@@ -36,7 +36,7 @@ public class UserDao {
     
     public boolean verifyOTP(OTP otp){
         Connection conn = mysql.openConnection();
-        String sql = "SELECT otp FROM users WHERE email = ?";
+        String sql = "SELECT otp FROM user WHERE email = ?";
         try(PreparedStatement ps = conn.prepareStatement(sql)){
             ps.setString(1, otp.getEmail());
             ResultSet rs = ps.executeQuery();
@@ -54,7 +54,7 @@ public class UserDao {
     
     public boolean resetPassword(User user){
        Connection conn = mysql.openConnection();
-       String sql = "UPDATE users SET password = ?, otp = NULL WHERE email= ?";
+       String sql = "UPDATE user SET password = ?, otp = NULL WHERE email= ?";
        try(PreparedStatement ps = conn.prepareStatement(sql)){
            ps.setString(1, user.getPassword());
            ps.setString(2, user.getEmail());
@@ -70,7 +70,7 @@ public class UserDao {
     
     public Timestamp otpCreatedAt(OTP otp){
         Connection conn = mysql.openConnection();
-        String sql = "SELECT otp_created_at FROM users WHERE email = ?";
+        String sql = "SELECT otp_created_at FROM user WHERE Email = ?";
         
         try(PreparedStatement ps = conn.prepareStatement(sql)){
             ps.setString(1, otp.getEmail());

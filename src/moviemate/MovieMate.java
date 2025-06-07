@@ -11,9 +11,11 @@ import view.UserRegister;
 
 import Controller.AddMovieController;
 import Controller.AdminPanelController;
+import Controller.ResetPasswordController;
 import Database.*;
 import view.AdminPanel;
 import view.AdminPannel2;
+import view.ResetPassword;
 
 /**
  *
@@ -39,9 +41,13 @@ public class MovieMate {
 //        AddMovieController controller = new AddMovieController(myprojform);
 //        controller.open();
         
-        // AdminPanel adminpanel = new AdminPanel();
-        // AdminPanelController controller =new AdminPanelController(adminpanel);
-        // controller.open();
+//        ResetPassword reset = new ResetPassword();
+//        ResetPasswordController controller = new ResetPasswordController(reset);
+//        controller.open();
+
+//            UserLogin login = new UserLogin();
+//            LoginController controller = new LoginController(login);
+//            controller.open();
 
 
     }

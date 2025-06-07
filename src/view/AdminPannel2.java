@@ -46,7 +46,6 @@ public class AdminPannel2 extends javax.swing.JFrame {
         MainImage = new javax.swing.JButton();
         MoreImage = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
         Cast = new javax.swing.JTextArea();
         jLabel12 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -59,12 +58,11 @@ public class AdminPannel2 extends javax.swing.JFrame {
         ReleaseDate = new org.jdesktop.swingx.JXDatePicker();
         jLabel15 = new javax.swing.JLabel();
         Showtime = new javax.swing.JComboBox<>();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 51));
 
-        jPanel1.setOpaque(false);
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Add New Movie");
@@ -97,12 +95,28 @@ public class AdminPannel2 extends javax.swing.JFrame {
 
         MovieName.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
         MovieName.setText("Enter a Movie Name");
+        MovieName.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                MovieNameFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                MovieNameFocusLost(evt);
+            }
+        });
 
         jLabel10.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
         jLabel10.setText("Director");
 
         Director.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
         Director.setText("Enter Name of Director");
+        Director.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                DirectorFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DirectorFocusLost(evt);
+            }
+        });
 
         Genre.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
         Genre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Action", "Adventure", "Comedy", "Drama", "Fantasy", "Horror", "Mystery", "Romance", "Science Fiction ", "Thriller", "Crime", "Animation", "Documentry", "Superhero", "Historical", " " }));
@@ -124,7 +138,6 @@ public class AdminPannel2 extends javax.swing.JFrame {
 
         Cast.setColumns(20);
         Cast.setRows(5);
-        jScrollPane1.setViewportView(Cast);
 
         jLabel12.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
         jLabel12.setText("Synopsis");
@@ -153,23 +166,6 @@ public class AdminPannel2 extends javax.swing.JFrame {
         Showtime.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
         Showtime.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00" }));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(73, Short.MAX_VALUE)
-                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel16)
-                .addGap(50, 50, 50))
-        );
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -180,6 +176,11 @@ public class AdminPannel2 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Cancel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Save))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,22 +223,16 @@ public class AdminPannel2 extends javax.swing.JFrame {
                                             .addComponent(Rating, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGap(16, 16, 16))
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 393, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(MoreImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(264, 264, 264))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(MoreImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(126, 126, 126)))
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Cancel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Save)))
+                                    .addComponent(Cast, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(37, 37, 37))
         );
         jPanel1Layout.setVerticalGroup(
@@ -278,15 +273,12 @@ public class AdminPannel2 extends javax.swing.JFrame {
                     .addComponent(jLabel15)
                     .addComponent(Showtime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(MoreImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(MoreImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Cast, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -320,6 +312,34 @@ public class AdminPannel2 extends javax.swing.JFrame {
     private void CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CancelActionPerformed
+
+    private void MovieNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_MovieNameFocusGained
+        // TODO add your handling code here:
+        if(MovieName.getText().equals("Enter a Movie Name")){
+            MovieName.setText("");
+        }
+    }//GEN-LAST:event_MovieNameFocusGained
+
+    private void MovieNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_MovieNameFocusLost
+        // TODO add your handling code here:
+        if(MovieName.getText().equals("")){
+            MovieName.setText("Enter a Movie Name");
+        }
+    }//GEN-LAST:event_MovieNameFocusLost
+
+    private void DirectorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DirectorFocusGained
+        // TODO add your handling code here:
+        if(Director.getText().equals("Enter Name of Director")){
+            Director.setText("");
+        }
+    }//GEN-LAST:event_DirectorFocusGained
+
+    private void DirectorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DirectorFocusLost
+        // TODO add your handling code here:
+        if(Director.getText().equals("")){
+            Director.setText("Enter Name of Director");
+        }
+    }//GEN-LAST:event_DirectorFocusLost
 
     /**
      * @param args the command line arguments
@@ -379,7 +399,6 @@ public class AdminPannel2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -387,10 +406,9 @@ public class AdminPannel2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
+
 
     public void addAddMovieListener(ActionListener listener){
         System.out.println("Save");

@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import view.AdminPanel;
 import view.AdminPannel2;
 import view.MovieCard;
+import view.UserLogin;
 
 /**
  *
@@ -29,6 +30,7 @@ public class AdminPanelController {
         System.out.println("Here");
         loadAllMovies();
         movie.addmovieListener(new MovieListener());
+        movie.addLogoutListener(new LogoutListener());
     }
     public void open(){
         this.movie.setVisible(true);
@@ -64,6 +66,18 @@ public class AdminPanelController {
             
             controller.open();
 
+        }
+        
+    }
+    
+    class LogoutListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            UserLogin login = new UserLogin();
+            LoginController controller = new LoginController(login);
+            close();
+            controller.open();
         }
         
     }

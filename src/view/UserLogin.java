@@ -27,20 +27,21 @@ public class UserLogin extends javax.swing.JFrame {
         icons = new javax.swing.JLabel();
         continueWith = new javax.swing.JLabel();
         register = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        ForgotPassword = new javax.swing.JButton();
         mainLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         transparent.setBackground(new java.awt.Color(241, 238, 238));
+        transparent.setOpaque(false);
 
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Logo.png"))); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/MOVIEMAT.png"))); // NOI18N
 
         login.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         login.setText("Login");
 
-        account.setFont(new java.awt.Font("Consolas", 0, 10)); // NOI18N
+        account.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 10)); // NOI18N
         account.setText("Don't have an account yet?");
 
         loginButton.setBackground(new java.awt.Color(153, 153, 255));
@@ -89,11 +90,13 @@ public class UserLogin extends javax.swing.JFrame {
 
         icons.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Frame 37274.png"))); // NOI18N
 
-        continueWith.setFont(new java.awt.Font("Consolas", 0, 10)); // NOI18N
+        continueWith.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 10)); // NOI18N
         continueWith.setText("or continue with");
 
-        register.setFont(new java.awt.Font("Consolas", 1, 10)); // NOI18N
-        register.setText("Register here");
+        register.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
+        register.setText("Register Here");
+        register.setFocusPainted(false);
+        register.setFocusable(false);
         register.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         register.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,11 +104,11 @@ public class UserLogin extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Consolas", 0, 10)); // NOI18N
-        jButton1.setText("Forgot Password?");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ForgotPassword.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
+        ForgotPassword.setText("Forgot Password?");
+        ForgotPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ForgotPasswordActionPerformed(evt);
             }
         });
 
@@ -116,30 +119,33 @@ public class UserLogin extends javax.swing.JFrame {
             .addGroup(transparentLayout.createSequentialGroup()
                 .addGroup(transparentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(transparentLayout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(account)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(register, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(transparentLayout.createSequentialGroup()
                         .addGap(128, 128, 128)
                         .addGroup(transparentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(password)
+                            .addComponent(icons, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(icons, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1)))
-                    .addGroup(transparentLayout.createSequentialGroup()
-                        .addGap(178, 178, 178)
-                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(transparentLayout.createSequentialGroup()
-                        .addGap(218, 218, 218)
-                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(transparentLayout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addComponent(ForgotPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(transparentLayout.createSequentialGroup()
                         .addGap(211, 211, 211)
-                        .addComponent(continueWith)))
-                .addContainerGap(125, Short.MAX_VALUE))
+                        .addComponent(continueWith))
+                    .addGroup(transparentLayout.createSequentialGroup()
+                        .addGap(202, 202, 202)
+                        .addComponent(register, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(transparentLayout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(transparentLayout.createSequentialGroup()
+                        .addGap(211, 211, 211)
+                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(transparentLayout.createSequentialGroup()
+                        .addGap(176, 176, 176)
+                        .addComponent(account)))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
         transparentLayout.setVerticalGroup(
             transparentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,22 +161,20 @@ public class UserLogin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(password)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-
                 .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-
                 .addComponent(loginButton)
-                .addGap(16, 16, 16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ForgotPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(continueWith)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(icons, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
-                .addGroup(transparentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(register, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(account))
-                .addGap(95, 95, 95))
+                .addComponent(account)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(register)
+                .addContainerGap())
         );
 
         getContentPane().add(transparent, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 530, 480));
@@ -220,9 +224,9 @@ public class UserLogin extends javax.swing.JFrame {
 
     }//GEN-LAST:event_PasswordFocusLost
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ForgotPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForgotPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ForgotPasswordActionPerformed
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         // TODO add your handling code here:
@@ -240,12 +244,12 @@ public class UserLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Email;
+    private javax.swing.JButton ForgotPassword;
     private javax.swing.JPasswordField Password;
     private javax.swing.JLabel account;
     private javax.swing.JLabel continueWith;
     private javax.swing.JLabel email;
     private javax.swing.JLabel icons;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel login;
     private javax.swing.JButton loginButton;
     private javax.swing.JLabel logo;
@@ -259,6 +263,9 @@ public class UserLogin extends javax.swing.JFrame {
 public void addUserLoginListener(ActionListener listener){
     
    loginButton.addActionListener(listener);
+}
+public void addForgotPasswordListener(ActionListener listener){
+    ForgotPassword.addActionListener(listener);
 }
 
 public javax.swing.JTextField getemailField(){

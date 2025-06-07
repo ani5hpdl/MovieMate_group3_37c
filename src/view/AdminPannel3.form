@@ -92,25 +92,25 @@
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel3" min="-2" pref="37" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="ReleaseDate" min="-2" pref="89" max="-2" attributes="0"/>
+                                          <Component id="Genre" min="-2" pref="131" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="Showtime" min="-2" pref="90" max="-2" attributes="0"/>
+                                          <Component id="jLabel5" min="-2" pref="37" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="Rating" min="-2" pref="124" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel3" min="-2" pref="37" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="Genre" max="32767" attributes="0"/>
+                                              <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="jXDatePicker1" min="-2" pref="91" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel5" min="-2" pref="37" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="Rating" min="-2" pref="124" max="-2" attributes="0"/>
+                                              <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="Showtime" min="-2" pref="90" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -169,7 +169,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="MainImage" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ReleaseDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jXDatePicker1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -203,8 +203,6 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="org.jdesktop.swingx.JXDatePicker" name="ReleaseDate">
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel15">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -519,6 +517,8 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CancelActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="org.jdesktop.swingx.JXDatePicker" name="jXDatePicker1">
         </Component>
       </SubComponents>
     </Container>

@@ -23,6 +23,7 @@ public class UserRegisterController {
     public UserRegisterController(UserRegister userView){
         this.userView = userView;
         userView.addAdduserListener(new AddUserListener());
+        userView.addLoginHereListener(new AddLoginListener());
     }
     
     public void open(){
@@ -44,6 +45,7 @@ public class UserRegisterController {
                 String NewPassword = userView.getpasswordField().getText();
                 String ConfirmPassword = userView.getpasswordField().getText();
                 int ContactNumber = Integer.parseInt(userView.getnumberField().getText());
+                String phone = userView.getnumberField().getText();
                 String Address = userView.getaddressField().getText();
                 
                 UserRegisterModel user = new UserRegisterModel(FullName,Email,ContactNumber,Address,NewPassword,ConfirmPassword);
@@ -52,6 +54,9 @@ public class UserRegisterController {
                     JOptionPane.showMessageDialog(userView,"User Already Exists");
                 }else if(!Email.contains("@")){
                     JOptionPane.showMessageDialog(userView,"Enter a Valid Email");
+                }
+                else if(phone.matches("^[789]\\dd{9}$")){
+                    JOptionPane.showMessageDialog(userView,"Enter Valid Phone Number");
                 }
                 else if(!NewPassword.equals(ConfirmPassword)){
                     JOptionPane.showMessageDialog(userView,"Password doesnot Match");
@@ -62,8 +67,7 @@ public class UserRegisterController {
                     
                     userView.dispose();
                     
-                    UserLogin loginPage = new UserLogin();
-                    loginPage.setVisible(true);
+
                     UserLogin UserLoginForm = new UserLogin();
                     LoginController controller = new LoginController(UserLoginForm);
                     controller.open();
@@ -73,7 +77,18 @@ public class UserRegisterController {
             }
         }
     }
-    
+    class AddLoginListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            close();
+
+            UserLogin UserLoginForm = new UserLogin();
+            LoginController controller = new LoginController(UserLoginForm);
+            controller.open();
+        }
+        
+    }
     
     
 }

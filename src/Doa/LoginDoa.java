@@ -18,8 +18,6 @@ public class LoginDoa {
         System.out.println("3");
         String sql = "SELECT * FROM user where email = ? and password = ?";
         try(PreparedStatement pstm = conn.prepareStatement(sql)){
-            System.out.println("Login email"+ userlogin.getEmail());
-            System.out.println("Login Password"+ userlogin.getPassword());
 
             pstm.setString(1,userlogin.getEmail());
             pstm.setString(2,userlogin.getPassword());

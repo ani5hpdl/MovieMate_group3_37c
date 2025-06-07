@@ -8,6 +8,7 @@ import view.NewPassword;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import view.UserLogin;
 
 public class NewPasswordController {
     private final NewPassword newPasswordView;
@@ -55,6 +56,9 @@ public class NewPasswordController {
             if (resetPassword) {
                 JOptionPane.showMessageDialog(newPasswordView, "Password reset successful! You can now log in.");
                 close();
+                UserLogin login = new UserLogin();
+                LoginController controller = new LoginController(login);
+                controller.open();
             } else {
                 JOptionPane.showMessageDialog(newPasswordView, "Failed to reset password. Please try again.");
             }
