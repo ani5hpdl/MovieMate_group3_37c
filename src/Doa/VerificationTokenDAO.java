@@ -15,6 +15,8 @@ public class VerificationTokenDAO {
 
     /**
      * Inserts a new token into 'verification_tokens'.
+     * @param tokenObj
+     * @throws java.sql.SQLException
      */
     public void saveToken(VerificationToken tokenObj) throws SQLException {
         String sql = "INSERT INTO verification_tokens (token, user_id, expires_at) "
@@ -31,7 +33,10 @@ public class VerificationTokenDAO {
     }
 
     /**
-     * Finds a VerificationToken by its token string. Returns null if not found.
+     * Finds a VerificationToken by its token string.Returns null if not found.
+     * @param token
+     * @return 
+     * @throws java.sql.SQLException
      */
     public VerificationToken findByToken(String token) throws SQLException {
         String sql = "SELECT token, user_id, expires_at, created_at "
@@ -53,6 +58,8 @@ public class VerificationTokenDAO {
 
     /**
      * Deletes a token row (one‐time use).
+     * @param token
+     * @throws java.sql.SQLException
      */
     public void deleteByToken(String token) throws SQLException {
         String sql = "DELETE FROM verification_tokens WHERE token = ?";
@@ -67,6 +74,8 @@ public class VerificationTokenDAO {
 
     /**
      * Deletes any existing tokens for the given user_id (used before issuing a new one).
+     * @param userId
+     * @throws java.sql.SQLException
      */
     public void deleteByUserId(long userId) throws SQLException {
         String sql = "DELETE FROM verification_tokens WHERE user_id = ?";

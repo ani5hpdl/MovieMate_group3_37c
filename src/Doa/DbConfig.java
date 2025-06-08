@@ -16,7 +16,7 @@ public class DbConfig {
 
     // Use exactly the user/pass that works in Workbench:
     private static final String USERNAME = "appuser";
-    private static final String PASSWORD = "secret123!";
+    private static final String PASSWORD = "qwerty1234";
 
     static {
         try {

@@ -31,7 +31,7 @@ public class MySqlConnection implements Database {
                 System.out.println("Database Connection Sucess");
             }
             return connection;
-        }catch(Exception e){
+        }catch(SQLException e){
             System.out.println(e);
             return null;
         }

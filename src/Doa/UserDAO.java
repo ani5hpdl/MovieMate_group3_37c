@@ -14,8 +14,10 @@ import java.time.ZoneId;
 public class UserDAO {
 
     /**
-     * Inserts a new user into the 'users' table.
-     * Returns the generated user_id.
+     * Inserts a new user into the 'users' table.Returns the generated user_id.
+     * @param user
+     * @return 
+     * @throws java.sql.SQLException
      */
     public long create(UserRegisterModel user) throws SQLException {
         String sql = "INSERT INTO users "
@@ -50,7 +52,10 @@ public class UserDAO {
     }
 
     /**
-     * Finds a user by email. Returns null if not found.
+     * Finds a user by email.Returns null if not found.
+     * @param email
+     * @return 
+     * @throws java.sql.SQLException
      */
     public UserRegisterModel findByEmail(String email) throws SQLException {
         String sql = "SELECT user_id, full_name, email, address, contact_number, password_hash, created_at, is_verified "
@@ -71,7 +76,10 @@ public class UserDAO {
     }
 
     /**
-     * Finds a user by their ID. Returns null if not found.
+     * Finds a user by their ID.Returns null if not found.
+     * @param userId
+     * @return 
+     * @throws java.sql.SQLException
      */
     public UserRegisterModel findById(long userId) throws SQLException {
         String sql = "SELECT user_id, full_name, email, address, contact_number, password_hash, created_at, is_verified "
@@ -93,6 +101,8 @@ public class UserDAO {
 
     /**
      * Sets is_verified = TRUE for the given user_id.
+     * @param userId
+     * @throws java.sql.SQLException
      */
     public void markAsVerified(long userId) throws SQLException {
         String sql = "UPDATE users SET is_verified = TRUE WHERE user_id = ?";
@@ -107,6 +117,9 @@ public class UserDAO {
 
     /**
      * (Optional) Returns whether the given user_id is already verified.
+     * @param userId
+     * @return 
+     * @throws java.sql.SQLException
      */
     public boolean isVerified(long userId) throws SQLException {
         String sql = "SELECT is_verified FROM users WHERE user_id = ?";
