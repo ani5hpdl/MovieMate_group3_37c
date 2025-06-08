@@ -15,7 +15,7 @@ public class DbConfig {
         "jdbc:mysql://localhost:3306/movie?useSSL=false&serverTimezone=UTC";
 
     // Use exactly the user/pass that works in Workbench:
-    private static final String USERNAME = "appuser";
+    private static final String USERNAME = "movie";
     private static final String PASSWORD = "qwerty1234";
 
     static {
