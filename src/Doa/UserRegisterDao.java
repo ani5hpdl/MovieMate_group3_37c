@@ -21,7 +21,7 @@ public class UserRegisterDao {
     
     public void UserRegisterDao(UserRegisterModel user){
         Connection conn = mysql.openConnection();
-        String sql = "INSERT INTO user (FullName,Email,ContactNumber,Address,Password) VALUES (?,?,?,?,?)";
+        String sql = "INSERT INTO user (fullname,email,contact_number,address,password) VALUES (?,?,?,?,?)";
         try(PreparedStatement pstm = conn.prepareStatement(sql)){
             pstm.setString(1,user.getFullName());
             pstm.setString(2,user.getEmail());

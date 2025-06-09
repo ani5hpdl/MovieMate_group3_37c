@@ -53,7 +53,6 @@ public class dashboard extends javax.swing.JFrame {
         scrollButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1000, 800));
         setResizable(false);
 
         sidePanel.setBackground(new java.awt.Color(0, 0, 51));
@@ -138,7 +137,7 @@ public class dashboard extends javax.swing.JFrame {
         logoutButton.setFocusPainted(false);
         logoutButton.setFocusable(false);
 
-        historyLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assets/history.png"))); // NOI18N
+        historyLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/history.png"))); // NOI18N
         historyLogo.setText("jLabel6");
 
         javax.swing.GroupLayout sidePanelLayout = new javax.swing.GroupLayout(sidePanel);
@@ -321,14 +320,12 @@ public class dashboard extends javax.swing.JFrame {
         upcoming.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         upcoming.setText("Coming Soon");
 
-        scrollButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\it solution\\Downloads\\Icon button.png")); // NOI18N
         scrollButton.setText("jButton11");
         scrollButton.setBorderPainted(false);
         scrollButton.setContentAreaFilled(false);
         scrollButton.setFocusPainted(false);
         scrollButton.setFocusable(false);
 
-        scrollButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\it solution\\Downloads\\Icon button.png")); // NOI18N
         scrollButton1.setText("jButton9");
         scrollButton1.setBorderPainted(false);
         scrollButton1.setContentAreaFilled(false);

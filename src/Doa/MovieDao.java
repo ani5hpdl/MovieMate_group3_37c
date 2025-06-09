@@ -6,6 +6,7 @@ package Doa;
 
 import Model.MovieData;
 import Database.MySqlConnection;
+import Model.ProfileModel;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 import java.sql.Connection;
@@ -30,7 +31,7 @@ public class MovieDao {
         String sql = "INSERT INTO moviedata (title, director, cast, duration, genre, language, rating, synopsis, release_date, showtime, poster_path, more_image_path) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         
         try(PreparedStatement pstm = conn.prepareStatement(sql)){
-             pstm.setString(1, movie.getTitle());
+            pstm.setString(1, movie.getTitle());
             pstm.setString(2, movie.getDirector());
             pstm.setString(3, movie.getCast());
             pstm.setInt(4, movie.getDuration());
@@ -49,6 +50,39 @@ public class MovieDao {
             mysql.closeConnection(conn);
         }
     }
+    
+    public MovieData getMovieById(int movieid){
+        Connection conn = mysql.openConnection();
+        String sql = "SELECT * FROM moviedata WHERE id = ?";
+        try(
+                PreparedStatement pstmt = conn.prepareStatement(sql)){
+            
+            pstmt.setInt(1, movieid);
+            ResultSet result = pstmt.executeQuery();
+            if(result.next()){
+                return new MovieData(
+                        result.getString("title"),
+                        result.getString("director"),
+                        result.getString("cast"),
+                        result.getInt("duration"),
+                        result.getString("genre"),
+                        result.getString("language"),
+                        result.getDouble("rating"),
+                        result.getString("synopsis"),
+                        result.getDate("release_date"),
+                        result.getString("showtime"),
+                        result.getString("poster_path"),
+                        result.getString("more_image_path")
+                );
+            }
+           conn.close(); 
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
+        return null;
+    }
+    
+    
     public static String validate(MovieData movie) {
     if (movie.getTitle() == null || movie.getTitle().trim().isEmpty()) {
         return "Title is required";
@@ -92,6 +126,7 @@ public class MovieDao {
                 ResultSet result = pstmt.executeQuery()){
             while(result.next()){
                 MovieData moviedata = new MovieData(
+                        result.getInt("id"),
                         result.getString("title"),
                         result.getString("director"),
                         result.getString("cast"),

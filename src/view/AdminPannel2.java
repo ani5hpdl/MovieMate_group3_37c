@@ -138,6 +138,7 @@ public class AdminPannel2 extends javax.swing.JFrame {
 
         Cast.setColumns(20);
         Cast.setRows(5);
+        Cast.setBorder(new javax.swing.border.MatteBorder(null));
 
         jLabel12.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
         jLabel12.setText("Synopsis");

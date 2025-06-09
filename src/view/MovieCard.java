@@ -6,6 +6,7 @@ package view;
 
 import Model.MovieData;
 import java.awt.Image;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 
 /**
@@ -34,8 +35,9 @@ public class MovieCard extends javax.swing.JPanel {
         MovieName = new javax.swing.JLabel();
         Genre = new javax.swing.JLabel();
         Language = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        Edit = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        ID = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -47,14 +49,14 @@ public class MovieCard extends javax.swing.JPanel {
 
         Language.setText("jLabel1");
 
-        jButton1.setText("Edit");
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setFocusPainted(false);
-        jButton1.setFocusable(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Edit.setText("Edit");
+        Edit.setBorderPainted(false);
+        Edit.setContentAreaFilled(false);
+        Edit.setFocusPainted(false);
+        Edit.setFocusable(false);
+        Edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                EditActionPerformed(evt);
             }
         });
 
@@ -68,16 +70,21 @@ public class MovieCard extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(MoviePoster)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MovieName, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Genre, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addComponent(Language, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(ID))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(MoviePoster)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MovieName, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Genre, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                        .addComponent(Language, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(Edit, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(48, 48, 48)
                 .addComponent(jButton2))
         );
@@ -90,23 +97,25 @@ public class MovieCard extends javax.swing.JPanel {
                     .addComponent(MovieName)
                     .addComponent(Genre)
                     .addComponent(Language)
-                    .addComponent(jButton1)
+                    .addComponent(Edit)
                     .addComponent(jButton2))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addComponent(ID))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_EditActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Edit;
     private javax.swing.JLabel Genre;
+    private javax.swing.JLabel ID;
     private javax.swing.JLabel Language;
     private javax.swing.JLabel MovieName;
     private javax.swing.JLabel MoviePoster;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     // End of variables declaration//GEN-END:variables
 
@@ -114,9 +123,15 @@ public class MovieCard extends javax.swing.JPanel {
         MovieName.setText(moviedata.getTitle());
         Language.setText(moviedata.getLanguage());
         Genre.setText(moviedata.getGenre());
+        ID.setText(String.valueOf(moviedata.getId()));
         
         ImageIcon icon = new ImageIcon(moviedata.getPosterPath());
         Image img = icon.getImage().getScaledInstance(100,100,Image.SCALE_SMOOTH);
         MoviePoster.setIcon(new ImageIcon(img));
+    }
+    
+    public void addEditListener(ActionListener listener){
+        System.out.println("Edit");
+        System.out.println(ID);
     }
 }

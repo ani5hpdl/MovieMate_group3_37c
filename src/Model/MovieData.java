@@ -12,6 +12,7 @@ package Model;
 import java.util.Date;
 
 public class MovieData {
+    private int id;
     private String title;
     private String director;
     private String cast;
@@ -26,6 +27,23 @@ public class MovieData {
     private String moreImagePath;
 
     // Constructor
+    public MovieData(int id,String title, String director, String cast, int duration, String genre,
+                     String language, double rating, String synopsis, Date releaseDate,
+                     String showTime, String posterPath, String moreImagePath) {
+        this.id = id;
+        this.title = title;
+        this.director = director;
+        this.cast = cast;
+        this.duration = duration;
+        this.genre = genre;
+        this.language = language;
+        this.rating = rating;
+        this.synopsis = synopsis;
+        this.releaseDate = releaseDate;
+        this.showTime = showTime;
+        this.posterPath = posterPath;
+        this.moreImagePath = moreImagePath;
+    }
     public MovieData(String title, String director, String cast, int duration, String genre,
                      String language, double rating, String synopsis, Date releaseDate,
                      String showTime, String posterPath, String moreImagePath) {
@@ -44,6 +62,8 @@ public class MovieData {
     }
 
     // Getters and Setters
+    public int getId(){ return id ;}
+    public void setId(int id){ this.id = id; }
 
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }

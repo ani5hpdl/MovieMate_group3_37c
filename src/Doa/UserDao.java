@@ -70,7 +70,7 @@ public class UserDao {
     
     public Timestamp otpCreatedAt(OTP otp){
         Connection conn = mysql.openConnection();
-        String sql = "SELECT otp_created_at FROM user WHERE Email = ?";
+        String sql = "SELECT otp_created_at FROM user WHERE email = ?";
         
         try(PreparedStatement ps = conn.prepareStatement(sql)){
             ps.setString(1, otp.getEmail());

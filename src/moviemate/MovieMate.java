@@ -11,11 +11,16 @@ import view.UserRegister;
 
 import Controller.AddMovieController;
 import Controller.AdminPanelController;
+import Controller.EditMovieController;
+import Controller.ProfileController;
 import Controller.ResetPasswordController;
 import Database.*;
 import view.AdminPanel;
 import view.AdminPannel2;
+import view.AdminPannel3;
+import view.MainProfile;
 import view.ResetPassword;
+import view.UpdateProfile;
 
 /**
  *
@@ -31,9 +36,9 @@ public class MovieMate {
         }
         
 
-        UserRegister UserRegisterForm = new UserRegister();
-        UserRegisterController controller = new UserRegisterController(UserRegisterForm);
-        controller.open();
+//        UserRegister UserRegisterForm = new UserRegister();
+//        UserRegisterController controller = new UserRegisterController(UserRegisterForm);
+//        controller.open();
         
 
 //        AdminPannel2 myprojform = new AdminPannel2();
@@ -48,7 +53,18 @@ public class MovieMate {
 //            UserLogin login = new UserLogin();
 //            LoginController controller = new LoginController(login);
 //            controller.open();
+//        UpdateProfile profile = new UpdateProfile();
+//////        MainProfile profile = new MainProfile();
+//        ProfileController controller = new ProfileController(profile);
+//        controller.open1();
+//
+//        AdminPanel admin = new AdminPanel();
+//        AdminPanelController controller = new AdminPanelController(admin);
+//        controller.open();
 
+        AdminPannel3 edit = new AdminPannel3();
+        EditMovieController controller = new EditMovieController(edit);
+        controller.open();
 
     }
             

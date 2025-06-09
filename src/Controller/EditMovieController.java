@@ -1,0 +1,120 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Controller;
+
+import Doa.MovieDao;
+import Model.MovieData;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JFileChooser;
+import view.AdminPannel3;
+
+/**
+ *
+ * @author anish
+ */
+public class EditMovieController {
+    public final MovieDao movie = new MovieDao();
+    private final AdminPannel3 editmovie;
+//    public movieid =1 ;
+    
+    public EditMovieController(AdminPannel3 editmovie){
+        this.editmovie = editmovie;
+        editmovie.addUpdateMovieListener(new UpdateMovieListener());
+        editmovie.addCancelMovieListener(new CancelMovieListener());
+        
+        loadEditMovie(1);
+        
+//        addmovie.addImageListener(new AddImageListener());
+//        addmovie.addMoreImageListener(new MoreImageListener());
+        
+        editmovie.getMainImageButton().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                openFileChooser1();
+
+            }
+        });
+        
+        editmovie.getMoreImageButton().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                openFileChooser2();
+
+            }
+        });
+    }
+    public void open(){
+        this.editmovie.setVisible(true);
+    }
+    public void close(){
+        this.editmovie.dispose();
+    }
+    
+    public MovieData fetchMovie(int movieid){
+        return movie.getMovieById(movieid);
+    }
+    class CancelMovieListener implements ActionListener{
+ 
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            editmovie.dispose();
+            editmovie.setVisible(false);
+        }
+        
+    }
+    
+    class UpdateMovieListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("Fuck You");
+        }
+        
+    }
+    
+    
+    public void loadEditMovie(int movieid){
+        MovieData data = this.fetchMovie(movieid);
+        
+        if(data != null){
+            editmovie.getMovieNameField().setText(data.getTitle());
+            editmovie.getDirectorField().setText(data.getDirector());
+            editmovie.getCastField().setText(data.getCast());
+            editmovie.getDurationSpinner().setValue(data.getDuration());
+            editmovie.getGenreComboBox().setSelectedItem(data.getGenre());
+            editmovie.getLanguageComboBox().setSelectedItem(data.getLanguage());
+            editmovie.getMainImageButton().setText(data.getPosterPath());
+            editmovie.getMoreImageButton().setText(data.getMoreImagePath());
+            editmovie.getRatingSpinner().setValue(data.getRating());
+            editmovie.getReleaseDatePicker().setDate(data.getReleaseDate());
+            editmovie.getShowTimeComboBox().setSelectedItem(data.getShowTime());
+            editmovie.getSynopsisField().setText(data.getSynopsis());
+        }
+    }
+    
+    private void openFileChooser1() {
+        JFileChooser jFileChooser = new JFileChooser();
+        jFileChooser.setDialogTitle("Select the image");
+
+        int result = jFileChooser.showOpenDialog(editmovie);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            String productImage = jFileChooser.getSelectedFile().getAbsolutePath();
+            editmovie.getMainImageButton().setText(productImage);
+
+        }
+    }
+    private void openFileChooser2() {
+        JFileChooser jFileChooser = new JFileChooser();
+        jFileChooser.setDialogTitle("Select the image");
+
+        int result = jFileChooser.showOpenDialog(editmovie);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            String productImage = jFileChooser.getSelectedFile().getAbsolutePath();
+            editmovie.getMoreImageButton().setText(productImage);
+
+        }
+    }
+}

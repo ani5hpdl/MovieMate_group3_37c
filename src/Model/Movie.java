@@ -1,14 +1,11 @@
 package Model;
 
 
-import jakarta.persistence.*;
+//import jakarta.persistence.*;
 import java.util.List;
 
-@Entity
 public class Movie {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
@@ -16,16 +13,12 @@ public class Movie {
     private String director;
     private double rating;
 
-    @ElementCollection
     private List<String> genres;
 
-    @Column(length = 1000)
     private String synopsis;
 
-    @ElementCollection
     private List<String> cast;
 
-    @ElementCollection
     private List<String> photos;
 
     // Constructors

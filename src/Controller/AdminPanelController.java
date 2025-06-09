@@ -6,12 +6,14 @@ package Controller;
 
 import Doa.MovieDao;
 import Model.MovieData;
+import Model.UserSession;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.JPanel;
 import view.AdminPanel;
 import view.AdminPannel2;
+import view.AdminPannel3;
 import view.MovieCard;
 import view.UserLogin;
 
@@ -23,7 +25,8 @@ public class AdminPanelController {
     
     
     
-    private final AdminPanel movie;
+    private AdminPanel movie;
+    private MovieCard  moviecrd;
     
     public AdminPanelController(AdminPanel movie){
         this.movie = movie;
@@ -31,6 +34,11 @@ public class AdminPanelController {
         loadAllMovies();
         movie.addmovieListener(new MovieListener());
         movie.addLogoutListener(new LogoutListener());
+    }
+    public AdminPanelController(MovieCard moviecrd){
+        this.moviecrd = moviecrd;
+        moviecrd.addEditListener(new EditListener());
+
     }
     public void open(){
         this.movie.setVisible(true);
@@ -74,10 +82,22 @@ public class AdminPanelController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            UserSession.clear();
             UserLogin login = new UserLogin();
             LoginController controller = new LoginController(login);
             close();
             controller.open();
+        }
+        
+    }
+    
+    class EditListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+//            AdminPannel3 editpanel = new AdminPannel3();
+//            AdminPanelController controller = new AdminPanelController(editpanel);
+//            controller.open();
         }
         
     }

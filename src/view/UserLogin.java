@@ -267,11 +267,9 @@ public void addUserLoginListener(ActionListener listener){
 public void addForgotPasswordListener(ActionListener listener){
     ForgotPassword.addActionListener(listener);
 }
-
 public javax.swing.JTextField getemailField(){
    return Email;
 }
-
 public javax.swing.JPasswordField getpasswordField(){
   return Password;
  }
