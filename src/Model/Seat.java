@@ -60,4 +60,17 @@ public class Seat {
         this.showTimeId = showTimeId;
         this.movieId = movieId;
     }
+    
+    public void bookSeat(){
+        this.booked = true;
+        this.status = "Booked";
+    }
+    public void unbookSeat(){
+        this.booked = false;
+        this.status = "Available";
+    }
+    
+    public boolean isAvailable(){
+        return !booked;
+    }
 }
