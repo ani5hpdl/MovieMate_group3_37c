@@ -1,0 +1,13 @@
+0000000000000000000000000000000000000000 3b672fd3c9abd4e5a1492b16770a358c2eee3d39 jelisaaa <subedijelisa@gmail.com> 1747759004 +0545	branch: Created from master
+3b672fd3c9abd4e5a1492b16770a358c2eee3d39 2a610632479d453b95af6ec162853b1156c021d9 jelisaaa <subedijelisa@gmail.com> 1747759696 +0545	commit: dashboard was added
+2a610632479d453b95af6ec162853b1156c021d9 21556f912480de2c6245734b2e350b9035aa153a jelisaaa <subedijelisa@gmail.com> 1747763697 +0545	commit: sidebar was created
+21556f912480de2c6245734b2e350b9035aa153a e70f957e259ccd2f4103517ce789921940001d66 jelisaaa <subedijelisa@gmail.com> 1747845707 +0545	commit: Assets and UI Updated
+e70f957e259ccd2f4103517ce789921940001d66 a57a97bb9659f2a66999b5d81c403509ae36c1c6 jelisaaa <subedijelisa@gmail.com> 1748426579 +0545	commit: model was added
+a57a97bb9659f2a66999b5d81c403509ae36c1c6 614191bf8ac296cd50aa81542863aefe2bd63c60 jelisaaa <subedijelisa@gmail.com> 1748427655 +0545	commit: updated
+614191bf8ac296cd50aa81542863aefe2bd63c60 f878c347962dc0c4e5debcf99b446bc41fe4a5b5 jelisaaa <subedijelisa@gmail.com> 1748427836 +0545	commit (merge): dashbaord
+f878c347962dc0c4e5debcf99b446bc41fe4a5b5 b9f151590a5e7f0a1016d17f429e6b23341ff232 jelisaaa <subedijelisa@gmail.com> 1748454323 +0545	commit: Model was Created
+b9f151590a5e7f0a1016d17f429e6b23341ff232 508d775982649537b5de3d47e700528ea8dadff5 jelisaaa <subedijelisa@gmail.com> 1748579074 +0545	commit: Model Updated
+508d775982649537b5de3d47e700528ea8dadff5 c28e1aef0ceacfe895ecb67a0865dc492cb7a5a4 jelisaaa <subedijelisa@gmail.com> 1748579602 +0545	commit: Model Updated
+c28e1aef0ceacfe895ecb67a0865dc492cb7a5a4 90ef1cc524ad02f1a261c918d54ab49b1efbe86a jelisaaa <subedijelisa@gmail.com> 1748710229 +0545	commit: Dashboard updated
+90ef1cc524ad02f1a261c918d54ab49b1efbe86a 31339ad5a7b18db11b14a619de86831a716cf6ed jelisaaa <subedijelisa@gmail.com> 1749104772 +0545	commit: Cleaned up build artifacts and private NetBeans settings, added new source assets
+31339ad5a7b18db11b14a619de86831a716cf6ed 4c9738c8cd03cf49d3b8281284782bc3ae4a14af jelisaaa <subedijelisa@gmail.com> 1749105193 +0545	commit: updated .gitignore
