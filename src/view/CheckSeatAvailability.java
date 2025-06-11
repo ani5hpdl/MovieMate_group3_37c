@@ -4,6 +4,9 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+
 /**
  *
  * @author ACER
@@ -128,6 +131,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
         jButton81 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(800, 600));
         setResizable(false);
 
@@ -1016,4 +1020,21 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
     private javax.swing.JLabel title;
     private javax.swing.JComboBox<String> titleComboBox;
     // End of variables declaration//GEN-END:variables
+
+public void addMovieSelectionListener(ActionListener listener) {
+    titleComboBox.addActionListener(listener);
+    timeComboBox.addActionListener(listener); // For both movie and showtime selection
+}
+public void addSeatTypeFliterListener(ActionListener listener){
+    filterComboBox.addActionListener(listener);
+}
+public void addShowTimeListener(ActionListener listener){
+    timeComboBox.addActionListener(listener);
+}
+
+public void addSeatButtonListener(JButton button, ActionListener listener){
+    button.addActionListener(listener);
+}
+
+
 }
