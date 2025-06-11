@@ -9,7 +9,7 @@ package Model;
  * @author NITRO
  */
 public class ChooseSeats {
-      private int id;
+    private int id;
     private String seatNumber;
     private boolean isBooked;
     private boolean isBlocked;
