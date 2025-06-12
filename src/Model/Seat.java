@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Model;
 
 /**
@@ -9,68 +6,70 @@ package Model;
  * @author ACER
  */
 public class Seat {
-    private String seatId;
-    public String getSeatId() {
-        return seatId;
-    }
-    public void setSeatId(String seatId) {
-        this.seatId = seatId;
-    }
+    private int seatId;
+    private int seatNumber;
+    private int movieId;
+    private int showtimeId;
     private String seatType;
-    public String getSeatType() {
-        return seatType;
-    }
-    public void setSeatType(String seatType) {
-        this.seatType = seatType;
-    }
-    private boolean booked;
-    public boolean isBooked() {
-        return booked;
-    }
-    public void setBooked(boolean booked) {
-        this.booked = booked;
-    }
     private String status;
-    public String getStatus() {
-        return status;
-    }
-    public void setStatus(String status) {
+    
+    public Seat(int seatId, int seatNumber, int movieId, int showtimeId, String seatType, String status){
+        this.seatId = seatId;
+        this.seatNumber = seatNumber;
+        this.movieId = movieId;
+        this.showtimeId = showtimeId;
+        this.seatType = seatType;
         this.status = status;
     }
-    private int showTimeId;
-    public int getShowTimeId() {
-        return showTimeId;
+    
+    public int getSeatId(){
+        return seatId;
     }
-    public void setShowTimeId(int showTimeId) {
-        this.showTimeId = showTimeId;
+    public void setSeatId(int seatId){
+        this.seatId = seatId;
     }
-    private int movieId;
+    
+    public int getSeatNum(){
+        return seatNumber;
+    }
+    public void setSeatNum(int seatNumber){
+        this.seatNumber = seatNumber;
+    }
+    
     public int getMovieId() {
         return movieId;
     }
     public void setMovieId(int movieId) {
         this.movieId = movieId;
     }
-
-    public Seat(String seatId, String seatType, boolean booked, String status, int showTimeId, int movieId) {
-        this.seatId = seatId;
+    
+    public int getShowtimeId(){
+        return showtimeId;
+    }
+    public void setShowtimeId(int showtimeId){
+        this.showtimeId = showtimeId;
+    }
+    
+    public String getSeatType(){
+        return seatType;
+    }
+    public void setSeatType(String seatType){
         this.seatType = seatType;
-        this.booked = booked;
+    }
+    
+    public String getStatus(){
+        return status;
+    }
+    public void setStatus(String status){
         this.status = status;
-        this.showTimeId = showTimeId;
-        this.movieId = movieId;
     }
     
-    public void bookSeat(){
-        this.booked = true;
-        this.status = "Booked";
+    @Override
+    public String toString() {
+        return seatNumber + " - " + seatType + " (" + status + ")";
     }
-    public void unbookSeat(){
-        this.booked = false;
-        this.status = "Available";
-    }
-    
-    public boolean isAvailable(){
-        return !booked;
+
+    public boolean isAvailable() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
