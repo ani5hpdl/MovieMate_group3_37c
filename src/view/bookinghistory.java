@@ -26,41 +26,93 @@ public class bookinghistory extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel1 = new javax.swing.JPanel();
+        Panel = new javax.swing.JPanel();
+        Bookings = new javax.swing.JLabel();
+        Date = new javax.swing.JLabel();
+        Search = new javax.swing.JTextField();
+        Movie = new javax.swing.JLabel();
+        Time = new javax.swing.JLabel();
+        Seats = new javax.swing.JLabel();
+        Price = new javax.swing.JLabel();
+        AddButton = new javax.swing.JButton();
+        ScrollPane = new javax.swing.JScrollPane();
+        Panel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 784, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 517, Short.MAX_VALUE)
-        );
+        Bookings.setBackground(new java.awt.Color(102, 102, 102));
+        Bookings.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        Bookings.setText("Bookings");
+        Panel.add(Bookings, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 23, -1, 27));
 
-        jScrollPane1.setViewportView(jPanel1);
+        Date.setBackground(new java.awt.Color(204, 204, 204));
+        Date.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        Date.setForeground(new java.awt.Color(255, 255, 255));
+        Date.setText("      Date");
+        Date.setEnabled(false);
+        Date.setFocusable(false);
+        Date.setInheritsPopupMenu(false);
+        Date.setOpaque(true);
+        Panel.add(Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 101, 151, -1));
+        Panel.add(Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 34, 217, -1));
+
+        Movie.setBackground(new java.awt.Color(204, 204, 204));
+        Movie.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        Movie.setText("        Movie");
+        Movie.setEnabled(false);
+        Movie.setFocusable(false);
+        Movie.setOpaque(true);
+        Panel.add(Movie, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 101, 223, -1));
+
+        Time.setBackground(new java.awt.Color(204, 204, 204));
+        Time.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        Time.setText("     Time");
+        Time.setEnabled(false);
+        Time.setFocusable(false);
+        Time.setOpaque(true);
+        Panel.add(Time, new org.netbeans.lib.awtextra.AbsoluteConstraints(424, 101, 100, -1));
+
+        Seats.setBackground(new java.awt.Color(204, 204, 204));
+        Seats.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        Seats.setText("    Seats");
+        Seats.setEnabled(false);
+        Seats.setFocusable(false);
+        Seats.setOpaque(true);
+        Panel.add(Seats, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 101, 79, -1));
+
+        Price.setBackground(new java.awt.Color(204, 204, 204));
+        Price.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        Price.setText("    Price");
+        Price.setEnabled(false);
+        Price.setFocusable(false);
+        Price.setOpaque(true);
+        Panel.add(Price, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 101, 109, -1));
+
+        AddButton.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        AddButton.setText("Add");
+        Panel.add(AddButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(714, 32, -1, -1));
+
+        ScrollPane.setBackground(new java.awt.Color(204, 204, 204));
+        ScrollPane.setOpaque(false);
+        Panel.add(ScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 122, 695, 311));
+
+        Panel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assets/background.jpeg"))); // NOI18N
+        Panel2.setText("jLabel1");
+        Panel.add(Panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-12, -5, 830, 500));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 786, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+            .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -102,7 +154,16 @@ public class bookinghistory extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton AddButton;
+    private javax.swing.JLabel Bookings;
+    private javax.swing.JLabel Date;
+    private javax.swing.JLabel Movie;
+    private javax.swing.JPanel Panel;
+    private javax.swing.JLabel Panel2;
+    private javax.swing.JLabel Price;
+    private javax.swing.JScrollPane ScrollPane;
+    private javax.swing.JTextField Search;
+    private javax.swing.JLabel Seats;
+    private javax.swing.JLabel Time;
     // End of variables declaration//GEN-END:variables
 }
