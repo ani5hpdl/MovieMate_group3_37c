@@ -6,9 +6,13 @@ package Controller;
 
 import Doa.MovieDao;
 import Model.MovieData;
+import Model.UserSession;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import view.AdminPanel;
 import view.AdminPannel3;
 
 /**
@@ -70,7 +74,41 @@ public class EditMovieController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("Fuck You");
+            MovieDao moviedao = new MovieDao();
+            try{
+                String title = editmovie.getMovieNameField().getText();
+                String director = editmovie.getDirectorField().getText();
+                String cast = editmovie.getCastField().getText();
+                int duration = (Integer) editmovie.getDurationSpinner().getValue();
+                String genre = (String) editmovie.getGenreComboBox().getSelectedItem();
+                String language =(String) editmovie.getLanguageComboBox().getSelectedItem();
+                String poster_path = editmovie.getMainImageButton().getText();
+                String more_image_path = editmovie.getMoreImageButton().getText();
+                int rating = (Integer) editmovie.getRatingSpinner().getValue();
+                Date release_date = editmovie.getReleaseDatePicker().getDate();
+                String showtime = (String) editmovie.getShowTimeComboBox().getSelectedItem();
+                String synopsis = editmovie.getSynopsisField().getText();
+                
+                MovieData moviedata = new MovieData(title,director,cast,duration,genre,language,rating,synopsis,release_date,showtime,poster_path,more_image_path);
+                
+                boolean check = moviedao.updateMovieById(moviedata,1);
+                    
+                    if(check){
+                        JOptionPane.showMessageDialog(null,"Data is Updating May take Few Moments!!");
+                    }else{
+                        JOptionPane.showMessageDialog(null,"Error while Updating Data Try Again !!");
+                    }
+                    
+                    close();
+                    
+                    AdminPanel admin = new AdminPanel();
+                    AdminPanelController controller = new AdminPanelController(admin);
+                    controller.open();
+                
+            }catch(Exception ex){
+                System.out.println("Error Updating Movie"+ ex.getMessage());
+
+            }
         }
         
     }
