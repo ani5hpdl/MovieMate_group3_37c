@@ -150,5 +150,32 @@ public class MovieDao {
         }
         return movies;
     }
+    
+    public boolean updateMovieById(MovieData moviedata,int movieid){
+        Connection conn = mysql.openConnection();
+        String sql = "UPDATE moviedata SET title = ?, director = ?, cast = ?, duration = ?, genre = ?, language = ?, rating = ?, synopsis = ?, release_date = ?, showtime = ?, poster_path = ?, more_image_path = ? WHERE id = ?";
+        try(PreparedStatement pstm = conn.prepareStatement(sql)){
+            pstm.setString(1, moviedata.getTitle());
+            pstm.setString(2, moviedata.getDirector());
+            pstm.setString(3, moviedata.getCast());
+            pstm.setInt(4, moviedata.getDuration());
+            pstm.setString(5, moviedata.getGenre());
+            pstm.setString(6, moviedata.getLanguage());
+            pstm.setInt(7, (int) moviedata.getRating());
+            pstm.setString(8, moviedata.getSynopsis());
+            pstm.setDate(9, new Date(moviedata.getReleaseDate().getTime())); 
+            pstm.setString(10, moviedata.getShowTime());
+            pstm.setString(11, moviedata.getPosterPath());
+            pstm.setString(12, moviedata.getMoreImagePath());
+            pstm.setInt(13, movieid);
+            
+            int rows = pstm.executeUpdate();
+            return rows>0;
+            
+        }catch(SQLException ex){
+            ex.printStackTrace();
+            return false;
+        }
+    }
 
 }

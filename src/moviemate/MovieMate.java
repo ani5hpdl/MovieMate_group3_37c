@@ -58,13 +58,13 @@ public class MovieMate {
 //        ProfileController controller = new ProfileController(profile);
 //        controller.open1();
 //
-//        AdminPanel admin = new AdminPanel();
-//        AdminPanelController controller = new AdminPanelController(admin);
-//        controller.open();
-
-        AdminPannel3 edit = new AdminPannel3();
-        EditMovieController controller = new EditMovieController(edit);
+        AdminPanel admin = new AdminPanel();
+        AdminPanelController controller = new AdminPanelController(admin);
         controller.open();
+
+//        AdminPannel3 edit = new AdminPannel3();
+//        EditMovieController controller = new EditMovieController(edit);
+//        controller.open();
 
     }
             
