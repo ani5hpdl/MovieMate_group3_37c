@@ -6,14 +6,14 @@ package Model;
  * @author ACER
  */
 public class Seat {
-    private int seatId;
-    private int seatNumber;
+    private String seatId;
+    private String seatNumber;
     private int movieId;
     private int showtimeId;
     private String seatType;
     private String status;
     
-    public Seat(int seatId, int seatNumber, int movieId, int showtimeId, String seatType, String status){
+    public Seat(String seatId, String seatNumber, int movieId, int showtimeId, String seatType, String status){
         this.seatId = seatId;
         this.seatNumber = seatNumber;
         this.movieId = movieId;
@@ -22,17 +22,17 @@ public class Seat {
         this.status = status;
     }
     
-    public int getSeatId(){
+    public String getSeatId(){
         return seatId;
     }
-    public void setSeatId(int seatId){
+    public void setSeatId(String seatId){
         this.seatId = seatId;
     }
     
-    public int getSeatNum(){
+    public String getSeatNum(){
         return seatNumber;
     }
-    public void setSeatNum(int seatNumber){
+    public void setSeatNum(String seatNumber){
         this.seatNumber = seatNumber;
     }
     
@@ -70,6 +70,6 @@ public class Seat {
     }
 
     public boolean isAvailable() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "Available".equalsIgnoreCase(status);
     }
 }
