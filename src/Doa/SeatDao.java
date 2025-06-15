@@ -17,24 +17,24 @@ public class SeatDao {
     MySqlConnection mysql = new MySqlConnection();
 
   
-    public List<Seat> fetchSeatsForMovieAndShowtime(int movieId, int showTimeId) {
+    public List<Seat> fetchSeatsForMovieAndShowtime(String movieTitle, String showtime) {
         Connection conn = mysql.openConnection();
         List<Seat> seatList = new ArrayList<>();
-        String sql = "SELECT * FROM seats WHERE movie_id = ? AND showtime_id= ?";
+        String sql = "SELECT * FROM seats WHERE movie_title = ? AND showtime= ?";
 
         try (PreparedStatement pst = conn.prepareStatement(sql)) {
-            pst.setInt(1, movieId);
-            pst.setInt(2, showTimeId);
+            pst.setString(1, movieTitle);
+            pst.setString(2, showtime);
 
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
                 Seat seat = new Seat(
                         rs.getString("seat_id"),
                         rs.getString("seat_number"),
-                        rs.getInt("movie_id"),
-                        rs.getInt("showtime_id"),
                         rs.getString("seat_type"),
-                        rs.getString("status")
+                        rs.getString("status"),
+                        rs.getString("movie_title"),
+                        rs.getString("showtime")
                 );
                 seatList.add(seat);
             }
@@ -48,25 +48,24 @@ public class SeatDao {
     }
 
     
-    public List<Seat> fetchSeatsByType(int movieId, int showTimeId, String seatType) {
+    public List<Seat> fetchAllSeats(String movieTitle, String showtime) {
         Connection conn = mysql.openConnection();
         List<Seat> seatList = new ArrayList<>();
-        String sql = "SELECT * FROM seats WHERE movie_id = ? AND showtime_id = ? AND seat_type = ?";
+        String sql = "SELECT * FROM seats WHERE movie_title = ? AND showtime = ?";
 
         try (PreparedStatement pst = conn.prepareStatement(sql)) {
-            pst.setInt(1, movieId);
-            pst.setInt(2, showTimeId); 
-            pst.setString(3, seatType);
-
+            pst.setString(1, movieTitle);
+            pst.setString(2,showtime);
+            
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
                 Seat seat = new Seat(
                         rs.getString("seat_id"),
                         rs.getString("seat_number"),
-                        rs.getInt("movie_id"),
-                        rs.getInt("showtime_id"),
                         rs.getString("seat_type"),
-                        rs.getString("status")
+                        rs.getString("status"),
+                        rs.getString("movie_title"),
+                        rs.getString("showtime")
                 );
                 seatList.add(seat);
             }
@@ -80,14 +79,46 @@ public class SeatDao {
     }
 
     
-    public int countAvailableSeats(int movieId, int showTimeId) {
+    public List<Seat> fetchSeatsByType(String movieTitle, String showtime, String seatType) {
         Connection conn = mysql.openConnection();
-        String sql = "SELECT COUNT(*) AS availableSeats FROM seats WHERE movie_id = ? AND showtime_id = ? AND status = 'Available'";
+        List<Seat> seatList = new ArrayList<>();
+        String sql = "SELECT * FROM seats WHERE movie_title = ? AND showtime = ? AND seat_type = ?";
+
+        try (PreparedStatement pst = conn.prepareStatement(sql)) {
+            pst.setString(1, movieTitle);
+            pst.setString(2,showtime);
+            pst.setString(3,seatType);
+
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                Seat seat = new Seat(
+                        rs.getString("seat_id"),
+                        rs.getString("seat_number"),
+                        rs.getString("seat_type"),
+                        rs.getString("status"),
+                        rs.getString("movie_title"),
+                        rs.getString("showtime")
+                );
+                seatList.add(seat);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SeatDao.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            mysql.closeConnection(conn);
+        }
+
+        return seatList;
+    }
+
+    
+    public int countAllAvailableSeats(String movieTitle, String showtime) {
+        Connection conn = mysql.openConnection();
+        String sql = "SELECT COUNT(*) AS availableSeats FROM seats WHERE movie_title = ? AND showtime = ? AND status = 'Available'";
         int count = 0;
 
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setInt(1, movieId);
-            ps.setInt(2, showTimeId);
+            ps.setString(1, movieTitle);
+            ps.setString(2, showtime);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 count = rs.getInt("availableSeats");
@@ -102,25 +133,26 @@ public class SeatDao {
     }
 
     
-    public Seat findSeatBySeatNum(String seatNum, int movieId, int showTimeId) {
+    public Seat findSeatBySeatNum(String movieTitle, String showtime, String seatNum) {
         Connection conn = mysql.openConnection();
-        String sql = "SELECT * FROM seats WHERE seat_number = ? AND movie_id = ? AND showtime_id = ?";
+        String sql = "SELECT * FROM seats WHERE movie_title = ? AND showtime = ? AND seat_number = ?";
         Seat seat = null;
 
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setString(1, seatNum);
-            ps.setInt(2, movieId);
-            ps.setInt(3, showTimeId);
+            ps.setString(1, movieTitle);
+            ps.setString(2, showtime);
+            ps.setString(3, seatNum);
+           
 
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 seat = new Seat(
                         rs.getString("seat_id"),
                         rs.getString("seat_number"),
-                        rs.getInt("movie_id"),
-                        rs.getInt("showtime_id"),
                         rs.getString("seat_type"),
-                        rs.getString("status")
+                        rs.getString("status"),
+                        rs.getString("movie_title"),
+                        rs.getString("showtime")
                 );
             }
         } catch (SQLException ex) {
@@ -133,18 +165,24 @@ public class SeatDao {
     }
 
     
-    public boolean updateSeatBookingStatus(String seatId,int movieId, int showtimeId, boolean booked, String status) {
+    public boolean updateSeatBookingStatus(String movieTitle, String showtime, String seatNum, String status) {
+        System.out.println("SeatDao: updateSeatBookingStatus method called");
+
         Connection conn = mysql.openConnection();
-        String sql = "UPDATE seats SET booked = ?, status = ? WHERE seat_id = ? AND movie_id = ? AND showtime_id = ?";
+        String sql = "UPDATE seats SET status = ? WHERE movie_title = ? AND showtime =? AND seat_number = ?";
 
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setBoolean(1, booked);
-            ps.setString(2, status);
-            ps.setString(3, seatId);
-            ps.setInt(4, movieId);
-            ps.setInt(5, showtimeId);
-            
+            ps.setString(1, status);
+            ps.setString(2, movieTitle);
+            ps.setString(3, showtime);
+            ps.setString(4, seatNum);
+
+            System.out.println("Updating seat status:");
+            System.out.println("Status = " + status);
+            System.out.println("Seat Number = " + seatNum);
+
             int rowsAffected = ps.executeUpdate();
+            System.out.println("Rows affected by update: " + rowsAffected);
             return rowsAffected > 0;
         } catch (SQLException ex) {
             Logger.getLogger(SeatDao.class.getName()).log(Level.SEVERE, null, ex);
@@ -154,4 +192,32 @@ public class SeatDao {
 
         return false;
     }
+
+    public List<Seat> fetchSeatsByStatus(String movieTitle, String showtime, String Booked) {
+        Connection conn = mysql.openConnection();
+        List<Seat> seatList = new ArrayList<>();
+        String sql = "SELECT * FROM seats WHERE movie_title = ? AND showtime = ? AND status = ?";
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, movieTitle);
+            ps.setString(2, showtime);
+            ps.setString(3, Booked);
+            
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                Seat seat = new Seat(
+                        rs.getString("seat_id"),
+                        rs.getString("seat_number"),
+                        rs.getString("seat_type"),
+                        rs.getString("status"),
+                        rs.getString("movie_title"),
+                        rs.getString("showtime")
+                );
+                seatList.add(seat);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SeatDao.class.getName()).log(Level.SEVERE, null, ex);
+        }    
+        return seatList;
+    }
+    
 }

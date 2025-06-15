@@ -1,57 +1,66 @@
-
+   
 package Controller;
 
-
-import Doa.MovieDao;
-import javax.swing.JButton;
 import Doa.SeatDao;
-import Model.Movie;
 import Model.Seat;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import javax.swing.JButton;
 import view.CheckSeatAvailability;
-
 
 public class SeatAvailabilityController {
     private final SeatDao seatDao;
     private final CheckSeatAvailability seatView;
-    
-    private final Map<String, Integer> movieMap = new HashMap<>();
-    private final Map<String, Integer> showtimeMap = new HashMap<>();
 
-    
+    private Map<String, JButton> seatButtonMap = new HashMap<>();
+    private String selectedmovie;
+    private String selectedShowtime ;
+
     public SeatAvailabilityController(CheckSeatAvailability seatView) {
         this.seatView = seatView;
         this.seatDao = new SeatDao();
-        
-        seatView.initializeSeatButtons();
-        
-        addSeatButtonListeners();
-        
-        seatView.addMovieSelectionListener(new MovieSelectionListener());
-        seatView.addSeatTypeFilterListener(new FilterSeatTypeListener());
-        seatView.addShowTimeListener(new ShowTimeListener());
-        
-        loadMovie();
-        loadSeatMap();
-    }
-    
-    public void loadMovie(){
-   
-    }
-    
-    public void addSeatButtonListeners(){
-        JButton[] buttons = seatView.getSeatButtons();
-        for(int seatId = 1; seatId < buttons.length; seatId++){
-            JButton btn = buttons[seatId];
-            if(btn != null){
-                
-                btn.addActionListener(new SeatButtonSelectionListener());
-                System.out.println("Listener attached to button " + seatId);
 
+
+        mapSeatButtons();
+        addSeatButtonListeners();
+
+        seatView.addSeatTypeFilterListener(new FilterSeatTypeListener());
+        seatView.addMovieSelectionListener(new MovieSelectionListener());
+        seatView.addShowtimeListener(new ShowtimeSelectionListener());
+
+        
+    }
+    
+    private void mapSeatButtons() {
+    JButton[] buttons = seatView.getSeatButtons(); 
+
+    String[] seatLabels = {
+        "A0", "A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9",
+        "B0", "B1", "B2", "B3", "B4", "B5", "B6", "B7", "B8", "B9",
+        "C0", "C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9",
+        "D0", "D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8", "D9",
+        "E0", "E1", "E2", "E3", "E4", "E5", "E6", "E7", "E8", "E9",
+        "F0", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9",
+        "G0", "G1", "G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9",
+        "H0", "H1", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9"
+    };
+
+    for (int i = 0; i < buttons.length && i < seatLabels.length; i++) {
+        if (buttons[i] != null) {
+            seatButtonMap.put(seatLabels[i], buttons[i]);
+            buttons[i].setText(seatLabels[i]); // Make sure the button displays the correct seat number
+        }
+    }
+}
+
+    public void addSeatButtonListeners() {
+        for (Map.Entry<String, JButton> entry : seatButtonMap.entrySet()) {
+            JButton button = entry.getValue();
+            if (button != null) {
+                button.addActionListener(new SeatButtonSelectionListener());
+                System.out.println("Listener attached to button " + entry.getKey());
             }
         }
     }
@@ -63,30 +72,44 @@ public class SeatAvailabilityController {
     public void close() {
         seatView.dispose();
     }
-    
-    private void loadSeatMap(){
-        int movieId = seatView.getSelectedMovie();
-        int showtimeId = seatView.getSelectedShowtime();
+
+    private void loadSeatMap() {
+        if (selectedmovie.isEmpty() || selectedShowtime.isEmpty()){
+            return;
+        }
         
-       
-        List<Seat> seats = seatDao.fetchSeatsForMovieAndShowtime(movieId, showtimeId);
+        List<Seat> seats = seatDao.fetchSeatsForMovieAndShowtime(selectedmovie, selectedShowtime);
         updateSeatButtons(seats);
-        
-        int availableCount = seatDao.countAvailableSeats(movieId, showtimeId);
+
+        int availableCount = seatDao.countAllAvailableSeats(selectedmovie, selectedShowtime);
         seatView.updateAvailableSeat(availableCount);
-        
-        
-        
     }
-    //premium or regular
-    private void applySeatFilterListener(){
-        int movieId = seatView.getSelectedMovie();
-        int showtimeId = seatView.getSelectedShowtime();
+
+    private void applySeatFilterListener() {
+        if(selectedmovie.isEmpty() || selectedmovie == null){
+            System.out.println("Please select a movie first.");
+            return;
+        }
+        if(selectedShowtime == null || selectedShowtime.isEmpty()){
+            System.out.println("Please select a showtime first");
+            return;
+        }
+        
         String seatType = seatView.getSelectedSeatType();
-        
-        if (movieId == -1 || showtimeId == -1) return;
-        
-        List<Seat> filteredSeats = seatDao.fetchSeatsByType(movieId, showtimeId, seatType);
+        List<Seat> filteredSeats;
+
+        switch (seatType) {
+            case "All":
+                filteredSeats = seatDao.fetchSeatsForMovieAndShowtime(selectedmovie, selectedShowtime);
+                break;
+            case "Booked":
+                filteredSeats = seatDao.fetchSeatsByStatus(selectedmovie, selectedShowtime, "Booked");
+                break;
+            default:
+                filteredSeats = seatDao.fetchSeatsByType(selectedmovie, selectedShowtime, seatType);
+                break;
+        }
+
         updateSeatButtons(filteredSeats);
 
         int availableCount = 0;
@@ -95,117 +118,108 @@ public class SeatAvailabilityController {
                 availableCount++;
             }
         }
-        seatView.updateAvailableSeat(availableCount);   
-    }
+        seatView.updateAvailableSeat(availableCount);
+    }   
     
     
-private void updateSeatButtons(List<Seat>seats){
-    JButton[] buttons = seatView.getSeatButtons();
-            // Update buttons based on seat data
-        for (Seat seat : seats) {
-            try {
-                int seatIndex = Integer.parseInt(seat.getSeatId().substring(1)); // Assumes seatId is like "A1"
-                JButton button = buttons[seatIndex];
-                if (button != null) {
-                    button.setText(seat.getSeatId());
 
-                    if (seat.isAvailable()) {
-                        button.setEnabled(true);
-                        if (seat.getSeatType().equalsIgnoreCase("Premium")) {
-                            button.setBackground(java.awt.Color.CYAN);
-                        } else {
-                            button.setBackground(java.awt.Color.GREEN);
-                        }
-                        button.setForeground(java.awt.Color.BLACK);
+    private void updateSeatButtons(List<Seat> seats) {
+        // Reset all buttons
+        for (JButton button : seatButtonMap.values()) {
+            button.setEnabled(true);
+            button.setBackground(Color.LIGHT_GRAY);
+            button.setForeground(Color.BLACK);
+        }
+
+        for (Seat seat : seats) {
+            JButton button = seatButtonMap.get(seat.getSeatNum());
+
+            if (button != null) {
+                button.setText(seat.getSeatNum());
+
+                if (seat.isAvailable()) {
+                    button.setEnabled(true);
+                    if (seat.getSeatType().equalsIgnoreCase("Premium")) {
+                        button.setBackground(Color.getHSBColor(0.13f, 1.00f, 1.00f));
                     } else {
-                        button.setEnabled(false);
-                        button.setBackground(java.awt.Color.RED);
-                        button.setForeground(java.awt.Color.WHITE);
+                        button.setBackground(Color.getHSBColor(0.57f, 0.60f, 1.00f));
                     }
+                    button.setForeground(Color.BLACK);
+                } else {
+                    button.setEnabled(false);
+                    button.setBackground(Color.getHSBColor(0.97f, 0.91f, 0.86f));
+                    button.setForeground(Color.WHITE);
                 }
-            } catch (Exception e) {
-                System.out.println("Invalid seat ID format: " + seat.getSeatId());
+            } else {
+                System.out.println("Button not found for seat: " + seat.getSeatNum());
             }
         }
     }
-
+    
     class MovieSelectionListener implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            selectedmovie = seatView.getSelectedmovie();
+            System.out.println("Selected movie: " + selectedmovie);
+            
+            }
+        }
+        
+    class ShowtimeSelectionListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            selectedShowtime = seatView.getSelectedShowtime();
+            System.out.println("Selected showtime: " + selectedShowtime);
             loadSeatMap();
         }
         
     }
-    
-    class FilterSeatTypeListener implements ActionListener{
 
+    class FilterSeatTypeListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            System.out.println("Filter Changed to: " + seatView.getSelectedSeatType());
             applySeatFilterListener();
         }
-        
     }
-    
-    class ShowTimeListener implements ActionListener{
 
+    class SeatButtonSelectionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            loadSeatMap();
-        }
-        
-    }
-    
-    class SeatButtonSelectionListener implements ActionListener{
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
+            if (selectedmovie.isEmpty() || selectedShowtime.isEmpty()){
+                seatView.showMessage("Please select a movie and showtime first.");
+                return;
+            }
+            
             JButton selectedButton = (JButton) e.getSource();
             String seatNum = selectedButton.getText();
-            String seatId = selectedButton.getText();
-            
-            
-            System.out.println("Button Clicked: " + seatNum); // Log this first
 
-//            int movieId = seatView.getSelectedMovie();
-//            int showtimeId = seatView.getSelectedShowtime();
-              
-              int movieId = 1; // Use a valid movieId from your database
-        int showtimeId = 1;
-            System.out.println("Movie ID: " + movieId + " Showtime ID: " + showtimeId);
+            System.out.println("Button Clicked: " + seatNum);
 
-            
-//            if (movieId == -1 || showtimeId == -1){
-//                seatView.showMessage("Please select movie and showtime.");
-//                return;
-//                
-//            }
-
-            Seat seat = seatDao.findSeatBySeatNum(seatNum, movieId, showtimeId);
+            Seat seat = seatDao.findSeatBySeatNum(selectedmovie, selectedShowtime, seatNum);
 
             if (seat != null) {
                 if (seat.isAvailable()) {
-                    boolean success = seatDao.updateSeatBookingStatus(seatId, movieId, showtimeId, true, "Booked");
+                    System.out.println("Calling DAO to update seat: " + seatNum);
+                    boolean success = seatDao.updateSeatBookingStatus(selectedmovie, selectedShowtime, seatNum, "Booked");
+                    System.out.println("DAO update result: " + success);
                     if (success) {
-                        // Directly update the button without reloading the whole seat map
                         selectedButton.setEnabled(false);
-                        selectedButton.setBackground(java.awt.Color.RED);
-                        selectedButton.setForeground(java.awt.Color.WHITE);
-                        seatView.showMessage("Seat " + seatId + " successfully booked!");
+                        selectedButton.setBackground(Color.RED);
+                        selectedButton.setForeground(Color.WHITE);
+                        seatView.showMessage("Seat " + seatNum + " successfully booked!");
 
-                        int availableSeats = seatDao.countAvailableSeats(movieId, showtimeId);
+                        int availableSeats = seatDao.countAllAvailableSeats(selectedmovie, selectedShowtime);
                         seatView.updateAvailableSeat(availableSeats);
                     }
                 } else {
-                    seatView.showMessage("Seat " + seatId + " is already booked.");
+                    seatView.showMessage("Seat " + seatNum + " is already booked.");
                 }
-            }else{
-                        seatView.showMessage("Seat not Found");
-                        }
-  
+            } else {
+                seatView.showMessage("Seat not Found");
+            }
         }
-        
     }
-    
 }
-    
