@@ -95,9 +95,9 @@ public class AdminPanelController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-//            AdminPannel3 editpanel = new AdminPannel3();
-//            AdminPanelController controller = new AdminPanelController(editpanel);
-//            controller.open();
+            AdminPannel3 editpanel = new AdminPannel3();
+            EditMovieController controller = new EditMovieController(editpanel);
+            controller.open();
         }
         
     }

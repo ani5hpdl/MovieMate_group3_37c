@@ -19,7 +19,7 @@ public class MovieData {
     private int duration;
     private String genre;
     private String language;
-    private double rating;
+    private int rating;
     private String synopsis;
     private Date releaseDate;
     private String showTime;
@@ -28,7 +28,7 @@ public class MovieData {
 
     // Constructor
     public MovieData(int id,String title, String director, String cast, int duration, String genre,
-                     String language, double rating, String synopsis, Date releaseDate,
+                     String language, int rating, String synopsis, Date releaseDate,
                      String showTime, String posterPath, String moreImagePath) {
         this.id = id;
         this.title = title;
@@ -45,7 +45,7 @@ public class MovieData {
         this.moreImagePath = moreImagePath;
     }
     public MovieData(String title, String director, String cast, int duration, String genre,
-                     String language, double rating, String synopsis, Date releaseDate,
+                     String language, int rating, String synopsis, Date releaseDate,
                      String showTime, String posterPath, String moreImagePath) {
         this.title = title;
         this.director = director;
@@ -83,7 +83,7 @@ public class MovieData {
     public String getLanguage() { return language; }
     public void setLanguage(String language) { this.language = language; }
 
-    public double getRating() { return rating; }
+    public int getRating() { return (int) rating; }
     public void setRating(int rating) { this.rating = rating; }
 
     public String getSynopsis() { return synopsis; }

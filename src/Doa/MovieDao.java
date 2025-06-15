@@ -67,7 +67,7 @@ public class MovieDao {
                         result.getInt("duration"),
                         result.getString("genre"),
                         result.getString("language"),
-                        result.getDouble("rating"),
+                        result.getInt("rating"),
                         result.getString("synopsis"),
                         result.getDate("release_date"),
                         result.getString("showtime"),
@@ -151,7 +151,7 @@ public class MovieDao {
         return movies;
     }
     
-    public boolean updateMovieById(MovieData moviedata,int movieid){
+    public boolean updateMovieById(MovieData moviedata){
         Connection conn = mysql.openConnection();
         String sql = "UPDATE moviedata SET title = ?, director = ?, cast = ?, duration = ?, genre = ?, language = ?, rating = ?, synopsis = ?, release_date = ?, showtime = ?, poster_path = ?, more_image_path = ? WHERE id = ?";
         try(PreparedStatement pstm = conn.prepareStatement(sql)){
@@ -167,9 +167,15 @@ public class MovieDao {
             pstm.setString(10, moviedata.getShowTime());
             pstm.setString(11, moviedata.getPosterPath());
             pstm.setString(12, moviedata.getMoreImagePath());
-            pstm.setInt(13, movieid);
+            pstm.setInt(13, moviedata.getId());
+//            System.out.println(moviedata.getId());
             
             int rows = pstm.executeUpdate();
+            if(rows > 0){
+                System.out.println("Updated Sucessfully");
+            }else{
+                System.out.println("Update Failed   ");
+            }
             return rows>0;
             
         }catch(SQLException ex){

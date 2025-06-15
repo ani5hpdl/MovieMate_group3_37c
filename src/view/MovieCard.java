@@ -4,6 +4,7 @@
  */
 package view;
 
+import Controller.EditMovieController;
 import Model.MovieData;
 import java.awt.Image;
 import java.awt.event.ActionListener;
@@ -66,6 +67,8 @@ public class MovieCard extends javax.swing.JPanel {
         jButton2.setFocusPainted(false);
         jButton2.setFocusable(false);
 
+        ID.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -106,6 +109,14 @@ public class MovieCard extends javax.swing.JPanel {
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
         // TODO add your handling code here:
+            AdminPannel3 editpanel = new AdminPannel3();
+            EditMovieController controller = new EditMovieController(editpanel);
+             int id = Integer.parseInt(ID.getText()); // ID label stores movie ID
+            MovieData movie = new MovieData(id, MovieName.getText(), "", "", 0, Genre.getText(), Language.getText(), 0, "", null, "", "", "");
+            controller.setMovieData(movie);  // 💡 Set it here
+            controller.loadEditMovie();
+            controller.open();
+            
     }//GEN-LAST:event_EditActionPerformed
 
 
@@ -133,5 +144,8 @@ public class MovieCard extends javax.swing.JPanel {
     public void addEditListener(ActionListener listener){
         System.out.println("Edit");
         System.out.println(ID);
+        Edit.addActionListener(listener);
     }
+    
+
 }

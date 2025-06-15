@@ -126,7 +126,7 @@ public class ProfileController {
                     controller.open();
                 }
             }catch(Exception ex){
-                System.out.println("Error Adding User"+ ex.getMessage());
+                System.out.println("Error Updating User"+ ex.getMessage());
             }
         }
         

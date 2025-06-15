@@ -22,6 +22,8 @@ import view.AdminPannel3;
 public class EditMovieController {
     public final MovieDao movie = new MovieDao();
     private final AdminPannel3 editmovie;
+    private MovieData moviedata;
+    private int movieId;
 //    public movieid =1 ;
     
     public EditMovieController(AdminPannel3 editmovie){
@@ -29,7 +31,6 @@ public class EditMovieController {
         editmovie.addUpdateMovieListener(new UpdateMovieListener());
         editmovie.addCancelMovieListener(new CancelMovieListener());
         
-        loadEditMovie(1);
         
 //        addmovie.addImageListener(new AddImageListener());
 //        addmovie.addMoreImageListener(new MoreImageListener());
@@ -56,9 +57,19 @@ public class EditMovieController {
     public void close(){
         this.editmovie.dispose();
     }
-    
-    public MovieData fetchMovie(int movieid){
+    public void setMovieData(MovieData moviedata){
+        this.movieId = moviedata.getId();
+        this.moviedata = moviedata;
+        
+    }
+    public MovieData fetchMovie(MovieData moviedata){
+        if (moviedata == null) {
+            System.err.println("fetchMovie() error: moviedata is null.");
+            return null;
+        }
+        int movieid = moviedata.getId();
         return movie.getMovieById(movieid);
+
     }
     class CancelMovieListener implements ActionListener{
  
@@ -74,7 +85,6 @@ public class EditMovieController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            MovieDao moviedao = new MovieDao();
             try{
                 String title = editmovie.getMovieNameField().getText();
                 String director = editmovie.getDirectorField().getText();
@@ -89,9 +99,9 @@ public class EditMovieController {
                 String showtime = (String) editmovie.getShowTimeComboBox().getSelectedItem();
                 String synopsis = editmovie.getSynopsisField().getText();
                 
-                MovieData moviedata = new MovieData(title,director,cast,duration,genre,language,rating,synopsis,release_date,showtime,poster_path,more_image_path);
+                MovieData moviedata = new MovieData(EditMovieController.this.moviedata.getId(),title,director,cast,duration,genre,language,rating,synopsis,release_date,showtime,poster_path,more_image_path);
                 
-                boolean check = moviedao.updateMovieById(moviedata,1);
+                boolean check = movie.updateMovieById(moviedata);
                     
                     if(check){
                         JOptionPane.showMessageDialog(null,"Data is Updating May take Few Moments!!");
@@ -114,8 +124,9 @@ public class EditMovieController {
     }
     
     
-    public void loadEditMovie(int movieid){
-        MovieData data = this.fetchMovie(movieid);
+    public void loadEditMovie(){
+        this.setMovieData(moviedata);
+        MovieData data = this.fetchMovie(moviedata);
         
         if(data != null){
             editmovie.getMovieNameField().setText(data.getTitle());
