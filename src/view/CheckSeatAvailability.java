@@ -1,14 +1,9 @@
 
 package view;
 
-import Model.Seat;
+
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,7 +13,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
     public CheckSeatAvailability() {
         initComponents();
-        initializeSeatButtons();
+        
     }
 
 
@@ -44,6 +39,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
         regular = new javax.swing.JLabel();
         booked = new javax.swing.JLabel();
         premium = new javax.swing.JLabel();
+        bookButton = new javax.swing.JButton();
         PanelWrapper = new javax.swing.JPanel();
         CenterPanel = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -132,37 +128,37 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(800, 600));
         setResizable(false);
 
+        MainPanel.setBackground(new java.awt.Color(255, 255, 255));
         MainPanel.setPreferredSize(new java.awt.Dimension(500, 350));
         MainPanel.setLayout(new java.awt.BorderLayout());
 
+        TopPanel.setBackground(new java.awt.Color(245, 245, 220));
+        TopPanel.setToolTipText("");
         TopPanel.setPreferredSize(new java.awt.Dimension(600, 150));
 
-        movieTitle.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        movieTitle.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         movieTitle.setText("Movie Title: ");
 
-        titleComboBox.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
-        titleComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Deadpool 3", "Avatar: The Way Of Water", "House Of The Dragon", "The Last Of Us" }));
+        titleComboBox.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        titleComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Deadpool 3", "Avatar: The Way Of Water", "House Of The Dragon", "Avengers" }));
 
-        showTitle.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        showTitle.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         showTitle.setText("ShowTime: ");
 
-        timeComboBox.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
-        timeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10:00 AM", "1:00 AM", " " }));
+        timeComboBox.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        timeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10:00 AM", "1:00 PM", "4:00 PM", " " }));
 
-        title.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        title.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         title.setText("Check Seat Availability");
 
-        Screen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        Screen.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        Screen.setForeground(new java.awt.Color(204, 85, 0));
         Screen.setText("Screen");
 
         javax.swing.GroupLayout TopPanelLayout = new javax.swing.GroupLayout(TopPanel);
         TopPanel.setLayout(TopPanelLayout);
         TopPanelLayout.setHorizontalGroup(
             TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopPanelLayout.createSequentialGroup()
-                .addGap(0, 263, Short.MAX_VALUE)
-                .addComponent(title)
-                .addGap(253, 253, 253))
             .addGroup(TopPanelLayout.createSequentialGroup()
                 .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(TopPanelLayout.createSequentialGroup()
@@ -178,9 +174,13 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
                             .addComponent(timeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(titleComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(TopPanelLayout.createSequentialGroup()
-                        .addGap(315, 315, 315)
-                        .addComponent(Screen, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(281, 281, 281)
+                        .addComponent(Screen, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopPanelLayout.createSequentialGroup()
+                .addGap(0, 229, Short.MAX_VALUE)
+                .addComponent(title)
+                .addGap(164, 164, 164))
         );
         TopPanelLayout.setVerticalGroup(
             TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,35 +195,36 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
                 .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(timeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(showTitle))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(Screen)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         MainPanel.add(TopPanel, java.awt.BorderLayout.PAGE_START);
 
+        BottomPanel.setBackground(new java.awt.Color(245, 245, 220));
         BottomPanel.setPreferredSize(new java.awt.Dimension(700, 80));
 
-        filterSeats.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        filterSeats.setFont(new java.awt.Font("Consolas", 1, 13)); // NOI18N
         filterSeats.setText("Filter Seats: ");
 
-        filterComboBox.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
-        filterComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Regular", "Premium" }));
+        filterComboBox.setFont(new java.awt.Font("Consolas", 1, 13)); // NOI18N
+        filterComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All", "Regular", "Premium", "Booked" }));
 
-        availableSeats.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        availableSeats.setFont(new java.awt.Font("Consolas", 1, 13)); // NOI18N
         availableSeats.setText("Available Seats: 80");
 
-        availableLabel.setBackground(new java.awt.Color(51, 153, 0));
+        availableLabel.setBackground(new java.awt.Color(102, 178, 255));
         availableLabel.setForeground(new java.awt.Color(255, 255, 255));
         availableLabel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         availableLabel.setOpaque(true);
 
-        bookLabel.setBackground(new java.awt.Color(204, 0, 0));
+        bookLabel.setBackground(new java.awt.Color(220, 20, 60));
         bookLabel.setForeground(new java.awt.Color(255, 255, 255));
         bookLabel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         bookLabel.setOpaque(true);
 
-        preLabel.setBackground(new java.awt.Color(0, 0, 0));
+        preLabel.setBackground(new java.awt.Color(255, 215, 0));
         preLabel.setForeground(new java.awt.Color(255, 255, 255));
         preLabel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         preLabel.setOpaque(true);
@@ -237,63 +238,76 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
         premium.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         premium.setText("Premium");
 
+        bookButton.setBackground(new java.awt.Color(0, 51, 102));
+        bookButton.setForeground(new java.awt.Color(173, 216, 153));
+        bookButton.setText("Book");
+        bookButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bookButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout BottomPanelLayout = new javax.swing.GroupLayout(BottomPanel);
         BottomPanel.setLayout(BottomPanelLayout);
         BottomPanelLayout.setHorizontalGroup(
             BottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BottomPanelLayout.createSequentialGroup()
-                .addGroup(BottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(BottomPanelLayout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(filterSeats)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(filterComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(73, 73, 73)
-                        .addComponent(availableSeats))
-                    .addGroup(BottomPanelLayout.createSequentialGroup()
-                        .addGap(227, 227, 227)
-                        .addComponent(availableLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(regular)
-                        .addGap(55, 55, 55)
-                        .addComponent(bookLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(booked)
-                        .addGap(65, 65, 65)
-                        .addComponent(preLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(premium)))
-                .addContainerGap(138, Short.MAX_VALUE))
+                .addGap(210, 210, 210)
+                .addComponent(availableLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(regular)
+                .addGap(57, 57, 57)
+                .addComponent(bookLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(booked)
+                .addGap(74, 74, 74)
+                .addComponent(preLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(premium)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(BottomPanelLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(filterSeats)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(filterComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(73, 73, 73)
+                .addComponent(availableSeats)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addComponent(bookButton)
+                .addGap(50, 50, 50))
         );
         BottomPanelLayout.setVerticalGroup(
             BottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BottomPanelLayout.createSequentialGroup()
-                .addContainerGap(11, Short.MAX_VALUE)
                 .addGroup(BottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(regular, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(bookLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(booked, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(preLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(premium, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(availableLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
+                    .addComponent(availableLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(regular)
+                    .addComponent(bookLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(booked)
+                    .addComponent(preLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(premium))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(BottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(filterSeats)
                     .addComponent(filterComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(availableSeats))
+                    .addComponent(availableSeats)
+                    .addComponent(bookButton))
                 .addGap(23, 23, 23))
         );
 
         MainPanel.add(BottomPanel, java.awt.BorderLayout.PAGE_END);
 
+        PanelWrapper.setBackground(new java.awt.Color(245, 245, 220));
         PanelWrapper.setMinimumSize(new java.awt.Dimension(580, 360));
         PanelWrapper.setPreferredSize(new java.awt.Dimension(650, 350));
 
+        CenterPanel.setBackground(new java.awt.Color(245, 245, 220));
         CenterPanel.setPreferredSize(new java.awt.Dimension(600, 310));
         CenterPanel.setLayout(new java.awt.GridLayout(8, 10, 5, 5));
 
         jButton1.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton1.setText("A0");
+        jButton1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton1.setFocusPainted(false);
         jButton1.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton1.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -301,6 +315,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton2.setText("A1");
+        jButton2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton2.setFocusPainted(false);
         jButton2.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton2.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -313,6 +328,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton3.setText("A2");
+        jButton3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton3.setFocusPainted(false);
         jButton3.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton3.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -320,6 +336,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton4.setText("A3");
+        jButton4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton4.setFocusPainted(false);
         jButton4.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton4.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -327,6 +344,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton5.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton5.setText("A4");
+        jButton5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton5.setFocusPainted(false);
         jButton5.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton5.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -334,6 +352,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton6.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton6.setText("A5");
+        jButton6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton6.setFocusPainted(false);
         jButton6.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton6.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -341,6 +360,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton7.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton7.setText("A6");
+        jButton7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton7.setFocusPainted(false);
         jButton7.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton7.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -348,6 +368,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton8.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton8.setText("A7");
+        jButton8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton8.setFocusPainted(false);
         jButton8.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton8.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -355,6 +376,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton9.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton9.setText("A8");
+        jButton9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton9.setFocusPainted(false);
         jButton9.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton9.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -362,6 +384,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton10.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton10.setText("A9");
+        jButton10.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton10.setFocusPainted(false);
         jButton10.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton10.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -369,6 +392,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton11.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton11.setText("B0");
+        jButton11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton11.setFocusPainted(false);
         jButton11.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton11.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -376,6 +400,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton12.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton12.setText("B1");
+        jButton12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton12.setFocusPainted(false);
         jButton12.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton12.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -383,6 +408,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton13.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton13.setText("B2");
+        jButton13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton13.setFocusPainted(false);
         jButton13.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton13.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -390,6 +416,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton14.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton14.setText("B3");
+        jButton14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton14.setFocusPainted(false);
         jButton14.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton14.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -397,6 +424,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton15.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton15.setText("B4");
+        jButton15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton15.setFocusPainted(false);
         jButton15.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton15.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -404,6 +432,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton16.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton16.setText("B5");
+        jButton16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton16.setFocusPainted(false);
         jButton16.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton16.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -411,6 +440,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton17.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton17.setText("B6");
+        jButton17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton17.setFocusPainted(false);
         jButton17.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton17.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -418,6 +448,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton18.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton18.setText("B7");
+        jButton18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton18.setFocusPainted(false);
         jButton18.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton18.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -425,6 +456,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton19.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton19.setText("B8");
+        jButton19.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton19.setFocusPainted(false);
         jButton19.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton19.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -432,6 +464,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton20.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton20.setText("B9");
+        jButton20.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton20.setFocusPainted(false);
         jButton20.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton20.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -439,6 +472,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton21.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton21.setText("C0");
+        jButton21.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton21.setFocusPainted(false);
         jButton21.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton21.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -446,6 +480,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton22.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton22.setText("C1");
+        jButton22.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton22.setFocusPainted(false);
         jButton22.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton22.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -453,6 +488,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton23.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton23.setText("C2");
+        jButton23.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton23.setFocusPainted(false);
         jButton23.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton23.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -460,6 +496,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton24.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton24.setText("C3");
+        jButton24.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton24.setFocusPainted(false);
         jButton24.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton24.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -467,6 +504,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton25.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton25.setText("C4");
+        jButton25.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton25.setFocusPainted(false);
         jButton25.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton25.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -474,6 +512,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton26.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton26.setText("C5");
+        jButton26.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton26.setFocusPainted(false);
         jButton26.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton26.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -481,6 +520,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton27.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton27.setText("C6");
+        jButton27.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton27.setFocusPainted(false);
         jButton27.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton27.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -488,6 +528,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton28.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton28.setText("C7");
+        jButton28.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton28.setFocusPainted(false);
         jButton28.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton28.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -495,6 +536,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton29.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton29.setText("C8");
+        jButton29.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton29.setFocusPainted(false);
         jButton29.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton29.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -502,6 +544,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton30.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton30.setText("C9");
+        jButton30.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton30.setFocusPainted(false);
         jButton30.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton30.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -509,6 +552,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton31.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton31.setText("D0");
+        jButton31.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton31.setFocusPainted(false);
         jButton31.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton31.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -516,6 +560,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton32.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton32.setText("D1");
+        jButton32.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton32.setFocusPainted(false);
         jButton32.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton32.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -523,6 +568,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton33.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton33.setText("D2");
+        jButton33.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton33.setFocusPainted(false);
         jButton33.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton33.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -530,6 +576,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton34.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton34.setText("D3");
+        jButton34.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton34.setFocusPainted(false);
         jButton34.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton34.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -537,6 +584,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton35.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton35.setText("D4");
+        jButton35.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton35.setFocusPainted(false);
         jButton35.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton35.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -544,6 +592,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton36.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton36.setText("D5");
+        jButton36.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton36.setFocusPainted(false);
         jButton36.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton36.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -551,6 +600,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton37.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton37.setText("D6");
+        jButton37.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton37.setFocusPainted(false);
         jButton37.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton37.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -558,6 +608,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton38.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton38.setText("D7");
+        jButton38.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton38.setFocusPainted(false);
         jButton38.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton38.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -565,6 +616,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton39.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton39.setText("D8");
+        jButton39.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton39.setFocusPainted(false);
         jButton39.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton39.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -572,6 +624,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton40.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton40.setText("D9");
+        jButton40.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton40.setFocusPainted(false);
         jButton40.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton40.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -579,6 +632,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton41.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton41.setText("E0");
+        jButton41.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton41.setFocusPainted(false);
         jButton41.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton41.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -586,6 +640,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton42.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton42.setText("E1");
+        jButton42.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton42.setFocusPainted(false);
         jButton42.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton42.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -593,6 +648,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton43.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton43.setText("E2");
+        jButton43.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton43.setFocusPainted(false);
         jButton43.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton43.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -600,6 +656,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton44.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton44.setText("E3");
+        jButton44.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton44.setFocusPainted(false);
         jButton44.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton44.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -607,6 +664,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton45.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton45.setText("E4");
+        jButton45.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton45.setFocusPainted(false);
         jButton45.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton45.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -614,6 +672,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton46.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton46.setText("E5");
+        jButton46.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton46.setFocusPainted(false);
         jButton46.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton46.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -626,6 +685,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton47.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton47.setText("E6");
+        jButton47.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton47.setFocusPainted(false);
         jButton47.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton47.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -633,6 +693,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton48.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton48.setText("E7");
+        jButton48.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton48.setFocusPainted(false);
         jButton48.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton48.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -640,6 +701,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton49.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton49.setText("E8");
+        jButton49.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton49.setFocusPainted(false);
         jButton49.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton49.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -647,6 +709,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton50.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton50.setText("E9");
+        jButton50.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton50.setFocusPainted(false);
         jButton50.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton50.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -654,6 +717,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton51.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton51.setText("F0");
+        jButton51.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton51.setFocusPainted(false);
         jButton51.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton51.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -661,6 +725,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton52.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton52.setText("F1");
+        jButton52.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton52.setFocusPainted(false);
         jButton52.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton52.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -668,6 +733,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton53.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton53.setText("F2");
+        jButton53.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton53.setFocusPainted(false);
         jButton53.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton53.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -675,6 +741,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton54.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton54.setText("F3");
+        jButton54.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton54.setFocusPainted(false);
         jButton54.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton54.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -682,6 +749,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton55.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton55.setText("F4");
+        jButton55.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton55.setFocusPainted(false);
         jButton55.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton55.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -689,6 +757,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton56.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton56.setText("F5");
+        jButton56.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton56.setFocusPainted(false);
         jButton56.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton56.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -696,6 +765,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton57.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton57.setText("F6");
+        jButton57.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton57.setFocusPainted(false);
         jButton57.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton57.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -703,6 +773,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton58.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton58.setText("F7");
+        jButton58.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton58.setFocusPainted(false);
         jButton58.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton58.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -710,6 +781,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton59.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton59.setText("F8");
+        jButton59.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton59.setFocusPainted(false);
         jButton59.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton59.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -717,6 +789,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton60.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton60.setText("F9");
+        jButton60.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton60.setFocusPainted(false);
         jButton60.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton60.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -724,6 +797,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton61.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton61.setText("G0");
+        jButton61.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton61.setFocusPainted(false);
         jButton61.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton61.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -731,6 +805,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton62.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton62.setText("G1");
+        jButton62.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton62.setFocusPainted(false);
         jButton62.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton62.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -738,6 +813,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton63.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton63.setText("G2");
+        jButton63.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton63.setFocusPainted(false);
         jButton63.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton63.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -745,6 +821,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton64.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton64.setText("G3");
+        jButton64.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton64.setFocusPainted(false);
         jButton64.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton64.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -752,6 +829,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton65.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton65.setText("G4");
+        jButton65.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton65.setFocusPainted(false);
         jButton65.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton65.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -759,6 +837,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton66.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton66.setText("G5");
+        jButton66.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton66.setFocusPainted(false);
         jButton66.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton66.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -766,6 +845,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton67.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton67.setText("G6");
+        jButton67.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton67.setFocusPainted(false);
         jButton67.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton67.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -773,6 +853,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton68.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton68.setText("G7");
+        jButton68.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton68.setFocusPainted(false);
         jButton68.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton68.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -780,6 +861,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton69.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton69.setText("G8");
+        jButton69.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton69.setFocusPainted(false);
         jButton69.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton69.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -787,6 +869,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton70.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton70.setText("G9");
+        jButton70.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton70.setFocusPainted(false);
         jButton70.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton70.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -794,6 +877,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton71.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton71.setText("H0");
+        jButton71.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton71.setFocusPainted(false);
         jButton71.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton71.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -801,6 +885,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton72.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton72.setText("H1");
+        jButton72.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton72.setFocusPainted(false);
         jButton72.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton72.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -808,6 +893,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton73.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton73.setText("H2");
+        jButton73.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton73.setFocusPainted(false);
         jButton73.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton73.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -815,6 +901,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton74.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton74.setText("H3");
+        jButton74.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton74.setFocusPainted(false);
         jButton74.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton74.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -822,6 +909,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton75.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton75.setText("H4");
+        jButton75.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton75.setFocusPainted(false);
         jButton75.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton75.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -829,6 +917,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton76.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton76.setText("H5");
+        jButton76.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton76.setFocusPainted(false);
         jButton76.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton76.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -836,6 +925,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton77.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton77.setText("H6");
+        jButton77.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton77.setFocusPainted(false);
         jButton77.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton77.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -843,6 +933,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton78.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton78.setText("H7");
+        jButton78.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton78.setFocusPainted(false);
         jButton78.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton78.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -850,6 +941,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton79.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton79.setText("H8");
+        jButton79.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton79.setFocusPainted(false);
         jButton79.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton79.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -857,6 +949,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         jButton80.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton80.setText("H9");
+        jButton80.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton80.setFocusPainted(false);
         jButton80.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton80.setPreferredSize(new java.awt.Dimension(50, 20));
@@ -889,6 +982,10 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton80ActionPerformed
 
+    private void bookButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bookButtonActionPerformed
+
 
     public static void main(String args[]) {
 
@@ -908,6 +1005,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
     private javax.swing.JPanel TopPanel;
     private javax.swing.JLabel availableLabel;
     private javax.swing.JLabel availableSeats;
+    private javax.swing.JButton bookButton;
     private javax.swing.JLabel bookLabel;
     private javax.swing.JLabel booked;
     private javax.swing.JComboBox<String> filterComboBox;
@@ -1002,150 +1100,42 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> titleComboBox;
     // End of variables declaration//GEN-END:variables
 
-public void addMovieSelectionListener(ActionListener listener) {
-    titleComboBox.addActionListener(listener);
-    
- }
-public void addSeatTypeFilterListener(ActionListener listener){
-    filterComboBox.addActionListener(listener);
- }
-public void addShowTimeListener(ActionListener listener){
-    timeComboBox.addActionListener(listener);
- }
-// Array to hold buttons for easy mapping
-private JButton[] seatButtons = new JButton[81];
-
-public void initializeSeatButtons() {
-    seatButtons = new JButton[81];
-    seatButtons[1] = jButton1;
-    seatButtons[2] = jButton2;
-    seatButtons[3] = jButton3;
-    seatButtons[4] = jButton4;
-    seatButtons[5] = jButton5;
-    seatButtons[6] = jButton6;
-    seatButtons[7] = jButton7;
-    seatButtons[8] = jButton8;
-    seatButtons[9] = jButton9;
-    seatButtons[10] = jButton10;
-    seatButtons[11] = jButton11;
-    seatButtons[12] = jButton12;
-    seatButtons[13] = jButton13;
-    seatButtons[14] = jButton14;
-    seatButtons[15] = jButton15;
-    seatButtons[16] = jButton16;
-    seatButtons[17] = jButton17;
-    seatButtons[18] = jButton18;
-    seatButtons[19] = jButton19;
-    seatButtons[20] = jButton20;
-    seatButtons[21] = jButton21;
-    seatButtons[22] = jButton22;
-    seatButtons[23] = jButton23;
-    seatButtons[24] = jButton24;
-    seatButtons[25] = jButton25;
-    seatButtons[26] = jButton26;
-    seatButtons[27] = jButton27;
-    seatButtons[28] = jButton28;
-    seatButtons[29] = jButton29;
-    seatButtons[30] = jButton30;
-    seatButtons[31] = jButton31;
-    seatButtons[32] = jButton32;
-    seatButtons[33] = jButton33;
-    seatButtons[34] = jButton34;
-    seatButtons[35] = jButton35;
-    seatButtons[36] = jButton36;
-    seatButtons[37] = jButton37;
-    seatButtons[38] = jButton38;
-    seatButtons[39] = jButton39;
-    seatButtons[40] = jButton40;
-    seatButtons[41] = jButton41;
-    seatButtons[42] = jButton42;
-    seatButtons[43] = jButton43;
-    seatButtons[44] = jButton44;
-    seatButtons[45] = jButton45;
-    seatButtons[46] = jButton46;
-    seatButtons[47] = jButton47;
-    seatButtons[48] = jButton48;
-    seatButtons[49] = jButton49;
-    seatButtons[50] = jButton50;
-    seatButtons[51] = jButton51;
-    seatButtons[52] = jButton52;
-    seatButtons[53] = jButton53;
-    seatButtons[54] = jButton54;
-    seatButtons[55] = jButton55;
-    seatButtons[56] = jButton56;
-    seatButtons[57] = jButton57;
-    seatButtons[58] = jButton58;
-    seatButtons[59] = jButton59;
-    seatButtons[60] = jButton60;
-    seatButtons[61] = jButton61;
-    seatButtons[62] = jButton62;
-    seatButtons[63] = jButton63;
-    seatButtons[64] = jButton64;
-    seatButtons[65] = jButton65;
-    seatButtons[66] = jButton66;
-    seatButtons[67] = jButton67;
-    seatButtons[68] = jButton68;
-    seatButtons[69] = jButton69;
-    seatButtons[70] = jButton70;
-    seatButtons[71] = jButton71;
-    seatButtons[72] = jButton72;
-    seatButtons[73] = jButton73;
-    seatButtons[74] = jButton74;
-    seatButtons[75] = jButton75;
-    seatButtons[76] = jButton76;
-    seatButtons[77] = jButton77;
-    seatButtons[78] = jButton78;
-    seatButtons[79] = jButton79;
-    seatButtons[80] = jButton80;
-    
-    for (int i = 1; i < seatButtons.length; i++) {
-        if (seatButtons[i] == null) {
-            System.out.println("Button " + i + " is not initialized!");
-        }
-    }   
-}
-public JButton[] getSeatButtons(){
-    return seatButtons;
-}
-//private Map<String, JButton> seatButtonsMap;
-//seatButtonsMap = new HashMap<>();
-//
-//seatButtonsMap.put("A1", JButton1);
-private Map<String, Integer> movieIdMap = new HashMap<>();
-public void setMovieIdMap(Map<String,Integer> movieIdMap){
-    this.movieIdMap = movieIdMap;
- }
-
-public void setMovieList(List<String> movieTitles) {
-    titleComboBox.removeAllItems();
-    for (String title : movieTitles) {
-        titleComboBox.addItem(title);
+    public void addMovieSelectionListener(ActionListener listener) {
+        titleComboBox.addActionListener(listener); 
     }
-}
+    public void addSeatTypeFilterListener(ActionListener listener){
+        filterComboBox.addActionListener(listener);
+    }
+    public void addShowtimeListener(ActionListener listener){
+        timeComboBox.addActionListener(listener);
+    }
 
-public int getSelectedMovie(){
-    String selected = (String) titleComboBox.getSelectedItem();
-    if (selected == null || !movieIdMap.containsKey(selected)) return -1;
-    return movieIdMap.get(selected);
- }
+public JButton[] getSeatButtons() {
+        return new JButton[] {
+            jButton1, jButton2, jButton3, jButton4, jButton5, jButton6, jButton7, jButton8, jButton9, jButton10,
+            jButton11, jButton12, jButton13, jButton14, jButton15, jButton16, jButton17, jButton18, jButton19, jButton20,
+            jButton21, jButton22, jButton23, jButton24, jButton25, jButton26, jButton27, jButton28, jButton29, jButton30,
+            jButton31, jButton32, jButton33, jButton34, jButton35, jButton36, jButton37, jButton38, jButton39, jButton40,
+            jButton41, jButton42, jButton43, jButton44, jButton45, jButton46, jButton47, jButton48, jButton49, jButton50,
+            jButton51, jButton52, jButton53, jButton54, jButton55, jButton56, jButton57, jButton58, jButton59, jButton60,
+            jButton61, jButton62, jButton63, jButton64, jButton65, jButton66, jButton67, jButton68, jButton69, jButton70,
+            jButton71, jButton72, jButton73, jButton74, jButton75, jButton76, jButton77, jButton78, jButton79, jButton80
+        };
+    }
 
-private Map<String, Integer> showtimeIdMap = new HashMap<>();
-public void setShowtimeIdMap(Map<String, Integer> showtimeIdMap){
-    this.showtimeIdMap = showtimeIdMap;
- }
-public int getSelectedShowtime(){
-    String selected = (String) timeComboBox.getSelectedItem();
-    if (selected == null || !showtimeIdMap.containsKey(selected)) return -1;
-    return showtimeIdMap.get(selected);
- }
-public String getSelectedSeatType(){
-    return filterComboBox.getSelectedItem() != null? filterComboBox.getSelectedItem().toString() : "";
- }
-public void updateAvailableSeat(int count){
-    availableSeats.setText("Available Seats: " + count);
- }
+    public String getSelectedmovie(){
+       return titleComboBox.getSelectedItem() != null ? titleComboBox.getSelectedItem().toString(): "";
+    }
+    public String getSelectedShowtime(){
+       return timeComboBox.getSelectedItem() != null? timeComboBox.getSelectedItem().toString(): "";
+    }
+    public String getSelectedSeatType(){
+       return filterComboBox.getSelectedItem() != null? filterComboBox.getSelectedItem().toString() : "";
+    }
+    public void updateAvailableSeat(int count){
+       availableSeats.setText("Available Seats: " + count);
+    }
     public void showMessage(String message) {
-    javax.swing.JOptionPane.showMessageDialog(this, message);
-  }
-
+       javax.swing.JOptionPane.showMessageDialog(this, message);
+    }
 }

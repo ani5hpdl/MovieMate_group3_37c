@@ -8,16 +8,16 @@ package Model;
 public class Seat {
     private String seatId;
     private String seatNumber;
-    private int movieId;
-    private int showtimeId;
+    private String movieTitle;
+    private String showtime;
     private String seatType;
     private String status;
     
-    public Seat(String seatId, String seatNumber, int movieId, int showtimeId, String seatType, String status){
+    public Seat(String seatId, String seatNumber, String seatType, String status, String movieTitle, String showtime){
         this.seatId = seatId;
         this.seatNumber = seatNumber;
-        this.movieId = movieId;
-        this.showtimeId = showtimeId;
+        this.movieTitle = movieTitle;
+        this.showtime = showtime;
         this.seatType = seatType;
         this.status = status;
     }
@@ -36,18 +36,19 @@ public class Seat {
         this.seatNumber = seatNumber;
     }
     
-    public int getMovieId() {
-        return movieId;
+public String getMovieTitle(){
+        return movieTitle;
     }
-    public void setMovieId(int movieId) {
-        this.movieId = movieId;
+    public void setMovieTitle(String movieTitle){
+        this.movieTitle = movieTitle;
+        
     }
     
-    public int getShowtimeId(){
-        return showtimeId;
+public String getShowtime(){
+        return showtime;
     }
-    public void setShowtimeId(int showtimeId){
-        this.showtimeId = showtimeId;
+    public void setShowtime(String showtime){
+        this.showtime = showtime;
     }
     
     public String getSeatType(){
