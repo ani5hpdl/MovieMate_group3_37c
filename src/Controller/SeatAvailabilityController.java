@@ -202,21 +202,12 @@ public class SeatAvailabilityController {
 
             if (seat != null) {
                 if (seat.isAvailable()) {
-                    System.out.println("Calling DAO to update seat: " + seatNum);
-                    boolean success = seatDao.updateSeatBookingStatus(selectedmovie, selectedShowtime, seatNum, "Booked");
-                    System.out.println("DAO update result: " + success);
-                    if (success) {
-                        selectedButton.setEnabled(false);
-                        selectedButton.setBackground(Color.RED);
-                        selectedButton.setForeground(Color.WHITE);
-                        seatView.showMessage("Seat " + seatNum + " successfully booked!");
-
-                        int availableSeats = seatDao.countAllAvailableSeats(selectedmovie, selectedShowtime);
-                        seatView.updateAvailableSeat(availableSeats);
-                    }
-                } else {
-                    seatView.showMessage("Seat " + seatNum + " is already booked.");
-                }
+                    String seatDetails = "Seat Number: " + seat.getSeatNum() +
+                                         "\nSeat Type: " + seat.getSeatType() + 
+                                         "\nSeat Status: " + seat.getStatus();
+                    
+                    seatView.showMessage(seatDetails);
+                } 
             } else {
                 seatView.showMessage("Seat not Found");
             }
