@@ -1,7 +1,7 @@
 package Doa;
 
 import Model.Seat;
-import database.MySqlConnection;
+import Database.MySqlConnection;
 
 import java.sql.*;
 import java.util.ArrayList;

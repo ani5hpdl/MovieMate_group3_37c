@@ -2,8 +2,12 @@
 package view;
 
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 
 /**
  *
@@ -13,7 +17,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
     public CheckSeatAvailability() {
         initComponents();
-        
+       
     }
 
 
@@ -39,7 +43,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
         regular = new javax.swing.JLabel();
         booked = new javax.swing.JLabel();
         premium = new javax.swing.JLabel();
-        bookButton = new javax.swing.JButton();
+        confirmButton = new javax.swing.JButton();
         PanelWrapper = new javax.swing.JPanel();
         CenterPanel = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -141,6 +145,11 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         titleComboBox.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         titleComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Deadpool 3", "Avatar: The Way Of Water", "House Of The Dragon", "Avengers" }));
+        titleComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                titleComboBoxActionPerformed(evt);
+            }
+        });
 
         showTitle.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         showTitle.setText("ShowTime: ");
@@ -238,12 +247,12 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
         premium.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         premium.setText("Premium");
 
-        bookButton.setBackground(new java.awt.Color(0, 51, 102));
-        bookButton.setForeground(new java.awt.Color(173, 216, 153));
-        bookButton.setText("Book");
-        bookButton.addActionListener(new java.awt.event.ActionListener() {
+        confirmButton.setBackground(new java.awt.Color(0, 51, 102));
+        confirmButton.setForeground(new java.awt.Color(173, 216, 153));
+        confirmButton.setText("Confirm");
+        confirmButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bookButtonActionPerformed(evt);
+                confirmButtonActionPerformed(evt);
             }
         });
 
@@ -273,7 +282,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
                 .addGap(73, 73, 73)
                 .addComponent(availableSeats)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
-                .addComponent(bookButton)
+                .addComponent(confirmButton)
                 .addGap(50, 50, 50))
         );
         BottomPanelLayout.setVerticalGroup(
@@ -291,7 +300,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
                     .addComponent(filterSeats)
                     .addComponent(filterComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(availableSeats)
-                    .addComponent(bookButton))
+                    .addComponent(confirmButton))
                 .addGap(23, 23, 23))
         );
 
@@ -982,9 +991,13 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton80ActionPerformed
 
-    private void bookButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookButtonActionPerformed
+    private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bookButtonActionPerformed
+    }//GEN-LAST:event_confirmButtonActionPerformed
+
+    private void titleComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_titleComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_titleComboBoxActionPerformed
 
 
     public static void main(String args[]) {
@@ -1005,9 +1018,9 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
     private javax.swing.JPanel TopPanel;
     private javax.swing.JLabel availableLabel;
     private javax.swing.JLabel availableSeats;
-    private javax.swing.JButton bookButton;
     private javax.swing.JLabel bookLabel;
     private javax.swing.JLabel booked;
+    private javax.swing.JButton confirmButton;
     private javax.swing.JComboBox<String> filterComboBox;
     private javax.swing.JLabel filterSeats;
     private javax.swing.JButton jButton1;
@@ -1108,6 +1121,9 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
     }
     public void addShowtimeListener(ActionListener listener){
         timeComboBox.addActionListener(listener);
+    }
+    public void addConfirmButtonListener(ActionListener listener){
+        confirmButton.addActionListener(listener);
     }
 
 public JButton[] getSeatButtons() {

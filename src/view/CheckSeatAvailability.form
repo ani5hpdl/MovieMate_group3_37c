@@ -144,6 +144,9 @@
                   </StringArray>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="titleComboBoxActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
@@ -236,7 +239,7 @@
                       <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                       <Component id="availableSeats" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="60" max="32767" attributes="0"/>
-                      <Component id="bookButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="confirmButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -257,7 +260,7 @@
                           <Component id="filterSeats" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="filterComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="availableSeats" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="bookButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="confirmButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   </Group>
@@ -371,7 +374,7 @@
                 <Property name="text" type="java.lang.String" value="Premium"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="bookButton">
+            <Component class="javax.swing.JButton" name="confirmButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="66" green="33" red="0" type="rgb"/>
@@ -379,10 +382,10 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="d8" red="ad" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Book"/>
+                <Property name="text" type="java.lang.String" value="Confirm"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bookButtonActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="confirmButtonActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

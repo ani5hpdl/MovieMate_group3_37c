@@ -4,7 +4,7 @@
  */
 package moviemate;
 import Controller.SeatAvailabilityController;
-import database.*;
+import Database.*;
 import view.CheckSeatAvailability;
 /**
  *
@@ -12,7 +12,7 @@ import view.CheckSeatAvailability;
  */
 public class MovieMate {
     public static void main(String[] args) {
-//        Database db = (Database) new MySqlConnection();
+//        Database db = new MySqlConnection();
 //        if(db.openConnection() != null){
 //            System.out.println("Database connected Sucessfully");
 //        }else{

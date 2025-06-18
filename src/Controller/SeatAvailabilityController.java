@@ -17,6 +17,11 @@ public class SeatAvailabilityController {
     private Map<String, JButton> seatButtonMap = new HashMap<>();
     private String selectedmovie;
     private String selectedShowtime ;
+    private String selectedSeats;
+    
+    private List<String> selectedSeatNumbers = new ArrayList<>();
+    private final int SEAT_SELECTION_LIMIT = 5;
+
 
     public SeatAvailabilityController(CheckSeatAvailability seatView) {
         this.seatView = seatView;
@@ -29,7 +34,7 @@ public class SeatAvailabilityController {
         seatView.addSeatTypeFilterListener(new FilterSeatTypeListener());
         seatView.addMovieSelectionListener(new MovieSelectionListener());
         seatView.addShowtimeListener(new ShowtimeSelectionListener());
-
+        seatView.addConfirmButtonListener (new ConfirmButtonListener());
         
     }
     
@@ -188,10 +193,11 @@ public class SeatAvailabilityController {
     class SeatButtonSelectionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (selectedmovie.isEmpty() || selectedShowtime.isEmpty()){
-                seatView.showMessage("Please select a movie and showtime first.");
-                return;
-            }
+            if (selectedmovie == null || selectedmovie.isEmpty() || selectedShowtime == null || selectedShowtime.isEmpty()) {
+             seatView.showMessage("Please select a movie and showtime first.");
+             return;
+            }      
+
             
             JButton selectedButton = (JButton) e.getSource();
             String seatNum = selectedButton.getText();
@@ -200,17 +206,61 @@ public class SeatAvailabilityController {
 
             Seat seat = seatDao.findSeatBySeatNum(selectedmovie, selectedShowtime, seatNum);
 
-            if (seat != null) {
-                if (seat.isAvailable()) {
-                    String seatDetails = "Seat Number: " + seat.getSeatNum() +
-                                         "\nSeat Type: " + seat.getSeatType() + 
-                                         "\nSeat Status: " + seat.getStatus();
-                    
-                    seatView.showMessage(seatDetails);
-                } 
-            } else {
-                seatView.showMessage("Seat not Found");
-            }
+//            if (seat != null) {
+//                if (seat.isAvailable()) {
+//                    String seatDetails = "Seat Number: " + seat.getSeatNum() +
+//                                         "\nSeat Type: " + seat.getSeatType() + 
+//                                         "\nSeat Status: " + seat.getStatus();
+//                    
+//                    seatView.showMessage(seatDetails);
+//                } 
+//            } else {
+//                seatView.showMessage("Seat not Found");
+//            }
+//        }
+//    }
+//}    
+           if (selectedSeatNumbers.contains(seatNum)){
+               selectedSeatNumbers.remove(seatNum);
+               selectedButton.setBackground(Color.LIGHT_GRAY);
+           } else {
+               if (selectedSeatNumbers.size()>= SEAT_SELECTION_LIMIT) {
+                   seatView.showMessage("You can select up to " + SEAT_SELECTION_LIMIT + "seats.");
+                   return;
+                   
+               }
+               selectedSeatNumbers.add(seatNum);
+               selectedButton.setBackground(Color.GREEN);
+           } 
+           System.out.println("Selected seats: "+ selectedSeatNumbers);
         }
     }
+
+
+class ConfirmButtonListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (selectedSeatNumbers.isEmpty()) {
+                seatView.showMessage("No seats selected to confirm.");
+                return;
+            }
+            
+            for (String seatNum : selectedSeatNumbers) {
+                boolean success = seatDao.updateSeatBookingStatus(selectedmovie, selectedShowtime, seatNum, "Booked");
+                if(success) {
+                    JButton btn = seatButtonMap.get(seatNum);
+                    if (btn != null){
+                        btn.setEnabled(false);
+                        btn.setBackground(Color.RED);
+                    }
+                }
+            }
+            seatView.showMessage("Seats successfully booked: " + selectedSeatNumbers);
+            selectedSeatNumbers.clear();
+            loadSeatMap();
+        }        
+   }
 }
+
+
+    
