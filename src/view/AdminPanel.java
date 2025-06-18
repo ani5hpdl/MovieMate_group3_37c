@@ -38,6 +38,7 @@ public class AdminPanel extends javax.swing.JFrame {
         Dashboard = new javax.swing.JButton();
         LogOut = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        Dashboard1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -74,6 +75,13 @@ public class AdminPanel extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/MOVIEMAT.png"))); // NOI18N
 
+        Dashboard1.setBackground(new java.awt.Color(34, 27, 57));
+        Dashboard1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Dashboard1.setForeground(new java.awt.Color(255, 255, 255));
+        Dashboard1.setText("User");
+        Dashboard1.setFocusPainted(false);
+        Dashboard1.setOpaque(true);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -81,16 +89,19 @@ public class AdminPanel extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(jLabel1))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(68, 68, 68)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AdminPanel)
                             .addComponent(Dashboard)
-                            .addComponent(AdminPanel))))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(Dashboard1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -102,6 +113,8 @@ public class AdminPanel extends javax.swing.JFrame {
                 .addComponent(AdminPanel)
                 .addGap(18, 18, 18)
                 .addComponent(Dashboard)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Dashboard1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(LogOut)
                 .addGap(34, 34, 34))
@@ -277,6 +290,7 @@ public class AdminPanel extends javax.swing.JFrame {
     private javax.swing.JButton AddMovie;
     private javax.swing.JLabel AdminPanel;
     private javax.swing.JButton Dashboard;
+    private javax.swing.JButton Dashboard1;
     private javax.swing.JButton LogOut;
     private javax.swing.JPanel MoviePanelReal;
     private javax.swing.JLabel jLabel1;

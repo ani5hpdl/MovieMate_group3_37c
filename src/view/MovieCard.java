@@ -4,6 +4,7 @@
  */
 package view;
 
+import Controller.AdminPanelController;
 import Controller.EditMovieController;
 import Model.MovieData;
 import java.awt.Image;
@@ -66,6 +67,11 @@ public class MovieCard extends javax.swing.JPanel {
         jButton2.setContentAreaFilled(false);
         jButton2.setFocusPainted(false);
         jButton2.setFocusable(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         ID.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -111,13 +117,32 @@ public class MovieCard extends javax.swing.JPanel {
         // TODO add your handling code here:
             AdminPannel3 editpanel = new AdminPannel3();
             EditMovieController controller = new EditMovieController(editpanel);
-             int id = Integer.parseInt(ID.getText()); // ID label stores movie ID
+             int id = Integer.parseInt(ID.getText()); 
             MovieData movie = new MovieData(id, MovieName.getText(), "", "", 0, Genre.getText(), Language.getText(), 0, "", null, "", "", "");
-            controller.setMovieData(movie);  // 💡 Set it here
+            controller.setMovieData(movie);  
             controller.loadEditMovie();
             controller.open();
             
     }//GEN-LAST:event_EditActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        AdminPannel3 editpanel = new AdminPannel3();
+        EditMovieController controller = new EditMovieController(editpanel);
+        int id = Integer.parseInt(ID.getText()); 
+        MovieData movie = new MovieData(id, MovieName.getText(), "", "", 0, Genre.getText(), Language.getText(), 0, "", null, "", "", "");
+        controller.setMovieData(movie);  
+        controller.deleteMovie();
+        
+    // Close the current window
+        java.awt.Window window = javax.swing.SwingUtilities.getWindowAncestor((java.awt.Component) evt.getSource());
+        if (window != null) {
+            window.dispose();
+        }        
+        AdminPanel admin = new AdminPanel();
+        AdminPanelController admincontroller = new AdminPanelController(admin);
+        admincontroller.open();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

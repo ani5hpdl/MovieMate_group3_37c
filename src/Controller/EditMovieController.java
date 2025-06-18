@@ -122,7 +122,7 @@ public class EditMovieController {
         }
         
     }
-    
+
     
     public void loadEditMovie(){
         this.setMovieData(moviedata);
@@ -143,7 +143,15 @@ public class EditMovieController {
             editmovie.getSynopsisField().setText(data.getSynopsis());
         }
     }
-    
+    public void deleteMovie(){        
+        boolean check = movie.deleteMovieById(moviedata);
+        if(check){
+            JOptionPane.showMessageDialog(null,"Movie Deleted Sucessfully");
+        }else{
+            JOptionPane.showMessageDialog(null,"Error While Deleting Movie!!");
+        }
+        
+    }
     private void openFileChooser1() {
         JFileChooser jFileChooser = new JFileChooser();
         jFileChooser.setDialogTitle("Select the image");
