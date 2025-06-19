@@ -84,11 +84,11 @@ public class UpdateProfile extends javax.swing.JFrame {
 
         City.setText(" City");
         City.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel1.add(City, new org.netbeans.lib.awtextra.AbsoluteConstraints(329, 518, 154, -1));
+        jPanel1.add(City, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 510, 154, -1));
 
         Country.setText(" Country");
         Country.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel1.add(Country, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 518, 154, -1));
+        jPanel1.add(Country, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 510, 154, -1));
 
         Update.setBackground(java.awt.SystemColor.activeCaptionBorder);
         Update.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -100,7 +100,7 @@ public class UpdateProfile extends javax.swing.JFrame {
         bio.setBorder(new javax.swing.border.MatteBorder(null));
         jScrollPane1.setViewportView(bio);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 329, 394, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 394, -1));
 
 // <<<<<<< HEAD
 //         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -201,7 +201,7 @@ public class UpdateProfile extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Country:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 478, 78, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 78, 20));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setText("City:");
@@ -217,7 +217,7 @@ public class UpdateProfile extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel9.setText("Edit Your Profile:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 234, 63));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 234, 40));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel10.setText("Date of birth:");
