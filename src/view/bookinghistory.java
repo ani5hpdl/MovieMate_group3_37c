@@ -10,9 +10,7 @@ package view;
  */
 public class bookinghistory extends javax.swing.JFrame {
 
-    /**
-     * Creates new form bookinghistory
-     */
+ 
     public bookinghistory() {
         initComponents();
     }
