@@ -100,7 +100,7 @@ public class UpdateProfile extends javax.swing.JFrame {
         bio.setBorder(new javax.swing.border.MatteBorder(null));
         jScrollPane1.setViewportView(bio);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 329, 394, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 394, -1));
 
         workplace.setText(" Workplace");
         workplace.setBorder(new javax.swing.border.MatteBorder(null));
