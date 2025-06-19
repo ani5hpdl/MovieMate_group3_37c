@@ -14,10 +14,12 @@ import Controller.AdminPanelController;
 import Controller.EditMovieController;
 import Controller.ProfileController;
 import Controller.ResetPasswordController;
+import Controller.UserMngmtController;
 import Database.*;
 import view.AdminPanel;
 import view.AdminPannel2;
 import view.AdminPannel3;
+import view.AdminUserr;
 import view.MainProfile;
 import view.ResetPassword;
 import view.UpdateProfile;
@@ -58,13 +60,17 @@ public class MovieMate {
 //        ProfileController controller = new ProfileController(profile);
 //        controller.open1();
 //
-        AdminPanel admin = new AdminPanel();
-        AdminPanelController controller = new AdminPanelController(admin);
-        controller.open();
+//        AdminPanel admin = new AdminPanel();
+//        AdminPanelController controller = new AdminPanelController(admin);
+//        controller.open();
 
 //        AdminPannel3 edit = new AdminPannel3();
 //        EditMovieController controller = new EditMovieController(edit);
 //        controller.open();
+
+        AdminUserr user = new AdminUserr();
+        UserMngmtController controller = new UserMngmtController(user);
+        controller.open();
 
     }
             
