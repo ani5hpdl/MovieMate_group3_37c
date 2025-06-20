@@ -6,7 +6,14 @@ package Controller;
 
 import Doa.UsermngmtDao;
 import Model.UserMngmt;
+import java.awt.event.MouseAdapter;
 import java.util.List;
+
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+
+import java.awt.event.MouseEvent;
+
 import view.AdminUserr;
 
 /**
@@ -45,12 +52,39 @@ public final class UserMngmtController {
             data[i][4]=u.getEmail();
             data[i][5]=u.getAddress();
             data[i][6]=u.getContactNumber();
-            data[i][7]=i;
+            data[i][7]="Delete";
         }
         
         view.setUserTableData(data);
-        
+        addDeleteAction(users);
     }
+
+
+    private void addDeleteAction(List<UserMngmt> users) {
+        
+    JTable table = view.getUserTable(); // Get table from view
+
+    table.addMouseListener(new MouseAdapter() {
+        public void mouseClicked(MouseEvent evt) {
+            int row = table.rowAtPoint(evt.getPoint());
+            int col = table.columnAtPoint(evt.getPoint());
+
+            if (col == 7) { // Action column (Delete)
+                int confirm = JOptionPane.showConfirmDialog(null,
+                        "Do you want to delete this user?",
+                        "Confirm Delete", JOptionPane.OK_CANCEL_OPTION);
+
+                if (confirm == JOptionPane.OK_OPTION) {
+                    UserMngmt userToDelete = users.get(row);
+                    userDao.deleteUser(userToDelete.getId()); // Make sure this method exists
+                    loadUsersTotable(); // Refresh table
+                }
+            }
+        }
+    });
+}
+
+    
     
     
 }

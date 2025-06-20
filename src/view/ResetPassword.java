@@ -28,7 +28,7 @@ public class ResetPassword extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        logoFP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Logo.png"))); // NOI18N
+        logoFP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/MOVIEMAT.png"))); // NOI18N
         getContentPane().add(logoFP, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
 
         forgotPassword.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
