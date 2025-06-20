@@ -1,3 +1,36 @@
+<!-- <<<<<<< HEAD -->
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="MovieMate" default="default" basedir=".">
+    <description>Builds, tests, and runs the project MovieMate.</description>
+
+    <!-- Import default NetBeans build script -->
+    <import file="nbproject/build-impl.xml"/>
+
+    <!-- === JavaFX Library Path === -->
+    <path id="javafx.classpath">
+        <fileset dir="C:\Users\anish\Downloads\javafx-sdk-24.0.1\lib">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <!-- === Add JavaFX libs to compilation === -->
+    <target name="-post-compile">
+        <copy todir="${build.classes.dir}">
+            <fileset dir="src"/>
+        </copy>
+    </target>
+
+    <!-- === Custom run target using JavaFX === -->
+    <target name="run" depends="jar">
+        <java jar="${dist.jar}" fork="true">
+            <jvmarg value="--module-path"/>
+            <jvmarg value="C:\Users\anish\Downloads\javafx-sdk-24.0.1\lib"/>
+            <jvmarg value="--add-modules"/>
+            <jvmarg value="javafx.controls,javafx.fxml"/>
+        </java>
+    </target>
+</project>
+<!-- =======
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- You may freely edit this file. See commented blocks below for -->
 <!-- some examples of how to customize the build. -->
@@ -71,3 +104,4 @@
 
     -->
 </project>
+>>>>>>> d9a840b6d3aac5c78bb975c18791445a66b8239a -->
