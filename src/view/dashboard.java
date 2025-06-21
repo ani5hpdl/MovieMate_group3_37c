@@ -4,6 +4,9 @@
  */
 package view;
 
+import Controller.LoginController;
+import javax.swing.JPanel;
+
 /**
  *
  * @author it solution
@@ -28,427 +31,259 @@ public class dashboard extends javax.swing.JFrame {
 
         sidePanel = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
-        homeLogo = new javax.swing.JLabel();
-        profileLogo = new javax.swing.JLabel();
-        transactionLogo = new javax.swing.JLabel();
-        homeButton = new javax.swing.JButton();
-        profileButton = new javax.swing.JButton();
-        transactionButton = new javax.swing.JButton();
-        historyButton = new javax.swing.JButton();
-        logoutButton = new javax.swing.JButton();
-        historyLogo = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        Profile = new javax.swing.JButton();
+        History = new javax.swing.JButton();
+        LogOut = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
+        DashboardPanel = new javax.swing.JPanel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jPanel2 = new javax.swing.JPanel();
+        ComingPanel = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        movie1 = new javax.swing.JPanel();
-        movie2 = new javax.swing.JPanel();
-        movie3 = new javax.swing.JPanel();
-        poster1 = new javax.swing.JLabel();
-        movie4 = new javax.swing.JPanel();
-        movie5 = new javax.swing.JPanel();
-        movie6 = new javax.swing.JPanel();
-        searchButton = new javax.swing.JButton();
-        searchlogoButton = new javax.swing.JButton();
-        meButton = new javax.swing.JButton();
-        Nowshowing = new javax.swing.JTextField();
-        upcoming = new javax.swing.JTextField();
-        scrollButton = new javax.swing.JButton();
-        scrollButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
+        TodayDate = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(245, 246, 250));
         setResizable(false);
 
-        sidePanel.setBackground(new java.awt.Color(0, 0, 51));
+        sidePanel.setBackground(new java.awt.Color(26, 29, 58));
         sidePanel.setDoubleBuffered(false);
         sidePanel.setEnabled(false);
         sidePanel.setFocusable(false);
 
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assets/Group 37071 (1).png"))); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/MOVIEMAT.png"))); // NOI18N
 
-        homeLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assets/Frame 37266 (1).png"))); // NOI18N
+        jButton1.setBackground(new java.awt.Color(26, 29, 58));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Home");
+        jButton1.setFocusPainted(false);
 
-        profileLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Frame 37267 (1).png"))); // NOI18N
-        profileLogo.setText("jLabel3");
+        Profile.setBackground(new java.awt.Color(26, 29, 58));
+        Profile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Profile.setForeground(new java.awt.Color(255, 255, 255));
+        Profile.setText("Profile");
+        Profile.setFocusPainted(false);
 
-        transactionLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Frame 37268 (1).png"))); // NOI18N
-        transactionLogo.setText("jLabel4");
+        History.setBackground(new java.awt.Color(26, 29, 58));
+        History.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        History.setForeground(new java.awt.Color(255, 255, 255));
+        History.setText("History");
+        History.setFocusPainted(false);
 
-        homeButton.setBackground(new java.awt.Color(0, 0, 51));
-        homeButton.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
-        homeButton.setForeground(new java.awt.Color(242, 242, 242));
-        homeButton.setText("Home");
-        homeButton.setBorderPainted(false);
-        homeButton.setContentAreaFilled(false);
-        homeButton.setDefaultCapable(false);
-        homeButton.setEnabled(false);
-        homeButton.setFocusPainted(false);
-        homeButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        homeButton.addActionListener(new java.awt.event.ActionListener() {
+        LogOut.setBackground(new java.awt.Color(26, 29, 58));
+        LogOut.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        LogOut.setForeground(new java.awt.Color(255, 255, 255));
+        LogOut.setText("LogOut");
+        LogOut.setFocusPainted(false);
+        LogOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                homeButtonActionPerformed(evt);
+                LogOutActionPerformed(evt);
             }
         });
-
-        profileButton.setBackground(new java.awt.Color(0, 0, 51));
-        profileButton.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
-        profileButton.setForeground(new java.awt.Color(242, 242, 242));
-        profileButton.setText("Profile");
-        profileButton.setBorderPainted(false);
-        profileButton.setContentAreaFilled(false);
-        profileButton.setDefaultCapable(false);
-        profileButton.setEnabled(false);
-        profileButton.setFocusPainted(false);
-        profileButton.setFocusable(false);
-        profileButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-
-        transactionButton.setBackground(new java.awt.Color(0, 0, 51));
-        transactionButton.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
-        transactionButton.setForeground(new java.awt.Color(242, 242, 242));
-        transactionButton.setText("Transaction");
-        transactionButton.setBorderPainted(false);
-        transactionButton.setContentAreaFilled(false);
-        transactionButton.setDefaultCapable(false);
-        transactionButton.setEnabled(false);
-        transactionButton.setFocusPainted(false);
-        transactionButton.setFocusable(false);
-        transactionButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                transactionButtonActionPerformed(evt);
-            }
-        });
-
-        historyButton.setBackground(new java.awt.Color(0, 0, 51));
-        historyButton.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
-        historyButton.setForeground(new java.awt.Color(242, 242, 242));
-        historyButton.setText("History");
-        historyButton.setBorderPainted(false);
-        historyButton.setContentAreaFilled(false);
-        historyButton.setDefaultCapable(false);
-        historyButton.setEnabled(false);
-        historyButton.setFocusPainted(false);
-        historyButton.setFocusable(false);
-        historyButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-
-        logoutButton.setBackground(new java.awt.Color(0, 0, 51));
-        logoutButton.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
-        logoutButton.setForeground(new java.awt.Color(242, 242, 242));
-        logoutButton.setText("Log Out");
-        logoutButton.setBorderPainted(false);
-        logoutButton.setContentAreaFilled(false);
-        logoutButton.setDefaultCapable(false);
-        logoutButton.setEnabled(false);
-        logoutButton.setFocusPainted(false);
-        logoutButton.setFocusable(false);
-
-        historyLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/history.png"))); // NOI18N
-        historyLogo.setText("jLabel6");
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Frame 37266 (1).png"))); // NOI18N
-        jLabel1.setText("jLabel1");
 
         javax.swing.GroupLayout sidePanelLayout = new javax.swing.GroupLayout(sidePanel);
         sidePanel.setLayout(sidePanelLayout);
         sidePanelLayout.setHorizontalGroup(
             sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sidePanelLayout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, sidePanelLayout.createSequentialGroup()
-                        .addComponent(historyLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(historyButton))
-                    .addGroup(sidePanelLayout.createSequentialGroup()
-                        .addComponent(transactionLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(transactionButton)
-                        .addGap(58, 58, 58))))
-            .addGroup(sidePanelLayout.createSequentialGroup()
                 .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(sidePanelLayout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(sidePanelLayout.createSequentialGroup()
-                                .addComponent(profileLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(profileButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(sidePanelLayout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(sidePanelLayout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(homeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(homeLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(sidePanelLayout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(32, Short.MAX_VALUE))
-            .addGroup(sidePanelLayout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(logoutButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(sidePanelLayout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jButton1)
+                            .addComponent(Profile)
+                            .addComponent(History)))
+                    .addGroup(sidePanelLayout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addComponent(LogOut)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         sidePanelLayout.setVerticalGroup(
             sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sidePanelLayout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(logo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(homeLogo)
-                    .addComponent(homeButton)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(profileButton)
-                    .addComponent(profileLogo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(transactionLogo, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addComponent(transactionButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(historyButton)
-                    .addComponent(historyLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(383, 383, 383)
-                .addComponent(logoutButton)
-                .addGap(108, 108, 108))
+                .addGap(26, 26, 26)
+                .addComponent(jButton1)
+                .addGap(12, 12, 12)
+                .addComponent(Profile)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(History)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LogOut)
+                .addGap(42, 42, 42))
         );
 
-        movie1.setBackground(new java.awt.Color(0, 0, 51));
-
-        javax.swing.GroupLayout movie1Layout = new javax.swing.GroupLayout(movie1);
-        movie1.setLayout(movie1Layout);
-        movie1Layout.setHorizontalGroup(
-            movie1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 205, Short.MAX_VALUE)
-        );
-        movie1Layout.setVerticalGroup(
-            movie1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 311, Short.MAX_VALUE)
-        );
-
-        movie2.setBackground(new java.awt.Color(0, 0, 51));
-
-        javax.swing.GroupLayout movie2Layout = new javax.swing.GroupLayout(movie2);
-        movie2.setLayout(movie2Layout);
-        movie2Layout.setHorizontalGroup(
-            movie2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 205, Short.MAX_VALUE)
-        );
-        movie2Layout.setVerticalGroup(
-            movie2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 311, Short.MAX_VALUE)
-        );
-
-        movie3.setBackground(new java.awt.Color(0, 0, 51));
-
-        poster1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assets/poster1.png"))); // NOI18N
-
-        javax.swing.GroupLayout movie3Layout = new javax.swing.GroupLayout(movie3);
-        movie3.setLayout(movie3Layout);
-        movie3Layout.setHorizontalGroup(
-            movie3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(movie3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(poster1, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
-                .addGap(14, 14, 14))
-        );
-        movie3Layout.setVerticalGroup(
-            movie3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(movie3Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(poster1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        movie4.setBackground(new java.awt.Color(0, 0, 51));
-
-        javax.swing.GroupLayout movie4Layout = new javax.swing.GroupLayout(movie4);
-        movie4.setLayout(movie4Layout);
-        movie4Layout.setHorizontalGroup(
-            movie4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 231, Short.MAX_VALUE)
-        );
-        movie4Layout.setVerticalGroup(
-            movie4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 319, Short.MAX_VALUE)
-        );
-
-        movie5.setBackground(new java.awt.Color(0, 0, 51));
-
-        javax.swing.GroupLayout movie5Layout = new javax.swing.GroupLayout(movie5);
-        movie5.setLayout(movie5Layout);
-        movie5Layout.setHorizontalGroup(
-            movie5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 212, Short.MAX_VALUE)
-        );
-        movie5Layout.setVerticalGroup(
-            movie5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 319, Short.MAX_VALUE)
-        );
-
-        movie6.setBackground(new java.awt.Color(0, 0, 51));
-
-        javax.swing.GroupLayout movie6Layout = new javax.swing.GroupLayout(movie6);
-        movie6.setLayout(movie6Layout);
-        movie6Layout.setHorizontalGroup(
-            movie6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 205, Short.MAX_VALUE)
-        );
-        movie6Layout.setVerticalGroup(
-            movie6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 319, Short.MAX_VALUE)
-        );
-
-        searchButton.setBackground(new java.awt.Color(0, 0, 51));
-        searchButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        searchButton.setForeground(new java.awt.Color(242, 242, 242));
-        searchButton.setText("Search");
-
-        searchlogoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assets/search.jpg"))); // NOI18N
-        searchlogoButton.setBorderPainted(false);
-        searchlogoButton.setContentAreaFilled(false);
-        searchlogoButton.setDefaultCapable(false);
-        searchlogoButton.setFocusPainted(false);
-        searchlogoButton.setFocusable(false);
-        searchlogoButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchlogoButtonActionPerformed(evt);
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane1.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jScrollPane1AncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
-        meButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assets/people.png"))); // NOI18N
-        meButton.setBorderPainted(false);
-        meButton.setContentAreaFilled(false);
-        meButton.setDefaultCapable(false);
-        meButton.setFocusPainted(false);
-        meButton.setFocusable(false);
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
 
-        Nowshowing.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        Nowshowing.setText("Now Showing");
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(DashboardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 775, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DashboardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
-        upcoming.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
-        upcoming.setText("Coming Soon");
+        jScrollPane1.setViewportView(jPanel1);
 
-        scrollButton.setText("jButton11");
-        scrollButton.setBorderPainted(false);
-        scrollButton.setContentAreaFilled(false);
-        scrollButton.setFocusPainted(false);
-        scrollButton.setFocusable(false);
+        jScrollPane2.setBorder(null);
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        scrollButton1.setText("jButton9");
-        scrollButton1.setBorderPainted(false);
-        scrollButton1.setContentAreaFilled(false);
-        scrollButton1.setFocusPainted(false);
-        scrollButton1.setFocusable(false);
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ComingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(758, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ComingPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/people.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
+        jScrollPane2.setViewportView(jPanel2);
 
-        jLabel3.setText("jLabel3");
+        jTextField1.setText("Search");
+        jTextField1.setDropMode(javax.swing.DropMode.INSERT);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setText("Now Showing:");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setText("Coming Soon:");
+
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+
+        jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
+
+        jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setText("Today Date:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(sidePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(movie4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(upcoming, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(movie3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Nowshowing, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(movie5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(movie6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(scrollButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(movie2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(movie1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(scrollButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(37, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(201, 201, 201)
-                        .addComponent(searchlogoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator4)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TodayDate, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(meButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47))))
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addComponent(jSeparator5)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jSeparator1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(sidePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(searchlogoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(meButton, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(searchButton)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Nowshowing, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(4, 4, 4)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(movie2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(movie1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(movie3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(282, 282, 282)
-                                .addComponent(scrollButton)))
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(upcoming, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(movie5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(movie4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(movie6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(55, 55, 55))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(scrollButton1)
-                                .addGap(89, 89, 89))))))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(TodayDate, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
+            .addComponent(sidePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void transactionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transactionButtonActionPerformed
+    private void jScrollPane1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jScrollPane1AncestorAdded
         // TODO add your handling code here:
-    }//GEN-LAST:event_transactionButtonActionPerformed
+        jScrollPane1.getVerticalScrollBar().setPreferredSize(new java.awt.Dimension(0,0));
+        jScrollPane1.getHorizontalScrollBar().setPreferredSize(new java.awt.Dimension(0,0));
+    }//GEN-LAST:event_jScrollPane1AncestorAdded
 
-    private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
+    private void LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_homeButtonActionPerformed
-
-    private void searchlogoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchlogoButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_searchlogoButtonActionPerformed
+        UserLogin login = new UserLogin();
+        LoginController controller = new LoginController(login);
+        this.dispose();
+        controller.open();
+    }//GEN-LAST:event_LogOutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -486,33 +321,35 @@ public class dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Nowshowing;
-    private javax.swing.JButton historyButton;
-    private javax.swing.JLabel historyLogo;
-    private javax.swing.JButton homeButton;
-    private javax.swing.JLabel homeLogo;
+    private javax.swing.JPanel ComingPanel;
+    private javax.swing.JPanel DashboardPanel;
+    private javax.swing.JButton History;
+    private javax.swing.JButton LogOut;
+    private javax.swing.JButton Profile;
+    private javax.swing.JLabel TodayDate;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel logo;
-    private javax.swing.JButton logoutButton;
-    private javax.swing.JButton meButton;
-    private javax.swing.JPanel movie1;
-    private javax.swing.JPanel movie2;
-    private javax.swing.JPanel movie3;
-    private javax.swing.JPanel movie4;
-    private javax.swing.JPanel movie5;
-    private javax.swing.JPanel movie6;
-    private javax.swing.JLabel poster1;
-    private javax.swing.JButton profileButton;
-    private javax.swing.JLabel profileLogo;
-    private javax.swing.JButton scrollButton;
-    private javax.swing.JButton scrollButton1;
-    private javax.swing.JButton searchButton;
-    private javax.swing.JButton searchlogoButton;
     private javax.swing.JPanel sidePanel;
-    private javax.swing.JButton transactionButton;
-    private javax.swing.JLabel transactionLogo;
-    private javax.swing.JTextField upcoming;
     // End of variables declaration//GEN-END:variables
+    public JPanel getMoviePanel(){
+        return DashboardPanel;
+    }
+    public JPanel getComingPanel(){
+        return ComingPanel;
+    }
+    public javax.swing.JLabel getTodayDate(){
+        return TodayDate;
+    }
 }

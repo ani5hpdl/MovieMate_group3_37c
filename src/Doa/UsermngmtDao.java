@@ -45,11 +45,11 @@ public class UsermngmtDao {
     }
 
     public void deleteUser(int id) {
-        Connection conn = mysql.openConnection();
-        String sql = "Delete FROM user WHERE id = ?";
-        try(PreparedStatement pstm = conn.prepareStatement(sql)){
-            ResultSet rs = pstm.executeQuery();
-            
-        }
+//        Connection conn = mysql.openConnection();
+//        String sql = "Delete FROM user WHERE id = ?";
+//        try(PreparedStatement pstm = conn.prepareStatement(sql)){
+//            ResultSet rs = pstm.executeQuery();
+//            
+//        }
     }
 }
