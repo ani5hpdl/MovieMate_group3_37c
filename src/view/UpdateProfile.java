@@ -39,30 +39,31 @@ public class UpdateProfile extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         bio = new javax.swing.JTextArea();
         workplace = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        Fn = new javax.swing.JLabel();
+        Cn = new javax.swing.JLabel();
+        Add = new javax.swing.JLabel();
+        Em = new javax.swing.JLabel();
+        co = new javax.swing.JLabel();
+        ci = new javax.swing.JLabel();
+        yb = new javax.swing.JLabel();
+        wp = new javax.swing.JLabel();
+        eyp = new javax.swing.JLabel();
+        dob = new javax.swing.JLabel();
         DOBb = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        DOB = new org.jdesktop.swingx.JXDatePicker();
+        personal = new javax.swing.JLabel();
+        detail = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(null);
 
         Address.setText(" Address");
         Address.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.add(Address);
+        Address.setBounds(30, 530, 160, 18);
 
         FullName.setForeground(new java.awt.Color(51, 51, 51));
         FullName.setText("  FullName");
@@ -73,27 +74,33 @@ public class UpdateProfile extends javax.swing.JFrame {
             }
         });
         jPanel1.add(FullName);
+        FullName.setBounds(30, 120, 160, 18);
 
         ContactNumber.setText(" ContactNumber");
         ContactNumber.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.add(ContactNumber);
+        ContactNumber.setBounds(320, 120, 160, 18);
 
         Email.setText(" Email");
         Email.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.add(Email);
+        Email.setBounds(30, 180, 160, 18);
 
         City.setText(" City");
         City.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.add(City);
+        City.setBounds(350, 460, 160, 18);
 
         Country.setText(" Country");
         Country.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.add(Country);
+        Country.setBounds(30, 460, 160, 18);
 
         Update.setBackground(java.awt.SystemColor.activeCaptionBorder);
         Update.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Update.setText("Update");
         jPanel1.add(Update);
+        Update.setBounds(240, 590, 100, 27);
 
         bio.setColumns(20);
         bio.setRows(5);
@@ -101,69 +108,84 @@ public class UpdateProfile extends javax.swing.JFrame {
         jScrollPane1.setViewportView(bio);
 
         jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(30, 300, 224, 84);
 
         workplace.setText(" Workplace");
         workplace.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.add(workplace);
+        workplace.setBounds(30, 240, 160, 18);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setText("Full Name:");
-        jPanel1.add(jLabel1);
+        Fn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Fn.setText("Full Name:");
+        jPanel1.add(Fn);
+        Fn.setBounds(30, 100, 90, 20);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setText("Contact Number:");
-        jPanel1.add(jLabel2);
+        Cn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Cn.setText("Contact Number:");
+        jPanel1.add(Cn);
+        Cn.setBounds(320, 100, 130, 20);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setText("Address:");
-        jPanel1.add(jLabel3);
+        Add.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Add.setText("Address:");
+        jPanel1.add(Add);
+        Add.setBounds(30, 510, 58, 20);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setText(" Email:");
-        jPanel1.add(jLabel4);
+        Em.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Em.setText("Email:");
+        jPanel1.add(Em);
+        Em.setBounds(30, 160, 60, 20);
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel5.setText("Country:");
-        jPanel1.add(jLabel5);
+        co.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        co.setText("Country:");
+        jPanel1.add(co);
+        co.setBounds(30, 440, 100, 20);
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel6.setText("City:");
-        jPanel1.add(jLabel6);
+        ci.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ci.setText("City:");
+        jPanel1.add(ci);
+        ci.setBounds(350, 440, 30, 20);
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel7.setText("Your bio:");
-        jPanel1.add(jLabel7);
+        yb.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        yb.setText("Your bio:");
+        jPanel1.add(yb);
+        yb.setBounds(30, 280, 62, 20);
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel8.setText("Workplace:");
-        jPanel1.add(jLabel8);
+        wp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        wp.setText("Workplace:");
+        jPanel1.add(wp);
+        wp.setBounds(30, 220, 77, 20);
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        jLabel9.setText("Edit Your Profile:");
-        jPanel1.add(jLabel9);
+        eyp.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        eyp.setText("Edit Your Profile:");
+        jPanel1.add(eyp);
+        eyp.setBounds(230, 10, 194, 32);
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel10.setText("Date of birth:");
-        jPanel1.add(jLabel10);
+        dob.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        dob.setText("Date of birth:");
+        jPanel1.add(dob);
+        dob.setBounds(320, 160, 110, 20);
 
         DOBb.setText(" DOB");
         DOBb.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.add(DOBb);
+        DOBb.setBounds(320, 180, 160, 18);
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        jLabel11.setText("Personal detail:");
-        jPanel1.add(jLabel11);
+        personal.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        personal.setText("Personal detail:");
+        jPanel1.add(personal);
+        personal.setBounds(30, 60, 170, 25);
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        jLabel12.setText("Address detail:");
-        jPanel1.add(jLabel12);
+        detail.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        detail.setText("Address detail:");
+        jPanel1.add(detail);
+        detail.setBounds(30, 400, 190, 25);
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/background1.png"))); // NOI18N
-        jLabel14.setText("jLabel14");
-        jPanel1.add(jLabel14);
-        jPanel1.add(DOB);
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/background1.png"))); // NOI18N
+        background.setText("jLabel1");
+        jPanel1.add(background);
+        background.setBounds(0, 30, 650, 630);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, -30, 650, 690));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 690));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -208,32 +230,31 @@ public class UpdateProfile extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Add;
     private javax.swing.JTextField Address;
     private javax.swing.JTextField City;
+    private javax.swing.JLabel Cn;
     private javax.swing.JTextField ContactNumber;
     private javax.swing.JTextField Country;
-    private org.jdesktop.swingx.JXDatePicker DOB;
     private javax.swing.JTextField DOBb;
+    private javax.swing.JLabel Em;
     private javax.swing.JTextField Email;
+    private javax.swing.JLabel Fn;
     private javax.swing.JTextField FullName;
     private javax.swing.JButton Update;
+    private javax.swing.JLabel background;
     private javax.swing.JTextArea bio;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel ci;
+    private javax.swing.JLabel co;
+    private javax.swing.JLabel detail;
+    private javax.swing.JLabel dob;
+    private javax.swing.JLabel eyp;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel personal;
     private javax.swing.JTextField workplace;
+    private javax.swing.JLabel wp;
+    private javax.swing.JLabel yb;
     // End of variables declaration//GEN-END:variables
 
     public javax.swing.JTextField getemailField() {
