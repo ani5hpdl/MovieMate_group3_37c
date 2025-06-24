@@ -4,6 +4,12 @@
  */
 package view;
 
+import Model.BookingHistory;
+import java.awt.event.ActionListener;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author it solution
@@ -13,6 +19,7 @@ public class bookinghistory extends javax.swing.JFrame {
  
     public bookinghistory() {
         initComponents();
+        customizeTableModel();
     }
 
     /**
@@ -25,76 +32,45 @@ public class bookinghistory extends javax.swing.JFrame {
     private void initComponents() {
 
         Panel = new javax.swing.JPanel();
+        btnSearch = new javax.swing.JButton();
         Bookings = new javax.swing.JLabel();
-        Date = new javax.swing.JLabel();
-        Search = new javax.swing.JTextField();
-        Movie = new javax.swing.JLabel();
-        Time = new javax.swing.JLabel();
-        Seats = new javax.swing.JLabel();
-        Price = new javax.swing.JLabel();
-        AddButton = new javax.swing.JButton();
+        txtMovieTitle = new javax.swing.JTextField();
         ScrollPane = new javax.swing.JScrollPane();
+        tblBookingHistory = new javax.swing.JTable();
         Panel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnSearch.setText("Search");
+        Panel.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 30, -1, -1));
+
         Bookings.setBackground(new java.awt.Color(102, 102, 102));
         Bookings.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         Bookings.setText("Bookings");
         Panel.add(Bookings, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 23, -1, 27));
-
-        Date.setBackground(new java.awt.Color(204, 204, 204));
-        Date.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
-        Date.setForeground(new java.awt.Color(255, 255, 255));
-        Date.setText("      Date");
-        Date.setEnabled(false);
-        Date.setFocusable(false);
-        Date.setInheritsPopupMenu(false);
-        Date.setOpaque(true);
-        Panel.add(Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 101, 151, -1));
-        Panel.add(Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 34, 217, -1));
-
-        Movie.setBackground(new java.awt.Color(204, 204, 204));
-        Movie.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
-        Movie.setText("        Movie");
-        Movie.setEnabled(false);
-        Movie.setFocusable(false);
-        Movie.setOpaque(true);
-        Panel.add(Movie, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 101, 223, -1));
-
-        Time.setBackground(new java.awt.Color(204, 204, 204));
-        Time.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
-        Time.setText("     Time");
-        Time.setEnabled(false);
-        Time.setFocusable(false);
-        Time.setOpaque(true);
-        Panel.add(Time, new org.netbeans.lib.awtextra.AbsoluteConstraints(424, 101, 100, -1));
-
-        Seats.setBackground(new java.awt.Color(204, 204, 204));
-        Seats.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
-        Seats.setText("    Seats");
-        Seats.setEnabled(false);
-        Seats.setFocusable(false);
-        Seats.setOpaque(true);
-        Panel.add(Seats, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 101, 79, -1));
-
-        Price.setBackground(new java.awt.Color(204, 204, 204));
-        Price.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
-        Price.setText("    Price");
-        Price.setEnabled(false);
-        Price.setFocusable(false);
-        Price.setOpaque(true);
-        Panel.add(Price, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 101, 109, -1));
-
-        AddButton.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        AddButton.setText("Add");
-        Panel.add(AddButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(714, 32, -1, -1));
+        Panel.add(txtMovieTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, 217, -1));
 
         ScrollPane.setBackground(new java.awt.Color(204, 204, 204));
+        ScrollPane.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         ScrollPane.setOpaque(false);
-        Panel.add(ScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 122, 695, 311));
+
+        tblBookingHistory.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Movie Title", "Date/Time", "SeatNum", "Status", "ShowTime"
+            }
+        ));
+        tblBookingHistory.getTableHeader().setReorderingAllowed(false);
+        ScrollPane.setViewportView(tblBookingHistory);
+
+        Panel.add(ScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 690, 340));
 
         Panel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assets/background.jpeg"))); // NOI18N
         Panel2.setText("jLabel1");
@@ -152,16 +128,53 @@ public class bookinghistory extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AddButton;
     private javax.swing.JLabel Bookings;
-    private javax.swing.JLabel Date;
-    private javax.swing.JLabel Movie;
     private javax.swing.JPanel Panel;
     private javax.swing.JLabel Panel2;
-    private javax.swing.JLabel Price;
     private javax.swing.JScrollPane ScrollPane;
-    private javax.swing.JTextField Search;
-    private javax.swing.JLabel Seats;
-    private javax.swing.JLabel Time;
+    private javax.swing.JButton btnSearch;
+    private javax.swing.JTable tblBookingHistory;
+    private javax.swing.JTextField txtMovieTitle;
     // End of variables declaration//GEN-END:variables
+
+    public String getEnteredMovieTitle(){
+        return txtMovieTitle.getText().trim();
+    }
+    
+    public void addSearchButtonListener(ActionListener listener){
+        btnSearch.addActionListener(listener);
+    }
+    
+    public void populateBookingTable(List<BookingHistory> bookingHistory) {
+    DefaultTableModel model = (DefaultTableModel) tblBookingHistory.getModel();
+    model.setRowCount(0); // Clear previous data
+
+    for (BookingHistory booking : bookingHistory) {
+        Object[] rowData = {
+            booking.getBookingId(),
+            booking.getMovieTitle(),
+            booking.getBookingDateTime(),
+            booking.getSeatNum(),
+            booking.getShowTime(),
+            booking.getStatus()
+        };
+        model.addRow(rowData);
+    }
+}
+
+    public void showMessage(String message){
+        JOptionPane.showMessageDialog(this, message);
+    }
+    
+    private void customizeTableModel() {
+    String[] columnNames = {"ID", "Movie Title", "Date/Time", "SeatNum", "ShowTime","Status"};
+    DefaultTableModel model = new DefaultTableModel(columnNames, 0) {
+        @Override
+        public boolean isCellEditable(int row, int column) {
+            return false;  // Make table non-editable
+        }
+    };
+    tblBookingHistory.setModel(model);
+}
+
 }

@@ -11,16 +11,18 @@ public class BookingHistory {
     private int bookingId;
     private String movieTitle;
     private Date bookingDateTime;
-    private int numberOfSeats;
+    private String seatNum;
     private String status;
+    private String showtime;
 
 
-    public BookingHistory(int bookingId, String movieTitle, Date bookingDateTime, int numberOfSeats, String status) {
+    public BookingHistory(int bookingId, String movieTitle, Date bookingDateTime, String seatNum, String status, String showtime) {
         this.bookingId = bookingId;
         this.movieTitle = movieTitle;
         this.bookingDateTime = bookingDateTime;
-        this.numberOfSeats = numberOfSeats;
+        this.seatNum = seatNum;
         this.status = status;
+        this.showtime = showtime;
     }
 
      public int getBookingId() {
@@ -44,11 +46,11 @@ public class BookingHistory {
         this.bookingDateTime = bookingDateTime;
     }
 
-    public int getNumberOfSeats() {
-        return numberOfSeats;
+    public String getSeatNum() {
+        return seatNum;
     }
-    public void setNumberOfSeats(int numberOfSeats) {
-        this.numberOfSeats = numberOfSeats;
+    public void setSeatNum(String seatNum) {
+        this.seatNum = seatNum;
     }
 
     public String getStatus() {
@@ -56,5 +58,13 @@ public class BookingHistory {
     }
     public void setStatus(String status) {
         this.status = status;
+    }
+    
+    public String getShowTime() {
+        return showtime;
+    }
+
+    public void setShowTime(String showTime) {
+        this.showtime = showTime;
     }
 }
