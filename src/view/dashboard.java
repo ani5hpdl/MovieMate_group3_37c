@@ -5,6 +5,8 @@
 package view;
 
 import Controller.LoginController;
+import Controller.MovieDetailsController;
+import Model.MovieData;
 import javax.swing.JPanel;
 
 /**
@@ -137,6 +139,15 @@ public class dashboard extends javax.swing.JFrame {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+
+        DashboardPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DashboardPanelMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                DashboardPanelMousePressed(evt);
             }
         });
 
@@ -284,6 +295,24 @@ public class dashboard extends javax.swing.JFrame {
         this.dispose();
         controller.open();
     }//GEN-LAST:event_LogOutActionPerformed
+
+    private void DashboardPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DashboardPanelMouseClicked
+        // TODO add your handling code here:
+        System.out.println("MotherFucker");
+        MovieDetails moviedetail = new MovieDetails();
+        DashboardCard dash = new DashboardCard();
+        MovieDetailsController controller = new MovieDetailsController(moviedetail);
+        int id = Integer.parseInt(dash.getIdField().getText());
+        MovieData movie = new MovieData(id,dash.getMovieNameField().getText(), "", "", 0, "", "", 0, "", null, "", "", "");
+        controller.setMovieData(movie);
+        controller.loadMovie();
+        controller.open();
+    }//GEN-LAST:event_DashboardPanelMouseClicked
+
+    private void DashboardPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DashboardPanelMousePressed
+        // TODO add your handling code here:
+        System.out.println("MotherFucker");
+    }//GEN-LAST:event_DashboardPanelMousePressed
 
     /**
      * @param args the command line arguments

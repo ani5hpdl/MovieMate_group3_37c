@@ -4,6 +4,7 @@
  */
 package view;
 
+import Controller.MovieDetailsController;
 import Model.MovieData;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -37,6 +38,18 @@ public class DashboardCard extends javax.swing.JPanel {
         ID = new javax.swing.JLabel();
         ReleaseDate = new javax.swing.JLabel();
 
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
+
+        MoviePoster.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MoviePosterMouseClicked(evt);
+            }
+        });
+
         MovieName.setText("MovieName");
 
         Rating.setText("Rating");
@@ -48,6 +61,11 @@ public class DashboardCard extends javax.swing.JPanel {
         ID.setText("jLabel1");
 
         ReleaseDate.setText("jLabel1");
+        ReleaseDate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ReleaseDateMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -94,6 +112,38 @@ public class DashboardCard extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void MoviePosterMouseClicked(java.awt.event.MouseEvent evt) {
+        System.out.println("Poster");
+
+        try {
+            MovieDetails moviedetail = new MovieDetails();
+            System.out.println("MotherFucker");
+
+            MovieDetailsController controller = new MovieDetailsController(moviedetail);
+            int id = Integer.parseInt(ID.getText()); // Might throw NumberFormatException or NullPointerException
+            MovieData movie = new MovieData(id, MovieName.getText(), "", "", 0, "", "", 0, "", null, "", "", "");
+            System.out.println("✅ ID: " + id);
+            
+            controller.setMovieData(movie);
+            controller.loadMovie();
+            controller.open();
+        } catch (Exception e) {
+            System.err.println("❌ Exception occurred: " + e);
+            e.printStackTrace(); // This will tell us EXACTLY where it's breaking
+        }
+    }
+
+
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        // TODO add your handling code here:
+        System.out.println("Form");
+    }//GEN-LAST:event_formMouseClicked
+
+    private void ReleaseDateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReleaseDateMouseClicked
+        // TODO add your handling code here:
+        System.out.println("Release Date");
+    }//GEN-LAST:event_ReleaseDateMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Duration;
@@ -115,4 +165,11 @@ public class DashboardCard extends javax.swing.JPanel {
         Image img = icon.getImage().getScaledInstance(180,180,Image.SCALE_SMOOTH);
         MoviePoster.setIcon(new ImageIcon(img));
     }
+    public javax.swing.JLabel getIdField(){
+        return ID;
+    }
+    public javax.swing.JLabel getMovieNameField(){
+        return MovieName;
+    }
+    
 }
