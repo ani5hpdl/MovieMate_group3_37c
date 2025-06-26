@@ -298,15 +298,6 @@ public class dashboard extends javax.swing.JFrame {
 
     private void DashboardPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DashboardPanelMouseClicked
         // TODO add your handling code here:
-        System.out.println("MotherFucker");
-        MovieDetails moviedetail = new MovieDetails();
-        DashboardCard dash = new DashboardCard();
-        MovieDetailsController controller = new MovieDetailsController(moviedetail);
-        int id = Integer.parseInt(dash.getIdField().getText());
-        MovieData movie = new MovieData(id,dash.getMovieNameField().getText(), "", "", 0, "", "", 0, "", null, "", "", "");
-        controller.setMovieData(movie);
-        controller.loadMovie();
-        controller.open();
     }//GEN-LAST:event_DashboardPanelMouseClicked
 
     private void DashboardPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DashboardPanelMousePressed

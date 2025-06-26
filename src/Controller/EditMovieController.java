@@ -59,8 +59,7 @@ public class EditMovieController {
     }
     public void setMovieData(MovieData moviedata){
         this.movieId = moviedata.getId();
-        this.moviedata = moviedata;
-        
+        this.moviedata = moviedata;  
     }
     public MovieData fetchMovie(MovieData moviedata){
         if (moviedata == null) {

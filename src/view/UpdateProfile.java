@@ -49,9 +49,9 @@ public class UpdateProfile extends javax.swing.JFrame {
         wp = new javax.swing.JLabel();
         eyp = new javax.swing.JLabel();
         dob = new javax.swing.JLabel();
-        DOBb = new javax.swing.JTextField();
         personal = new javax.swing.JLabel();
         detail = new javax.swing.JLabel();
+        DOB = new org.jdesktop.swingx.JXDatePicker();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -165,11 +165,6 @@ public class UpdateProfile extends javax.swing.JFrame {
         jPanel1.add(dob);
         dob.setBounds(320, 160, 110, 20);
 
-        DOBb.setText(" DOB");
-        DOBb.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel1.add(DOBb);
-        DOBb.setBounds(320, 180, 160, 18);
-
         personal.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         personal.setText("Personal detail:");
         jPanel1.add(personal);
@@ -179,6 +174,8 @@ public class UpdateProfile extends javax.swing.JFrame {
         detail.setText("Address detail:");
         jPanel1.add(detail);
         detail.setBounds(30, 400, 190, 25);
+        jPanel1.add(DOB);
+        DOB.setBounds(320, 180, 165, 24);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/background1.png"))); // NOI18N
         background.setText("jLabel1");
@@ -236,7 +233,7 @@ public class UpdateProfile extends javax.swing.JFrame {
     private javax.swing.JLabel Cn;
     private javax.swing.JTextField ContactNumber;
     private javax.swing.JTextField Country;
-    private javax.swing.JTextField DOBb;
+    private org.jdesktop.swingx.JXDatePicker DOB;
     private javax.swing.JLabel Em;
     private javax.swing.JTextField Email;
     private javax.swing.JLabel Fn;

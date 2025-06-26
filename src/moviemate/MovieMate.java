@@ -11,6 +11,7 @@ import view.UserRegister;
 
 import Controller.AddMovieController;
 import Controller.AdminPanelController;
+import Controller.DashboardController;
 import Controller.EditMovieController;
 import Controller.ProfileController;
 import Controller.ResetPasswordController;
@@ -23,6 +24,7 @@ import view.AdminUserr;
 import view.MainProfile;
 import view.ResetPassword;
 import view.UpdateProfile;
+import view.dashboard;
 
 /**
  *
@@ -36,7 +38,7 @@ public class MovieMate {
         }else{
             System.out.println("Failed to connect to database");
         }
-        
+//        
 
 //        UserRegister UserRegisterForm = new UserRegister();
 //        UserRegisterController controller = new UserRegisterController(UserRegisterForm);
@@ -68,9 +70,13 @@ public class MovieMate {
 //        EditMovieController controller = new EditMovieController(edit);
 //        controller.open();
 
-        AdminUserr user = new AdminUserr();
-        UserMngmtController controller = new UserMngmtController(user);
-        controller.open();
+//        AdminUserr user = new AdminUserr();
+//        UserMngmtController controller = new UserMngmtController(user);
+//        controller.open();
+
+            dashboard dash = new dashboard();
+            DashboardController controller = new DashboardController(dash);
+            controller.open();
 
     }
             

@@ -6,6 +6,7 @@ import Doa.LoginDoa;
 import Model.Login;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import view.AdminPanel;
 import view.ResetPassword;
@@ -39,7 +40,12 @@ public class LoginController {
                 String email = loginScreen.getemailField().getText();
                 String password = loginScreen.getpasswordField().getText();
                 Login userRequest = new Login(email, password);
+                System.out.println(email);
+                System.out.println(password);
                 boolean check = logindao.validateuser(userRequest);
+//                ResultSet user = logindao.checkuser(userRequest);
+//                System.out.println(user);
+                System.out.println(check);
                 if(check){
                     JOptionPane.showMessageDialog(loginScreen, "Login successful");
                     close();
