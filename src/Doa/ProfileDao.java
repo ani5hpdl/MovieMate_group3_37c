@@ -6,6 +6,7 @@ package Doa;
 
 import Model.ProfileModel;
 import Database.MySqlConnection;
+import Model.UserSession;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -46,7 +47,7 @@ public class ProfileDao {
         }
         return null;
     }
-    public boolean updateUserById(ProfileModel profile,int userid){
+    public boolean updateUserById(ProfileModel profile){
         Connection conn = mysql.openConnection();
         String sql = "UPDATE user SET fullName = ?, email = ?, contact_number = ?, address = ?, country = ?, city = ?, bio = ?, dob = ?, workplace = ? WHERE id = ?";
         try(PreparedStatement pstmt = conn.prepareStatement(sql)){
@@ -57,9 +58,11 @@ public class ProfileDao {
             pstmt.setString(5,profile.getCountry());
             pstmt.setString(6,profile.getCity());
             pstmt.setString(7,profile.getBio());
-            pstmt.setDate(8, (Date) profile.getDob());
+            java.util.Date utilDate = profile.getDob();
+            java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+            pstmt.setDate(8,sqlDate);
             pstmt.setString(9,profile.getWorkplace());
-            pstmt.setInt(10, userid);
+            pstmt.setInt(10, UserSession.getUserId());
             
             int rows = pstmt.executeUpdate();
             return rows>0;

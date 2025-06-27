@@ -6,6 +6,7 @@ package view;
 
 import Controller.LoginController;
 import Controller.MovieDetailsController;
+import Controller.ProfileController;
 import Model.MovieData;
 import javax.swing.JPanel;
 
@@ -75,6 +76,11 @@ public class dashboard extends javax.swing.JFrame {
         Profile.setForeground(new java.awt.Color(255, 255, 255));
         Profile.setText("Profile");
         Profile.setFocusPainted(false);
+        Profile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProfileActionPerformed(evt);
+            }
+        });
 
         History.setBackground(new java.awt.Color(26, 29, 58));
         History.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -304,6 +310,13 @@ public class dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.out.println("MotherFucker");
     }//GEN-LAST:event_DashboardPanelMousePressed
+
+    private void ProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfileActionPerformed
+        // TODO add your handling code here:
+        MainProfile profile = new MainProfile();
+        ProfileController controller = new ProfileController(profile);
+        controller.open();
+    }//GEN-LAST:event_ProfileActionPerformed
 
     /**
      * @param args the command line arguments

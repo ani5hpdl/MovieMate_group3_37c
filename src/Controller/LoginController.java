@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import view.AdminPanel;
 import view.ResetPassword;
 import view.UserLogin;
+import view.dashboard;
 
 
 
@@ -42,19 +43,24 @@ public class LoginController {
                 Login userRequest = new Login(email, password);
                 System.out.println(email);
                 System.out.println(password);
-                boolean check = logindao.validateuser(userRequest);
-//                ResultSet user = logindao.checkuser(userRequest);
-//                System.out.println(user);
-                System.out.println(check);
-                if(check){
+//                boolean check = logindao.validateuser(userRequest);
+                String user = logindao.checkUserRole(userRequest);
+                System.out.println(user);
+//                System.out.println(check);
+                if(user.equals("admin")){
                     JOptionPane.showMessageDialog(loginScreen, "Login successful");
                     close();
                      AdminPanel adminpanel = new AdminPanel();
                      AdminPanelController controller =new AdminPanelController(adminpanel);
                      controller.open();
+                }else if(user.equals("user")){
+                    JOptionPane.showMessageDialog(loginScreen, "Login successful");
+                    close();
+                     dashboard dash = new dashboard();
+                     DashboardController controller =new DashboardController(dash);
+                     controller.open();
                 }else{
                     JOptionPane.showMessageDialog(loginScreen, "Invalid Credentials");
-
                 }
             }catch (Exception ex){
                 System.out.println("Error adding user: " + ex.getMessage());

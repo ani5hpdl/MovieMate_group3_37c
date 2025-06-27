@@ -75,7 +75,6 @@ public class MainProfile extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(51, 0, 51));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\NITRO\\Downloads\\Screenshot 2025-06-18 232625.png")); // NOI18N
         jLabel9.setText("jLabel9");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -238,6 +237,11 @@ public class MainProfile extends javax.swing.JFrame {
         jButton1.setText("Edit");
         jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jButton1.setFocusPainted(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
@@ -354,6 +358,15 @@ public class MainProfile extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        UpdateProfile pp = new UpdateProfile();
+        ProfileController controller = new ProfileController(pp);
+        controller.open1();
+        this.dispose();
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

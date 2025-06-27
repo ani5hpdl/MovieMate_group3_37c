@@ -27,36 +27,40 @@ public class LoginDoa {
             System.out.println(result.next());
             
             if(result.next()){
-                int userid = result.getInt("id");
-                UserSession.setUserId(userid);
+        
+                return true;
             }
-            return result.next();
+            return false;
             
         }catch(Exception ex){
             Logger.getLogger(UserRegisterDao.class.getName()).log(Level.SEVERE,null,ex);
+            return false;
         }finally{
             mysql.closeConnection(conn);
         }
-        return false;
     } 
         
         
-    public ResultSet checkuser(Login userlogin){
+    public String checkUserRole(Login userlogin) {
         Connection conn = mysql.openConnection();
-        String sql = "SELECT role FROM user WHERE email = ? and password = ?";
-        try(PreparedStatement pstm = conn.prepareStatement(sql)){
+        String sql = "SELECT id, role FROM user WHERE email = ? AND password = ?";
+        try (PreparedStatement pstm = conn.prepareStatement(sql)) {
+            pstm.setString(1, userlogin.getEmail());
+            pstm.setString(2, userlogin.getPassword());
+            ResultSet result = pstm.executeQuery();
 
-            pstm.setString(1,userlogin.getEmail());
-            pstm.setString(2,userlogin.getPassword());
-//            ResultSet result = pstm.executeQuery();
-            
-//            return result;
-            
-        }catch(Exception ex){
-            Logger.getLogger(UserRegisterDao.class.getName()).log(Level.SEVERE,null,ex);
-        }finally{
+            if (result.next()) {
+                int userid = result.getInt("id");
+                UserSession.setUserId(userid);
+                return result.getString("role");
+            }
+
+        } catch (Exception ex) {
+            Logger.getLogger(UserRegisterDao.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
             mysql.closeConnection(conn);
         }
         return null;
     }
+
 }

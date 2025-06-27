@@ -14,6 +14,7 @@ import view.MainProfile;
 //import view.ProfileView;
 import view.UpdateProfile;
 import view.UserLogin;
+import view.dashboard;
 
 public class ProfileController {
 
@@ -24,11 +25,11 @@ public class ProfileController {
     public ProfileController(MainProfile profileView) {
         this.profileView = profileView;
 //        loadUserProfile(UserSession.getUserId());
-          loadUserProfile(1);
+          loadUserProfile(UserSession.getUserId());
     }
     public ProfileController(UpdateProfile updateprofile) {
         this.updateprofile = updateprofile;
-        loadEditUser(1);
+        loadEditUser(UserSession.getUserId());
         updateprofile.addUpdateUserListener(new UpdateUserListener());
     }
 
@@ -54,25 +55,45 @@ public class ProfileController {
     public static void main(String[] args) {
         System.out.println("Here");
     }
-    public void loadUserProfile(int userid){
-//        ProfileController controller = new ProfileController(profileView);
+    public void loadUserProfile(int userid) {
         ProfileModel profile = this.fetchUserProfile(userid);
-        
-        if(profile != null){
-            profileView.getaddressField().setText(profile.getAddress());
-            profileView.getemailField().setText(profile.getEmail());
-            profileView.getaddressField().setText(profile.getAddress());
-            profileView.getcontactnumberField().setText(profile.getContactNumber());
-            profileView.getfullnameField().setText(profile.getFullname());
-            profileView.getfullname1Field().setText(profile.getFullname());
+
+        if (profile != null) {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            profileView.getdobField().setText(sdf.format(profile.getDob()));
-            profileView.getworkplaceField().setText(profile.getWorkplace());
-            profileView.getcountryField().setText(profile.getCountry());
-            profileView.getcityField().setText(profile.getCity());
-            profileView.getbioField().setText(profile.getBio());
+
+            profileView.getaddressField().setText(
+                profile.getAddress() != null ? profile.getAddress() : "Update Profile"
+            );
+            profileView.getemailField().setText(
+                profile.getEmail() != null ? profile.getEmail() : "Update Profile"
+            );
+            profileView.getcontactnumberField().setText(
+                profile.getContactNumber() != null ? profile.getContactNumber() : "Update Profile"
+            );
+            profileView.getfullnameField().setText(
+                profile.getFullname() != null ? profile.getFullname() : "Update Profile"
+            );
+            profileView.getfullname1Field().setText(
+                profile.getFullname() != null ? profile.getFullname() : "Update Profile"
+            );
+            profileView.getdobField().setText(
+                profile.getDob() != null ? sdf.format(profile.getDob()) : "Update Profile"
+            );
+            profileView.getworkplaceField().setText(
+                profile.getWorkplace() != null ? profile.getWorkplace() : "Update Profile"
+            );
+            profileView.getcountryField().setText(
+                profile.getCountry() != null ? profile.getCountry() : "Update Profile"
+            );
+            profileView.getcityField().setText(
+                profile.getCity() != null ? profile.getCity() : "Update Profile"
+            );
+            profileView.getbioField().setText(
+                profile.getBio() != null ? profile.getBio() : "Update Profile"
+            );
         }
     }
+
     public void loadEditUser(int userid){
         ProfileModel profile = this.fetchUserProfile(userid);
         
@@ -109,8 +130,7 @@ public class ProfileController {
                     JOptionPane.showMessageDialog(updateprofile,"Enter Valid Phone Number");
                 }
                 else{
-                    UserSession.setUserId(1);
-                    boolean check = profiledao.updateUserById(profile,UserSession.getUserId());
+                    boolean check = profiledao.updateUserById(profile);
                     
                     if(check){
                         JOptionPane.showMessageDialog(null,"Data is Updating May take Few Moments!!");
@@ -121,8 +141,8 @@ public class ProfileController {
                     close1();
                     
 
-                    UserLogin UserLoginForm = new UserLogin();
-                    LoginController controller = new LoginController(UserLoginForm);
+                    dashboard dash = new dashboard();
+                    DashboardController controller = new DashboardController(dash);
                     controller.open();
                 }
             }catch(Exception ex){

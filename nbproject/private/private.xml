@@ -12,7 +12,6 @@
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Doa/LoginDoa.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Controller/LoginController.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/Login.java</file>
-            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/Movie.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/UserSession.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/AdminPannel2.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Controller/AddMovieController.java</file>
@@ -34,8 +33,30 @@
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Controller/EditMovieController.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Controller/EmailUtil.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Controller/OTPEntryController.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/NewPassword.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/AdminUserr.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/UserMngmt.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Doa/UsermngmtDao.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Controller/UserMngmtController.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/ResetPassword.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/OTPEntry.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Doa/MovieDetailsDao.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Doa/UpcomingMoviesDao.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/viewTheaters.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/User.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/MovieDetails.java</file>
-
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Database/MySqlConnection.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/SearchMovie.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/ViewTheatersview.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/DashboardCard.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Controller/MovieDetailsController.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Controller/DashboardController.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Doa/New.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/Dashboard.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/New.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/OTP.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/UpcomingMovies.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/UserRegisterModel.java</file>
         </group>
     </open-files>
 </project-private>
