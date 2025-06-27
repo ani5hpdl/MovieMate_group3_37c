@@ -9,57 +9,30 @@ package Model;
  * @author it solution
  */
 public class PaymentMethod {
-
-
-public class Payment {
-
-    private int totalTickets;
-    private String seatNo;
-    private double amount;
-    private String paymentMethod;
-    private String selectedShowTitle;
-    private String selectedShowImagePath; 
-    private String qrCodePath; 
-
+    private String paymentMethod;     // e.g., "Khalti", "eSewa", "Stripe"
+    private String accountNumber;     // Mobile wallet number or card number
+    private boolean consent;          // User's confirmation for payment
+    private int amount;               // Total ticket price
+    private int totalTickets;         // Number of tickets booked
+    private String seatNumbers;       // Comma-separated seat numbers, e.g. "A1,A2,A3"
+    private String showTitle;         // Movie/show title
+    private String transactionId;     // Optional: generated or received from payment gateway
+    private String paymentStatus;     // "pending", "success", "failed"
     
-    public Payment(int totalTickets, String seatNo, double amount, String paymentMethod, String selectedShowTitle, String selectedShowImagePath, String qrCodePath) {
-        this.totalTickets = totalTickets;
-        this.seatNo = seatNo;
-        this.amount = amount;
+    
+    public PaymentMethod(String paymentMethod, String accountNumber, boolean consent, int amount, int totalTickets, String seatNumbers, String showTitle,String transactionId, String paymentStatus) {
         this.paymentMethod = paymentMethod;
-        this.selectedShowTitle = selectedShowTitle;
-        this.selectedShowImagePath = selectedShowImagePath;
-        this.qrCodePath = qrCodePath;
-    }
-
-    
-    public Payment() {
-    }
-
-    
-    public int getTotalTickets() {
-        return totalTickets;
-    }
-
-    public void setTotalTickets(int totalTickets) {
-        this.totalTickets = totalTickets;
-    }
-
-    public String getSeatNo() {
-        return seatNo;
-    }
-
-    public void setSeatNo(String seatNo) {
-        this.seatNo = seatNo;
-    }
-
-    public double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(double amount) {
+        this.accountNumber = accountNumber;
+        this.consent = consent;
         this.amount = amount;
+        this.totalTickets = totalTickets;
+        this.seatNumbers = seatNumbers;
+        this.showTitle = showTitle;
+        this.transactionId = transactionId;
+        this.paymentStatus = paymentStatus;
     }
+
+    // Getters and Setters
 
     public String getPaymentMethod() {
         return paymentMethod;
@@ -69,43 +42,69 @@ public class Payment {
         this.paymentMethod = paymentMethod;
     }
 
-    public String getSelectedShowTitle() {
-        return selectedShowTitle;
+    public String getAccountNumber() {
+        return accountNumber;
     }
 
-    public void setSelectedShowTitle(String selectedShowTitle) {
-        this.selectedShowTitle = selectedShowTitle;
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
     }
 
-    public String getSelectedShowImagePath() {
-        return selectedShowImagePath;
+    public boolean isConsent() {
+        return consent;
     }
 
-    public void setSelectedShowImagePath(String selectedShowImagePath) {
-        this.selectedShowImagePath = selectedShowImagePath;
+    public void setConsent(boolean consent) {
+        this.consent = consent;
     }
 
-    public String getQrCodePath() {
-        return qrCodePath;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setQrCodePath(String qrCodePath) {
-        this.qrCodePath = qrCodePath;
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
-    @Override
-    public String toString() {
-        return "Payment{" +
-                "totalTickets=" + totalTickets +
-                ", seatNo='" + seatNo + '\'' +
-                ", amount=" + amount +
-                ", paymentMethod='" + paymentMethod + '\'' +
-                ", selectedShowTitle='" + selectedShowTitle + '\'' +
-                ", selectedShowImagePath='" + selectedShowImagePath + '\'' +
-                ", qrCodePath='" + qrCodePath + '\'' +
-                '}';
+    public int getTotalTickets() {
+        return totalTickets;
+    }
+
+    public void setTotalTickets(int totalTickets) {
+        this.totalTickets = totalTickets;
+    }
+
+    public String getSeatNumbers() {
+        return seatNumbers;
+    }
+
+    public void setSeatNumbers(String seatNumbers) {
+        this.seatNumbers = seatNumbers;
+    }
+
+    public String getShowTitle() {
+        return showTitle;
+    }
+
+    public void setShowTitle(String showTitle) {
+        this.showTitle = showTitle;
+    }
+
+    public String getTransactionId() {
+        return transactionId;
+    }
+
+    public void setTransactionId(String transactionId) {
+        this.transactionId = transactionId;
+    }
+
+    public String getPaymentStatus() {
+        return paymentStatus;
+    }
+
+    public void setPaymentStatus(String paymentStatus) {
+        this.paymentStatus = paymentStatus;
     }
 }
 
-    
-}
+
