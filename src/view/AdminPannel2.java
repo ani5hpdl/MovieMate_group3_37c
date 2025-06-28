@@ -165,7 +165,8 @@ public class AdminPannel2 extends javax.swing.JFrame {
         jLabel15.setText("Show Time");
 
         Showtime.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
-        Showtime.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00" }));
+        Showtime.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10:00", "11:00", "12:00", "12:30", "13:30", "14:30", "15:00", "16:00", "17:00", "17:30", "18:30", "19:30" }));
+        Showtime.setToolTipText("Select ShowTime");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

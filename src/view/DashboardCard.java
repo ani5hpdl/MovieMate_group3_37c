@@ -7,6 +7,7 @@ package view;
 import Controller.MovieDetailsController;
 import Doa.MovieDao;
 import Model.MovieData;
+import Model.MovieSession;
 import java.awt.Image;
 import java.awt.Window;
 import javax.swing.ImageIcon;
@@ -129,6 +130,7 @@ public class DashboardCard extends javax.swing.JPanel {
             System.out.println("✅ ID: " + id);
             
             controller.setMovieData(movie);
+            MovieSession.setMovieId(id);
             controller.loadMovie();
             Window window = SwingUtilities.getWindowAncestor(this);
             if(window != null){
