@@ -6,6 +6,9 @@ package Controller;
 
 import Doa.MovieDao;
 import Model.MovieData;
+import Model.UserSession;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.JPanel;
 import view.DashboardCard;
@@ -18,6 +21,7 @@ import java.time.ZoneId;
 import java.util.Date;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import view.bookinghistory;
 
 
 /**
@@ -30,8 +34,10 @@ public class DashboardController {
     private String keyword;
     
     public DashboardController(dashboard view){
+//        UserSession.setUserId(5);
         this.view = view;
         view.addSearchListener(new SearchListener());
+        view.addHistoryListener(new HistoryListener());
         loadAllMovies(1);
     }
     public void open(){
@@ -111,6 +117,17 @@ public class DashboardController {
             }else{
                 loadAllMovies(2);
             }
+        }
+        
+    }
+    
+    class HistoryListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            bookinghistory book = new bookinghistory();
+            BookingHistoryController controller = new BookingHistoryController(book);
+            controller.open();
         }
         
     }

@@ -11,6 +11,7 @@ import view.UserRegister;
 
 import Controller.AddMovieController;
 import Controller.AdminPanelController;
+import Controller.BookingHistoryController;
 import Controller.DashboardController;
 import Controller.EditMovieController;
 import Controller.ProfileController;
@@ -24,6 +25,7 @@ import view.AdminUserr;
 import view.MainProfile;
 import view.ResetPassword;
 import view.UpdateProfile;
+import view.bookinghistory;
 import view.dashboard;
 
 /**
@@ -80,6 +82,10 @@ public class MovieMate {
             dashboard dash = new dashboard();
             DashboardController controller = new DashboardController(dash);
             controller.open();
+            
+//            bookinghistory book = new bookinghistory();
+//            BookingHistoryController controller = new BookingHistoryController(book);
+//            controller.open();
 
     }
             

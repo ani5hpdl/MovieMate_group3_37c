@@ -2,7 +2,7 @@
 package Doa;
 
 import Model.BookingHistory;
-import database.MySqlConnection;
+import Database.MySqlConnection;
 import java.util.List;
 import java.sql.*;
 import java.util.ArrayList;
@@ -21,13 +21,13 @@ public class HistoryDao {
         Connection conn = mysql.openConnection();
         List<BookingHistory> bookingHistoryList = new ArrayList<>();
         String sql = "SELECT b.booking_id AS booking_id, " +
-                     "       m.movie_title AS movie_title, " +
+                     "       m.title AS title, " +
                      "       s.showtime AS showtime, " +
                      "       se.seat_number AS seat_number, " +
                      "       b.booked_datetime, " +
                      "       'Booked' AS status " +
                      "FROM booking b " +
-                     "JOIN movies m ON b.movie_id = m.movie_id " +
+                     "JOIN moviedata m ON b.movie_id = m.id " +
                      "JOIN seats se ON b.seat_id = se.seat_id " +
                      "JOIN showtimes s ON se.showtime_id = s.showtime_id " +
                      "WHERE b.user_id = ? " +
@@ -41,7 +41,7 @@ public class HistoryDao {
            while(rs.next()){
                BookingHistory booking = new BookingHistory(
                        rs.getInt("booking_id"),
-                       rs.getString("movie_title"),
+                       rs.getString("title"),
                        rs.getTimestamp("booked_datetime"),
                        rs.getString("seat_number"),
                        rs.getString("showtime"),
@@ -60,12 +60,12 @@ public class HistoryDao {
     public List<BookingHistory> getBookingHistoryByMovie(int userId,String movieTitle) {
         Connection conn = mysql.openConnection();
         List<BookingHistory> bookingHistoryList = new ArrayList<>();
-        String sql = "SELECT b.booking_id, m.movie_title, s.seat_number, st.showtime, b.booked_datetime, 'Booked' AS status " +
+        String sql = "SELECT b.booking_id, m.title, s.seat_number, st.showtime, b.booked_datetime, 'Booked' AS status " +
                  "FROM booking b " +
-                 "JOIN movies m ON b.movie_id = m.movie_id " +
+                 "JOIN moviedata m ON b.movie_id = m.id " +
                  "JOIN seats s ON b.seat_id = s.seat_id " +
                  "JOIN showtimes st ON s.showtime_id = st.showtime_id " +
-                 "WHERE b.user_id = ? AND m.movie_title LIKE ? " +
+                 "WHERE b.user_id = ? AND m.title LIKE ? " +
                  "ORDER BY b.booked_datetime DESC";
 
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -77,7 +77,7 @@ public class HistoryDao {
             while (rs.next()) {
                 BookingHistory booking = new BookingHistory(
                     rs.getInt("booking_id"),
-                    rs.getString("movie_title"),
+                    rs.getString("title"),
                     rs.getTimestamp("booked_datetime"),
                     rs.getString("seat_number"),
                     rs.getString("showtime"),

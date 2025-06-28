@@ -3,6 +3,7 @@ package Controller;
 
 import Doa.HistoryDao;
 import Model.BookingHistory;
+import Model.UserSession;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -16,12 +17,11 @@ public class BookingHistoryController {
     private final HistoryDao bookingdao = new HistoryDao();
     private final bookinghistory bookingView;
     
-    private int loggedInUser;
     
-    public BookingHistoryController(bookinghistory bookingView, int userId){
+    public BookingHistoryController(bookinghistory bookingView){
         this.bookingView = bookingView;
-        this.loggedInUser = userId;
-        
+//        UserSession.setUserId(5);
+
         
         loadBookingHistory();
         bookingView.addSearchButtonListener(new SearchButtonListener());
@@ -39,7 +39,7 @@ public class BookingHistoryController {
     }
     
     private void loadBookingHistory(){
-        List<BookingHistory> bookingHistory = bookingdao.getBookingHistory(loggedInUser);
+        List<BookingHistory> bookingHistory = bookingdao.getBookingHistory(UserSession.getUserId());
         bookingView.populateBookingTable(bookingHistory);
     }
 
@@ -53,7 +53,7 @@ public class BookingHistoryController {
               return;
             }
 
-            List<BookingHistory> bookingHistory = bookingdao.getBookingHistoryByMovie(loggedInUser, movieTitle);
+            List<BookingHistory> bookingHistory = bookingdao.getBookingHistoryByMovie(UserSession.getUserId(), movieTitle);
 
             if (bookingHistory.isEmpty()) {
                bookingView.showMessage("No bookings found for movie: " + movieTitle);

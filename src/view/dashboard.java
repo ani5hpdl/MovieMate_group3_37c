@@ -8,6 +8,7 @@ import Controller.LoginController;
 import Controller.MovieDetailsController;
 import Controller.ProfileController;
 import Model.MovieData;
+import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 import javax.swing.event.DocumentListener;
 
@@ -413,5 +414,8 @@ public class dashboard extends javax.swing.JFrame {
     }
     public void addSearchListener(DocumentListener listener){
         SearchField.getDocument().addDocumentListener(listener);
+    }
+    public void addHistoryListener(ActionListener listener){
+        History.addActionListener(listener);
     }
 }

@@ -72,8 +72,8 @@ public class bookinghistory extends javax.swing.JFrame {
 
         Panel.add(ScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 690, 340));
 
-        Panel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assets/background.jpeg"))); // NOI18N
-        Panel2.setText("jLabel1");
+        Panel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/background1.png"))); // NOI18N
+        Panel2.setText(" ");
         Panel.add(Panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-12, -5, 830, 500));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
