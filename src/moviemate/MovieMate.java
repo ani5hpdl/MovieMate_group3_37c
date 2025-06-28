@@ -31,6 +31,9 @@ import view.dashboard;
  * @author anish
  */
 public class MovieMate {
+    
+    public static int loogedInUserId=1; //hardcoded for now, remove it later
+    
     public static void main(String[] args) {
         Database db = (Database) new MySqlConnection();
         if(db.openConnection() != null){
