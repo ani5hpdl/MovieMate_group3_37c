@@ -151,6 +151,41 @@ public class MovieDao {
         return movies;
     }
     
+    public List<MovieData> getMovies(String keyword){
+        List<MovieData> movies = new ArrayList<>();
+        Connection conn = mysql.openConnection();
+        String sql = "SELECT * FROM moviedata WHERE title LIKE ?";
+        
+        try(PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1,"%"+keyword+"%");
+            ResultSet result = pstmt.executeQuery();
+            while(result.next()){
+                MovieData moviedata = new MovieData(
+                        result.getInt("id"),
+                        result.getString("title"),
+                        result.getString("director"),
+                        result.getString("cast"),
+                        result.getInt("duration"),
+                        result.getString("genre"),
+                        result.getString("language"),
+                        result.getInt("rating"),
+                        result.getString("synopsis"),
+                        result.getDate("release_date"),
+                        result.getString("showtime"),
+                        result.getString("poster_path"),
+                        result.getString("more_image_path")
+                );
+                movies.add(moviedata);
+                
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }finally{
+            mysql.closeConnection(conn);
+        }
+        return movies;
+    }
+    
     public boolean updateMovieById(MovieData moviedata){
         Connection conn = mysql.openConnection();
         String sql = "UPDATE moviedata SET title = ?, director = ?, cast = ?, duration = ?, genre = ?, language = ?, rating = ?, synopsis = ?, release_date = ?, showtime = ?, poster_path = ?, more_image_path = ? WHERE id = ?";

@@ -16,6 +16,8 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 
 /**
@@ -25,11 +27,12 @@ import java.util.Date;
 public class DashboardController {
     private final dashboard view;
     private DashboardCard dashboardcrd;
+    private String keyword;
     
     public DashboardController(dashboard view){
         this.view = view;
-        loadAllMovies();
-        
+        view.addSearchListener(new SearchListener());
+        loadAllMovies(1);
     }
     public void open(){
         this.view.setVisible(true);
@@ -37,12 +40,23 @@ public class DashboardController {
     public void close(){
         this.view.dispose();
     }
-    private void loadAllMovies() {
+    private void loadAllMovies(int ch) {
         MovieDao moviedao = new MovieDao();
         LocalDateTime now = LocalDateTime.now();
         Date currentDate = Date.from(now.atZone(ZoneId.systemDefault()).toInstant());
-
-        List<MovieData> movies = moviedao.getAllMovies();
+        List<MovieData> movies;
+        switch (ch) {
+            case 1:
+                movies = moviedao.getAllMovies();
+                break;
+            case 2:
+                movies =moviedao.getMovies(keyword);
+                break;
+            default:
+                System.out.println("Wrong");
+                movies = null;
+                break;
+        }
         
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String dateString = sdf.format(currentDate);
@@ -70,6 +84,35 @@ public class DashboardController {
 
         comingPanel.revalidate();
         comingPanel.repaint();
+    }
+    class SearchListener implements DocumentListener{
+
+        @Override
+        public void insertUpdate(DocumentEvent e) {
+            liveSearch();
+        }
+
+        @Override
+        public void removeUpdate(DocumentEvent e) {
+            liveSearch();
+        }
+
+        @Override
+        public void changedUpdate(DocumentEvent e) {
+            liveSearch();
+        }
+        
+        
+        public void liveSearch(){
+            keyword = view.getSearchField().getText().trim();
+            if(keyword.isEmpty() || keyword.equals("Search")){
+                System.out.println(" sdvvs");
+                loadAllMovies(1);
+            }else{
+                loadAllMovies(2);
+            }
+        }
+        
     }
 
 }

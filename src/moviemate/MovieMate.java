@@ -54,9 +54,9 @@ public class MovieMate {
 //        ResetPasswordController controller = new ResetPasswordController(reset);
 //        controller.open();
 
-            UserLogin login = new UserLogin();
-            LoginController controller = new LoginController(login);
-            controller.open();
+//            UserLogin login = new UserLogin();
+//            LoginController controller = new LoginController(login);
+//            controller.open();
 //        UpdateProfile profile = new UpdateProfile();
 //////        MainProfile profile = new MainProfile();
 //        ProfileController controller = new ProfileController(profile);
@@ -74,9 +74,9 @@ public class MovieMate {
 //        UserMngmtController controller = new UserMngmtController(user);
 //        controller.open();
 
-//            dashboard dash = new dashboard();
-//            DashboardController controller = new DashboardController(dash);
-//            controller.open();
+            dashboard dash = new dashboard();
+            DashboardController controller = new DashboardController(dash);
+            controller.open();
 
     }
             

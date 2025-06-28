@@ -9,6 +9,7 @@ import Controller.MovieDetailsController;
 import Controller.ProfileController;
 import Model.MovieData;
 import javax.swing.JPanel;
+import javax.swing.event.DocumentListener;
 
 /**
  *
@@ -45,7 +46,7 @@ public class dashboard extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         ComingPanel = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        SearchField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -206,8 +207,16 @@ public class dashboard extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(jPanel2);
 
-        jTextField1.setText("Search");
-        jTextField1.setDropMode(javax.swing.DropMode.INSERT);
+        SearchField.setText("Search");
+        SearchField.setDropMode(javax.swing.DropMode.INSERT);
+        SearchField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                SearchFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                SearchFieldFocusLost(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Now Showing:");
@@ -238,7 +247,7 @@ public class dashboard extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(TodayDate, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(20, 20, 20))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -266,7 +275,7 @@ public class dashboard extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -318,6 +327,20 @@ public class dashboard extends javax.swing.JFrame {
         controller.open();
     }//GEN-LAST:event_ProfileActionPerformed
 
+    private void SearchFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_SearchFieldFocusGained
+        // TODO add your handling code here:
+        if(SearchField.getText().equals("Search")){
+            SearchField.setText("");
+        }
+    }//GEN-LAST:event_SearchFieldFocusGained
+
+    private void SearchFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_SearchFieldFocusLost
+        // TODO add your handling code here:
+        if(SearchField.getText().isEmpty()){
+            SearchField.setText("Search");
+        }
+    }//GEN-LAST:event_SearchFieldFocusLost
+
     /**
      * @param args the command line arguments
      */
@@ -359,6 +382,7 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JButton History;
     private javax.swing.JButton LogOut;
     private javax.swing.JButton Profile;
+    private javax.swing.JTextField SearchField;
     private javax.swing.JLabel TodayDate;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -372,7 +396,6 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel sidePanel;
     // End of variables declaration//GEN-END:variables
@@ -384,5 +407,11 @@ public class dashboard extends javax.swing.JFrame {
     }
     public javax.swing.JLabel getTodayDate(){
         return TodayDate;
+    }
+    public javax.swing.JTextField getSearchField(){
+        return SearchField;
+    }
+    public void addSearchListener(DocumentListener listener){
+        SearchField.getDocument().addDocumentListener(listener);
     }
 }
