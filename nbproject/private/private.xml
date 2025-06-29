@@ -57,6 +57,14 @@
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/OTP.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/UpcomingMovies.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/UserRegisterModel.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Doa/HistoryDao.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Controller/BookingHistoryController.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/bookinghistory.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/BookingHistory.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/TheatersandHall.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/MovieSession.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Controller/TheaterandHallController.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Doa/TheaterandHallDao.java</file>
         </group>
     </open-files>
 </project-private>

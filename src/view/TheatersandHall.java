@@ -5,11 +5,14 @@
 package view;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import Controller.TheaterandHallController;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,7 +25,7 @@ public class TheatersandHall extends javax.swing.JFrame {
      */
     public TheatersandHall() {
         initComponents();
-        SelectHall.setVisible(false);
+//        SelectHall.setVisible(false);s
         HallAShowTime.setVisible(false);
         HallBShowTime.setVisible(false);
         HallCShowTime.setVisible(false);
@@ -37,7 +40,6 @@ public class TheatersandHall extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -129,7 +131,6 @@ public class TheatersandHall extends javax.swing.JFrame {
         jLabel45 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(842, 702));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(245, 245, 245));
@@ -380,25 +381,11 @@ public class TheatersandHall extends javax.swing.JFrame {
 
         SelectHall.setBackground(new java.awt.Color(255, 255, 255));
         SelectHall.setPreferredSize(new java.awt.Dimension(568, 242));
-        SelectHall.setLayout(new java.awt.GridBagLayout());
 
         jLabel20.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
         jLabel20.setText("Select Hall - ");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 12, 0, 0);
-        SelectHall.add(jLabel20, gridBagConstraints);
 
         jLabel21.setText("👥");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(7, 6, 0, 0);
-        SelectHall.add(jLabel21, gridBagConstraints);
 
         HallA.setBackground(new java.awt.Color(255, 255, 255));
         HallA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -466,16 +453,6 @@ public class TheatersandHall extends javax.swing.JFrame {
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipadx = 43;
-        gridBagConstraints.ipady = 7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 12, 0, 0);
-        SelectHall.add(HallA, gridBagConstraints);
-
         HallB.setBackground(new java.awt.Color(255, 255, 255));
         HallB.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         HallB.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -511,7 +488,7 @@ public class TheatersandHall extends javax.swing.JFrame {
                 .addGroup(HallBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(HallBLayout.createSequentialGroup()
                         .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                         .addComponent(jLabel26))
                     .addGroup(HallBLayout.createSequentialGroup()
                         .addGroup(HallBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -541,16 +518,6 @@ public class TheatersandHall extends javax.swing.JFrame {
                     .addComponent(jLabel36))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipadx = 63;
-        gridBagConstraints.ipady = 19;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 12, 13, 0);
-        SelectHall.add(HallB, gridBagConstraints);
 
         HallC.setBackground(new java.awt.Color(255, 255, 255));
         HallC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -618,24 +585,49 @@ public class TheatersandHall extends javax.swing.JFrame {
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.ipadx = 61;
-        gridBagConstraints.ipady = 7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 18, 0, 5);
-        SelectHall.add(HallC, gridBagConstraints);
-
         TheaterName.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
         TheaterName.setText("Theater_Name");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        SelectHall.add(TheaterName, gridBagConstraints);
+
+        javax.swing.GroupLayout SelectHallLayout = new javax.swing.GroupLayout(SelectHall);
+        SelectHall.setLayout(SelectHallLayout);
+        SelectHallLayout.setHorizontalGroup(
+            SelectHallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SelectHallLayout.createSequentialGroup()
+                .addGroup(SelectHallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SelectHallLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel21)
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel20)
+                        .addGap(6, 6, 6)
+                        .addComponent(TheaterName))
+                    .addGroup(SelectHallLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(HallA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(HallC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(SelectHallLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(HallB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        SelectHallLayout.setVerticalGroup(
+            SelectHallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SelectHallLayout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addGroup(SelectHallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SelectHallLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel21))
+                    .addComponent(jLabel20)
+                    .addComponent(TheaterName))
+                .addGap(6, 6, 6)
+                .addGroup(SelectHallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(HallA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HallC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(HallB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         HallAShowTime.setBackground(new java.awt.Color(255, 255, 255));
         HallAShowTime.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -649,25 +641,37 @@ public class TheatersandHall extends javax.swing.JFrame {
         HallAShowTime.add(jLabel122, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, 27));
 
         button1.setText("10:00");
+        button1.setBorderPainted(false);
+        button1.setFocusPainted(false);
         HallAShowTime.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, -1, -1));
 
         button2.setText("12:30");
+        button2.setBorderPainted(false);
+        button2.setFocusPainted(false);
         HallAShowTime.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, -1, -1));
 
         button3.setText("3:00");
+        button3.setBorderPainted(false);
+        button3.setFocusPainted(false);
         HallAShowTime.add(button3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, -1, -1));
 
         button4.setText("5:30");
+        button4.setBorderPainted(false);
+        button4.setFocusPainted(false);
         HallAShowTime.add(button4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, -1, -1));
 
         button5.setText("8:00");
+        button5.setBorderPainted(false);
+        button5.setFocusPainted(false);
         HallAShowTime.add(button5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, -1, -1));
 
         button0.setText("7:30");
+        button0.setBorderPainted(false);
+        button0.setFocusPainted(false);
         HallAShowTime.add(button0, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
         jLabel46.setText("            ");
-        HallAShowTime.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, -1, -1));
+        HallAShowTime.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 50, -1, 20));
 
         HallBShowTime.setBackground(new java.awt.Color(255, 255, 255));
         HallBShowTime.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -681,25 +685,37 @@ public class TheatersandHall extends javax.swing.JFrame {
         HallBShowTime.add(jLabel124, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
 
         button7.setText("10:00");
+        button7.setBorderPainted(false);
+        button7.setFocusPainted(false);
         HallBShowTime.add(button7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, -1, -1));
 
         button8.setText("12:30");
+        button8.setBorderPainted(false);
+        button8.setFocusPainted(false);
         HallBShowTime.add(button8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, -1, -1));
 
         button9.setText("3:00");
+        button9.setBorderPainted(false);
+        button9.setFocusPainted(false);
         HallBShowTime.add(button9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, -1, -1));
 
         button10.setText("5:30");
+        button10.setBorderPainted(false);
+        button10.setFocusPainted(false);
         HallBShowTime.add(button10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, -1, -1));
 
         button6.setText("7:30");
+        button6.setBorderPainted(false);
+        button6.setFocusPainted(false);
         HallBShowTime.add(button6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
         button11.setText("8:00");
+        button11.setBorderPainted(false);
+        button11.setFocusPainted(false);
         HallBShowTime.add(button11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, -1, -1));
 
         jLabel47.setText("            ");
-        HallBShowTime.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, -1, -1));
+        HallBShowTime.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 60, -1, -1));
 
         HallCShowTime.setBackground(new java.awt.Color(255, 255, 255));
         HallCShowTime.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -713,25 +729,37 @@ public class TheatersandHall extends javax.swing.JFrame {
         HallCShowTime.add(jLabel126, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
 
         button13.setText("10:00");
+        button13.setBorderPainted(false);
+        button13.setFocusPainted(false);
         HallCShowTime.add(button13, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, -1));
 
         button14.setText("12:30");
+        button14.setBorderPainted(false);
+        button14.setFocusPainted(false);
         HallCShowTime.add(button14, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, -1, -1));
 
         button15.setText("3:00");
+        button15.setBorderPainted(false);
+        button15.setFocusPainted(false);
         HallCShowTime.add(button15, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, -1, -1));
 
         button16.setText("5:30");
+        button16.setBorderPainted(false);
+        button16.setFocusPainted(false);
         HallCShowTime.add(button16, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, -1, -1));
 
         button12.setText("7:30");
+        button12.setBorderPainted(false);
+        button12.setFocusPainted(false);
         HallCShowTime.add(button12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
         button17.setText("8:00");
+        button17.setBorderPainted(false);
+        button17.setFocusPainted(false);
         HallCShowTime.add(button17, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, -1, -1));
 
         jLabel48.setText("            ");
-        HallCShowTime.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, -1, -1));
+        HallCShowTime.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 60, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setPreferredSize(new java.awt.Dimension(570, 136));
@@ -754,7 +782,7 @@ public class TheatersandHall extends javax.swing.JFrame {
         jLabel44.setText("4. Click a showtime to proceed to seat selection.");
 
         jLabel45.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel45.setText("Note: To change your selection, simply click a different theater or hall.");
+        jLabel45.setText("Note: To change your selection, simply click a different theater or hall. And The time in Green is available Time");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -779,7 +807,7 @@ public class TheatersandHall extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(417, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -815,10 +843,10 @@ public class TheatersandHall extends javax.swing.JFrame {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(HallBShowTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(HallCShowTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(HallAShowTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SelectHall, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(SelectHall, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
+                            .addComponent(HallAShowTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HallBShowTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HallCShowTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -882,6 +910,7 @@ public class TheatersandHall extends javax.swing.JFrame {
 
     private void HallAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HallAMouseClicked
         // TODO add your handling code here:
+        HallName = "HallA";
         HallAShowTime.setVisible(true);
         HallBShowTime.setVisible(false);
         HallCShowTime.setVisible(false);
@@ -890,6 +919,7 @@ public class TheatersandHall extends javax.swing.JFrame {
 
     private void HallCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HallCMouseClicked
         // TODO add your handling code here:
+        HallName = "HAllB";
         HallBShowTime.setVisible(true);
         HallAShowTime.setVisible(false);
         HallCShowTime.setVisible(false);
@@ -897,6 +927,7 @@ public class TheatersandHall extends javax.swing.JFrame {
 
     private void HallBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HallBMouseClicked
         // TODO add your handling code here:
+        HallName = "HallC";
         HallCShowTime.setVisible(true);
         HallAShowTime.setVisible(false);
         HallBShowTime.setVisible(false);
@@ -1031,6 +1062,8 @@ public class TheatersandHall extends javax.swing.JFrame {
 
     private javax.swing.JButton[] button;
 
+    private String HallName;
+    
     private void groupButtonsIntoArray() {
         button = new javax.swing.JButton[] {
             button0, button1, button2, button3, button4, button5,
@@ -1046,15 +1079,32 @@ public class TheatersandHall extends javax.swing.JFrame {
     };
 
     public void highlightBookedButton(int bookedTime) {
-    for (int i = 0; i < 18; i++) {
-        if (buttonTimes[i] == bookedTime) {
-            button[i].setBackground(Color.RED);
-            button[i].setForeground(Color.WHITE); // Optional
-        } else {
-            button[i].setBackground(null); // Reset others if needed
+        for (int i = 0; i < 18; i++) {
+            if (buttonTimes[i] == bookedTime) {
+                button[i].setBackground(Color.GREEN);
+    //            button[i].setForeground(Color.WHITE); // Optional
+                button[i].addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+
+                    }
+                });
+
+                
+            }
+            else {
+                button[i].setBackground(Color.ORANGE); // Reset others if needed
+                button[i].addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                       JOptionPane.showMessageDialog(null, "Choose Available Time Please!!");
+
+                    }
+                });
+            }
         }
     }
-}
+    
 
 
 

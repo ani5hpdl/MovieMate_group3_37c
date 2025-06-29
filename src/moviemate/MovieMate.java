@@ -16,6 +16,7 @@ import Controller.DashboardController;
 import Controller.EditMovieController;
 import Controller.ProfileController;
 import Controller.ResetPasswordController;
+import Controller.TheaterandHallController;
 import Controller.UserMngmtController;
 import Database.*;
 import view.AdminPanel;
@@ -24,6 +25,7 @@ import view.AdminPannel3;
 import view.AdminUserr;
 import view.MainProfile;
 import view.ResetPassword;
+import view.TheatersandHall;
 import view.UpdateProfile;
 import view.bookinghistory;
 import view.dashboard;
@@ -66,7 +68,7 @@ public class MovieMate {
 //////        MainProfile profile = new MainProfile();
 //        ProfileController controller = new ProfileController(profile);
 //        controller.open1();
-//
+
 //        AdminPanel admin = new AdminPanel();
 //        AdminPanelController controller = new AdminPanelController(admin);
 //        controller.open();
@@ -79,13 +81,17 @@ public class MovieMate {
 //        UserMngmtController controller = new UserMngmtController(user);
 //        controller.open();
 
-            dashboard dash = new dashboard();
-            DashboardController controller = new DashboardController(dash);
-            controller.open();
+//            dashboard dash = new dashboard();
+//            DashboardController controller = new DashboardController(dash);
+//            controller.open();
             
 //            bookinghistory book = new bookinghistory();
 //            BookingHistoryController controller = new BookingHistoryController(book);
 //            controller.open();
+
+            TheatersandHall hall = new TheatersandHall();
+            TheaterandHallController controller = new TheaterandHallController(hall);
+            controller.open();
 
     }
             
