@@ -50,6 +50,7 @@ public class ViewTheatersview extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jButton9 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -176,7 +177,7 @@ public class ViewTheatersview extends javax.swing.JFrame {
         Parent.add(firstpanel, "card2");
 
         jPanel1.add(Parent);
-        Parent.setBounds(6, 550, 160, 80);
+        Parent.setBounds(6, 550, 160, 100);
 
         jButton2.setText("June 18");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -229,6 +230,10 @@ public class ViewTheatersview extends javax.swing.JFrame {
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/search.jpg"))); // NOI18N
         jPanel1.add(jLabel12);
         jLabel12.setBounds(330, 110, 20, 30);
+
+        jButton9.setText("City Center");
+        jPanel1.add(jButton9);
+        jButton9.setBounds(160, 300, 90, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -322,6 +327,7 @@ public class ViewTheatersview extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
