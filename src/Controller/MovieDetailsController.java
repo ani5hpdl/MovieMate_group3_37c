@@ -8,8 +8,11 @@ import Doa.MovieDao;
 import Model.MovieData;
 import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import view.MovieDetails;
+import view.TheatersandHall;
 
 /**
  *
@@ -24,6 +27,7 @@ public class MovieDetailsController {
     public MovieDetailsController(MovieDetails moviedet){
         this.moviedet = moviedet; 
         this.movie = new MovieDao();
+        this.moviedet.addBookListener(new BookListener());
     }
     public void open(){
         this.moviedet.setVisible(true);
@@ -80,6 +84,17 @@ public class MovieDetailsController {
             moviedet.getMoreImageField().repaint();
 
         }
+    }
+    
+    class BookListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            TheatersandHall hall = new TheatersandHall();
+            TheaterandHallController controller = new TheaterandHallController(hall);
+            controller.open();
+        }
+        
     }
     
 }

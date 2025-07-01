@@ -42,7 +42,6 @@
                   <Component id="jButton1" min="-2" pref="164" max="-2" attributes="0"/>
                   <Component id="jLabel6" min="-2" pref="72" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" pref="72" max="-2" attributes="0"/>
-                  <Component id="jCalendar1" min="-2" max="-2" attributes="0"/>
                   <Component id="jComboBox1" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" pref="72" max="-2" attributes="0"/>
                   <Component id="jComboBox2" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
@@ -70,8 +69,7 @@
                       <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jCalendar1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -131,8 +129,6 @@
         </Property>
         <Property name="text" type="java.lang.String" value="location"/>
       </Properties>
-    </Component>
-    <Component class="com.toedter.calendar.JCalendar" name="jCalendar1">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>

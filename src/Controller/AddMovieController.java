@@ -6,6 +6,7 @@ package Controller;
 import view.AdminPannel2;
 import Doa.MovieDao;
 import Model.MovieData;
+import Model.TheaterandHall;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;

@@ -4,11 +4,13 @@
  */
 package view;
 
+import Controller.SeatAvailabilityController;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 import Controller.TheaterandHallController;
+import Model.TheaterandHall;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -888,24 +890,28 @@ public class TheatersandHall extends javax.swing.JFrame {
         // TODO add your handling code here:
         SelectHall.setVisible(true);
         TheaterName.setText("Civil Mall");
+        Location = "Kanti Marg";
     }//GEN-LAST:event_CivilMallMouseClicked
 
     private void ChhayaCenterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ChhayaCenterMouseClicked
         // TODO add your handling code here:
         SelectHall.setVisible(true);
         TheaterName.setText("Chhaya Center");
+        Location = "Amrit Marg";
     }//GEN-LAST:event_ChhayaCenterMouseClicked
 
     private void DurbarCinemaxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DurbarCinemaxMouseClicked
         // TODO add your handling code here:
         SelectHall.setVisible(true);
         TheaterName.setText("Durbar Cinemax");
+        Location = "Durbar Marg";
     }//GEN-LAST:event_DurbarCinemaxMouseClicked
 
     private void LabimMallMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabimMallMouseClicked
         // TODO add your handling code here:
         SelectHall.setVisible(true);
         TheaterName.setText("Labim Mall");
+        Location = "Lalitpur";
     }//GEN-LAST:event_LabimMallMouseClicked
 
     private void HallAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HallAMouseClicked
@@ -1063,6 +1069,7 @@ public class TheatersandHall extends javax.swing.JFrame {
     private javax.swing.JButton[] button;
 
     private String HallName;
+    private String Location;
     
     private void groupButtonsIntoArray() {
         button = new javax.swing.JButton[] {
@@ -1080,13 +1087,17 @@ public class TheatersandHall extends javax.swing.JFrame {
 
     public void highlightBookedButton(int bookedTime) {
         for (int i = 0; i < 18; i++) {
+            final int index = i;
             if (buttonTimes[i] == bookedTime) {
                 button[i].setBackground(Color.GREEN);
     //            button[i].setForeground(Color.WHITE); // Optional
                 button[i].addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-
+                        TheaterandHall hall = new TheaterandHall(Location,TheaterName.getText(),HallName,button[index].getText());
+                        CheckSeatAvailability seat = new CheckSeatAvailability();
+                        SeatAvailabilityController controller = new SeatAvailabilityController(seat,hall);
+                        controller.open();
                     }
                 });
 

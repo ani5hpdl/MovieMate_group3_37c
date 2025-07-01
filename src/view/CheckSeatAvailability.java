@@ -27,12 +27,16 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
         MainPanel = new javax.swing.JPanel();
         TopPanel = new javax.swing.JPanel();
-        movieTitle = new javax.swing.JLabel();
-        titleComboBox = new javax.swing.JComboBox<>();
+        Label = new javax.swing.JLabel();
         showTitle = new javax.swing.JLabel();
-        timeComboBox = new javax.swing.JComboBox<>();
         title = new javax.swing.JLabel();
-        Screen = new javax.swing.JLabel();
+        MovieName = new javax.swing.JLabel();
+        ShowTime = new javax.swing.JLabel();
+        Label1 = new javax.swing.JLabel();
+        showTitle1 = new javax.swing.JLabel();
+        Location = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        HallName = new javax.swing.JLabel();
         BottomPanel = new javax.swing.JPanel();
         filterSeats = new javax.swing.JLabel();
         filterComboBox = new javax.swing.JComboBox<>();
@@ -130,7 +134,6 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(800, 600));
-        setResizable(false);
 
         MainPanel.setBackground(new java.awt.Color(255, 255, 255));
         MainPanel.setPreferredSize(new java.awt.Dimension(500, 350));
@@ -140,73 +143,99 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
         TopPanel.setToolTipText("");
         TopPanel.setPreferredSize(new java.awt.Dimension(600, 150));
 
-        movieTitle.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        movieTitle.setText("Movie Title: ");
-
-        titleComboBox.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        titleComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Deadpool 3", "Avatar: The Way Of Water", "House Of The Dragon", "Avengers" }));
-        titleComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                titleComboBoxActionPerformed(evt);
-            }
-        });
+        Label.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        Label.setText("Movie:");
 
         showTitle.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        showTitle.setText("ShowTime: ");
+        showTitle.setText("Time:");
 
-        timeComboBox.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        timeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10:00 AM", "1:00 PM", "4:00 PM", " " }));
-
-        title.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        title.setFont(new java.awt.Font("Segoe UI Emoji", 1, 24)); // NOI18N
         title.setText("Check Seat Availability");
 
-        Screen.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        Screen.setForeground(new java.awt.Color(204, 85, 0));
-        Screen.setText("Screen");
+        MovieName.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
+        MovieName.setText("jLabel1");
+
+        ShowTime.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
+        ShowTime.setText("jLabel1");
+
+        Label1.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        Label1.setText("Location:");
+
+        showTitle1.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        showTitle1.setText("Hall:");
+
+        Location.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
+        Location.setText("jLabel1");
+
+        jLabel1.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel1.setText(".");
+        jLabel1.setOpaque(true);
+
+        HallName.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
+        HallName.setText("jLabel1");
 
         javax.swing.GroupLayout TopPanelLayout = new javax.swing.GroupLayout(TopPanel);
         TopPanel.setLayout(TopPanelLayout);
         TopPanelLayout.setHorizontalGroup(
             TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(title)
+                .addGap(209, 209, 209))
             .addGroup(TopPanelLayout.createSequentialGroup()
+                .addGap(107, 107, 107)
                 .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(TopPanelLayout.createSequentialGroup()
-                        .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(TopPanelLayout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addComponent(movieTitle))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopPanelLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(showTitle)))
-                        .addGap(18, 18, 18)
-                        .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(timeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(titleComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(8, 8, 8)
+                        .addComponent(showTitle))
+                    .addComponent(Label, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(MovieName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ShowTime, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(TopPanelLayout.createSequentialGroup()
-                        .addGap(281, 281, 281)
-                        .addComponent(Screen, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopPanelLayout.createSequentialGroup()
-                .addGap(0, 229, Short.MAX_VALUE)
-                .addComponent(title)
-                .addGap(164, 164, 164))
+                        .addGap(8, 8, 8)
+                        .addComponent(showTitle1))
+                    .addComponent(Label1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Location, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(HallName, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+            .addGroup(TopPanelLayout.createSequentialGroup()
+                .addGap(99, 99, 99)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 586, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         TopPanelLayout.setVerticalGroup(
             TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TopPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(12, 12, 12)
                 .addComponent(title)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TopPanelLayout.createSequentialGroup()
+                        .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Location)
+                            .addComponent(Label1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(HallName))
+                    .addGroup(TopPanelLayout.createSequentialGroup()
+                        .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(MovieName)
+                            .addComponent(Label))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ShowTime))
+                    .addGroup(TopPanelLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(showTitle1)
+                            .addComponent(showTitle))))
                 .addGap(18, 18, 18)
-                .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(titleComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(movieTitle))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(timeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(showTitle))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addComponent(Screen)
-                .addContainerGap())
+                .addComponent(jLabel1)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         MainPanel.add(TopPanel, java.awt.BorderLayout.PAGE_START);
@@ -214,13 +243,13 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
         BottomPanel.setBackground(new java.awt.Color(245, 245, 220));
         BottomPanel.setPreferredSize(new java.awt.Dimension(700, 80));
 
-        filterSeats.setFont(new java.awt.Font("Consolas", 1, 13)); // NOI18N
+        filterSeats.setFont(new java.awt.Font("Segoe UI Emoji", 1, 13)); // NOI18N
         filterSeats.setText("Filter Seats: ");
 
         filterComboBox.setFont(new java.awt.Font("Consolas", 1, 13)); // NOI18N
         filterComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All", "Regular", "Premium", "Booked" }));
 
-        availableSeats.setFont(new java.awt.Font("Consolas", 1, 13)); // NOI18N
+        availableSeats.setFont(new java.awt.Font("Segoe UI Emoji", 1, 13)); // NOI18N
         availableSeats.setText("Available Seats: 80");
 
         availableLabel.setBackground(new java.awt.Color(102, 178, 255));
@@ -238,13 +267,13 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
         preLabel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         preLabel.setOpaque(true);
 
-        regular.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        regular.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
         regular.setText("Regular");
 
-        booked.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        booked.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
         booked.setText("Booked");
 
-        premium.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        premium.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
         premium.setText("Premium");
 
         confirmButton.setBackground(new java.awt.Color(0, 51, 102));
@@ -261,29 +290,32 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
         BottomPanelLayout.setHorizontalGroup(
             BottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BottomPanelLayout.createSequentialGroup()
-                .addGap(210, 210, 210)
-                .addComponent(availableLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(regular)
-                .addGap(57, 57, 57)
-                .addComponent(bookLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(booked)
-                .addGap(74, 74, 74)
-                .addComponent(preLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(premium)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(BottomPanelLayout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addComponent(filterSeats)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(filterComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(73, 73, 73)
-                .addComponent(availableSeats)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
-                .addComponent(confirmButton)
-                .addGap(50, 50, 50))
+                .addGroup(BottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(BottomPanelLayout.createSequentialGroup()
+                        .addComponent(filterSeats)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(filterComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(availableLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(BottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BottomPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(regular)
+                        .addGap(63, 63, 63)
+                        .addComponent(bookLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(booked)
+                        .addGap(74, 74, 74)
+                        .addComponent(preLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(premium)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(BottomPanelLayout.createSequentialGroup()
+                        .addGap(126, 126, 126)
+                        .addComponent(availableSeats)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                        .addComponent(confirmButton)
+                        .addGap(50, 50, 50))))
         );
         BottomPanelLayout.setVerticalGroup(
             BottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -291,10 +323,11 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
                 .addGroup(BottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(availableLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(regular)
-                    .addComponent(bookLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(booked)
                     .addComponent(preLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(premium))
+                    .addComponent(premium)
+                    .addGroup(BottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(bookLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(booked)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(BottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(filterSeats)
@@ -995,10 +1028,6 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_confirmButtonActionPerformed
 
-    private void titleComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_titleComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_titleComboBoxActionPerformed
-
 
     public static void main(String args[]) {
 
@@ -1012,9 +1041,14 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BottomPanel;
     private javax.swing.JPanel CenterPanel;
+    private javax.swing.JLabel HallName;
+    private javax.swing.JLabel Label;
+    private javax.swing.JLabel Label1;
+    private javax.swing.JLabel Location;
     private javax.swing.JPanel MainPanel;
+    private javax.swing.JLabel MovieName;
     private javax.swing.JPanel PanelWrapper;
-    private javax.swing.JLabel Screen;
+    private javax.swing.JLabel ShowTime;
     private javax.swing.JPanel TopPanel;
     private javax.swing.JLabel availableLabel;
     private javax.swing.JLabel availableSeats;
@@ -1103,25 +1137,20 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton80;
     private javax.swing.JButton jButton9;
-    private javax.swing.JLabel movieTitle;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel preLabel;
     private javax.swing.JLabel premium;
     private javax.swing.JLabel regular;
     private javax.swing.JLabel showTitle;
-    private javax.swing.JComboBox<String> timeComboBox;
+    private javax.swing.JLabel showTitle1;
     private javax.swing.JLabel title;
-    private javax.swing.JComboBox<String> titleComboBox;
     // End of variables declaration//GEN-END:variables
 
-    public void addMovieSelectionListener(ActionListener listener) {
-        titleComboBox.addActionListener(listener); 
-    }
+
     public void addSeatTypeFilterListener(ActionListener listener){
         filterComboBox.addActionListener(listener);
     }
-    public void addShowtimeListener(ActionListener listener){
-        timeComboBox.addActionListener(listener);
-    }
+
     public void addConfirmButtonListener(ActionListener listener){
         confirmButton.addActionListener(listener);
     }
@@ -1139,19 +1168,32 @@ public JButton[] getSeatButtons() {
         };
     }
 
-    public String getSelectedmovie(){
-       return titleComboBox.getSelectedItem() != null ? titleComboBox.getSelectedItem().toString(): "";
+    public javax.swing.JLabel getMovieNameLabel(){
+        return MovieName;
     }
-    public String getSelectedShowtime(){
-       return timeComboBox.getSelectedItem() != null? timeComboBox.getSelectedItem().toString(): "";
+    
+    public javax.swing.JLabel getShowTime(){
+        return ShowTime;
     }
+    
+    public javax.swing.JLabel getLocationPoint(){
+        return Location;
+    }
+    
+    public javax.swing.JLabel getHallName(){
+        return HallName;
+    }
+
     public String getSelectedSeatType(){
        return filterComboBox.getSelectedItem() != null? filterComboBox.getSelectedItem().toString() : "";
     }
+    
     public void updateAvailableSeat(int count){
        availableSeats.setText("Available Seats: " + count);
     }
+    
     public void showMessage(String message) {
        javax.swing.JOptionPane.showMessageDialog(this, message);
     }
+    
 }

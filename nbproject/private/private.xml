@@ -42,7 +42,7 @@
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/OTPEntry.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Doa/MovieDetailsDao.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Doa/UpcomingMoviesDao.java</file>
-            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/viewTheaters.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/TheaterandHall.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/User.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/MovieDetails.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Database/MySqlConnection.java</file>
@@ -65,6 +65,11 @@
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/MovieSession.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Controller/TheaterandHallController.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Doa/TheaterandHallDao.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/Assignseat.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/CheckSeatAvailability.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Doa/SeatDao.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/ChooseSeats.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Controller/SeatAvailabilityController.java</file>
         </group>
     </open-files>
 </project-private>

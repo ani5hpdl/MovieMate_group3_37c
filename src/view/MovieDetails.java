@@ -6,6 +6,7 @@ package view;
 
 import Controller.DashboardController;
 import Model.MovieData;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -48,7 +49,7 @@ public class MovieDetails extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         Director = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        Book = new javax.swing.JButton();
         jToggleButton1 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -130,13 +131,13 @@ public class MovieDetails extends javax.swing.JFrame {
         Director.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         Director.setText("Director");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(204, 0, 0));
-        jButton1.setText("+ Book");
-        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 51)));
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setFocusPainted(false);
+        Book.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        Book.setForeground(new java.awt.Color(204, 0, 0));
+        Book.setText("+ Book");
+        Book.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 51)));
+        Book.setBorderPainted(false);
+        Book.setContentAreaFilled(false);
+        Book.setFocusPainted(false);
 
         jToggleButton1.setFont(new java.awt.Font("Britannic Bold", 1, 12)); // NOI18N
         jToggleButton1.setText("<<");
@@ -183,7 +184,7 @@ public class MovieDetails extends javax.swing.JFrame {
                         .addGap(56, 56, 56))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(199, 199, 199)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Book, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jToggleButton1)
@@ -203,7 +204,7 @@ public class MovieDetails extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGap(53, 53, 53)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Book, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGap(39, 39, 39)
                                 .addComponent(Duration)
@@ -215,8 +216,8 @@ public class MovieDetails extends javax.swing.JFrame {
                                 .addComponent(Genre))))
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -293,6 +294,7 @@ public class MovieDetails extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Book;
     private javax.swing.JTextArea Cast;
     private javax.swing.JLabel Director;
     private javax.swing.JLabel Duration;
@@ -302,7 +304,6 @@ public class MovieDetails extends javax.swing.JFrame {
     private javax.swing.JLabel PosterImage;
     private javax.swing.JLabel Rating;
     private javax.swing.JTextArea Synopsis;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -350,6 +351,10 @@ public class MovieDetails extends javax.swing.JFrame {
     
     public javax.swing.JLabel getMoreImageField(){
         return MoreImage;
+    }
+    
+    public void addBookListener(ActionListener listener){
+        Book.addActionListener(listener);
     }
     
 }

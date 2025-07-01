@@ -16,6 +16,7 @@ import Controller.DashboardController;
 import Controller.EditMovieController;
 import Controller.ProfileController;
 import Controller.ResetPasswordController;
+import Controller.SeatAvailabilityController;
 import Controller.TheaterandHallController;
 import Controller.UserMngmtController;
 import Database.*;
@@ -23,6 +24,7 @@ import view.AdminPanel;
 import view.AdminPannel2;
 import view.AdminPannel3;
 import view.AdminUserr;
+import view.CheckSeatAvailability;
 import view.MainProfile;
 import view.ResetPassword;
 import view.TheatersandHall;
@@ -36,7 +38,6 @@ import view.dashboard;
  */
 public class MovieMate {
     
-    public static int loogedInUserId=1; //hardcoded for now, remove it later
     
     public static void main(String[] args) {
         Database db = (Database) new MySqlConnection();
@@ -47,9 +48,9 @@ public class MovieMate {
         }
 //        
 
-//        UserRegister UserRegisterForm = new UserRegister();
-//        UserRegisterController controller = new UserRegisterController(UserRegisterForm);
-//        controller.open();
+        UserRegister UserRegisterForm = new UserRegister();
+        UserRegisterController controller = new UserRegisterController(UserRegisterForm);
+        controller.open();
         
 
 //        AdminPannel2 myprojform = new AdminPannel2();
@@ -89,10 +90,13 @@ public class MovieMate {
 //            BookingHistoryController controller = new BookingHistoryController(book);
 //            controller.open();
 
-            TheatersandHall hall = new TheatersandHall();
-            TheaterandHallController controller = new TheaterandHallController(hall);
-            controller.open();
+//            TheatersandHall hall = new TheatersandHall();
+//            TheaterandHallController controller = new TheaterandHallController(hall);
+//            controller.open();
 
+//            CheckSeatAvailability seat = new CheckSeatAvailability();
+//            SeatAvailabilityController controller = new SeatAvailabilityController(seat);
+//            controller.open();
     }
             
 }
