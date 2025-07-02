@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ACER
@@ -47,7 +49,6 @@ public class PaymentMethod extends javax.swing.JFrame {
         selectedShow = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(650, 550));
         setResizable(false);
 
         jPanel1.setLayout(new java.awt.BorderLayout());
@@ -121,11 +122,12 @@ public class PaymentMethod extends javax.swing.JFrame {
                     .addComponent(totalTickets)
                     .addComponent(ticketsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(seatNo)
-                    .addComponent(seatNolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(amount)
-                    .addComponent(amountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(amountLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(seatNolabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(amount)))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
@@ -141,6 +143,11 @@ public class PaymentMethod extends javax.swing.JFrame {
         khaltiBtn.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         khaltiBtn.setText("Khalti");
         khaltiBtn.setBorder(null);
+        khaltiBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                khaltiBtnActionPerformed(evt);
+            }
+        });
 
         qrCode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/QRr.jpg"))); // NOI18N
 
@@ -224,6 +231,23 @@ public class PaymentMethod extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void khaltiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_khaltiBtnActionPerformed
+        // TODO add your handling code here:
+        util.StripeRedirectListener.startServer();
+        String url = Controller.CheckoutController.createCheckoutSession();
+
+        if (!url.startsWith("http")) {
+            JOptionPane.showMessageDialog(this, "Payment failed: " + url);
+        } else {
+            try {
+                java.awt.Desktop.getDesktop().browse(java.net.URI.create(url));
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this, "Failed to open browser: " + ex.getMessage());
+            }
+        }
+
+    }//GEN-LAST:event_khaltiBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -280,4 +304,6 @@ public class PaymentMethod extends javax.swing.JFrame {
     private javax.swing.JLabel ticketsLabel;
     private javax.swing.JLabel totalTickets;
     // End of variables declaration//GEN-END:variables
+   
+
 }
