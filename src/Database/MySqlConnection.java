@@ -1,76 +1,36 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.*;
+import java.sql.SQLException;
 
-/**
- *
- * @author anish
- */
-public class MySqlConnection implements Database {
+public class MySqlConnection {
+private final String URL = "jdbc:mysql://127.0.0.1:3306/moviemate?useSSL=false&allowPublicKeyRetrieval=true";
+    private final String USER = "appuser";
+    private final String PASSWORD = "app_password"; // change here
 
-    @Override
     public Connection openConnection() {
-        try{
-            String username = "root";
-            String password = "qwerty1234";
-            String database = "moviemate";
-            Connection connection;
-            connection = DriverManager.getConnection(
-            "jdbc:mysql://127.0.0.1:3306/" + database, username, password
-            );
-            if(connection == null){
-                System.out.println("Database Connection fail");
-            }else{
-                System.out.println("Database Connection Sucess");
-            }
-            return connection;
-        }catch(Exception e){
-            System.out.println(e);
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver"); // optional for newer Java
+            Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            System.out.println("✅ Connected to database.");
+            return conn;
+        } catch (ClassNotFoundException e) {
+            System.err.println("❌ MySQL JDBC Driver not found.");
+            e.printStackTrace();
+            return null;
+        } catch (SQLException e) {
+            System.err.println("❌ Connection failed: " + e.getMessage());
+            e.printStackTrace();
             return null;
         }
     }
 
-    @Override
     public void closeConnection(Connection conn) {
-        try{
-            if(conn != null && !conn.isClosed()){
-                conn.close();
-                System.out.println("Connection close");
-            }
-        }catch(Exception e){
-            System.out.println(e);
+        try {
+            if (conn != null) conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
-
-    @Override
-    public ResultSet runQuery(Connection conn, String query) {
-        try{
-            Statement stmp = conn.createStatement();
-            ResultSet result = stmp.executeQuery(query);
-            return result;
-        }catch(Exception e){
-            System.out.println(e);
-            return null;
-        }
-    }
-
-    @Override
-    public int executeUpdate(Connection conn, String query) {
-        try{
-            Statement stmp = conn.createStatement();
-            int result = stmp.executeUpdate(query);
-            return result;
-        }catch(Exception e){
-            System.out.println(e);
-            return -1;
-        }
-    }
-    
 }

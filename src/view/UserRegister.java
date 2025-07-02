@@ -1,6 +1,12 @@
 package view;
 
+
+import javax.swing.JOptionPane;
+import Doa.TempUserDao;
+import Model.TempUser;
+import util.EmailUtil;
 import java.awt.event.ActionListener;
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -16,10 +22,15 @@ public class UserRegister extends javax.swing.JFrame {
     /**
      * Creates new form UserRegister
      */
-    public UserRegister() {
-        initComponents();
-    }
+public UserRegister() {
+    initComponents();
 
+//    Register.addActionListener(this::onRegisterClicked);
+}
+
+
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -265,9 +276,63 @@ public class UserRegister extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+////
     private void RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterActionPerformed
-        // TODO add your handling code here:
+
+    String fullName = FullName.getText().trim();
+    String email = Email.getText().trim();
+    String address = Address.getText().trim();
+    String contact = ContactNumber.getText().trim();
+    String password = new String(NewPassword.getPassword()).trim();
+    String confirmPassword = new String(ConfirmPassword.getPassword()).trim();
+
+    if (!password.equals(confirmPassword)) {
+        JOptionPane.showMessageDialog(this, "Passwords do not match!");
+        return;
+    }
+
+    TempUserDao dao = new TempUserDao();
+
+    // 1. Check if email already registered in users table
+    if (dao.isEmailRegistered(email)) {
+        JOptionPane.showMessageDialog(this, "Email already registered. Please login or use a different email.");
+        return;
+    }
+
+    // 2. Generate OTP
+    String otp = String.valueOf((int)(Math.random() * 9000) + 1000); // 4-digit OTP
+
+    // 3. Check if email exists in temp_user
+    TempUser existingTempUser = dao.getTempUserByEmail(email);
+
+    try {
+        if (existingTempUser == null) {
+            // Email not in temp_user → save new temp user
+            TempUser tempUser = new TempUser(fullName, email, address, contact, password, otp);
+            boolean saved = dao.saveTempUser(tempUser);
+            if (!saved) {
+                JOptionPane.showMessageDialog(this, "Failed to save temporary user.");
+                return;
+            }
+        } else {
+            // Email already in temp_user: just update the OTP (you can add this method)
+            dao.updateOtpByEmail(email, otp);
+        }
+
+        // 4. Send OTP email
+        EmailUtil.sendOtpEmail(email, otp);
+        JOptionPane.showMessageDialog(this, "OTP sent to your email.");
+
+        // 5. Redirect to OTP verification page
+        Emailverification verify = new Emailverification(email); // pass email string
+        verify.setVisible(true);
+        this.dispose();
+        
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Failed to send OTP email: " + e.getMessage());
+        e.printStackTrace();
+    }
+
     }//GEN-LAST:event_RegisterActionPerformed
 
     private void AddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddressActionPerformed
@@ -412,4 +477,36 @@ public class UserRegister extends javax.swing.JFrame {
     public javax.swing.JTextField getnumberField(){
         return ContactNumber;
     }
+    
+    
+//    private void onRegisterClicked(java.awt.event.ActionEvent evt) {
+//    // Read form data:
+//    String fullName = FullName.getText();
+//    String email = Email.getText();
+//    String address = Address.getText();
+//    String contact = ContactNumber.getText();
+//    String password = new String(NewPassword.getPassword());
+//    String confirmPassword = new String(ConfirmPassword.getPassword());
+//
+//    // Simple validation:
+//    if (fullName.isEmpty() || email.isEmpty() || address.isEmpty() || contact.isEmpty() || password.isEmpty()) {
+//        javax.swing.JOptionPane.showMessageDialog(this, "Please fill all fields");
+//        return;
+//    }
+//
+//    if (!password.equals(confirmPassword)) {
+//        javax.swing.JOptionPane.showMessageDialog(this, "Passwords do not match");
+//        return;
+//    }
+//
+//    // TODO: call your controller or backend here to save the user and send OTP
+//
+//    javax.swing.JOptionPane.showMessageDialog(this, "Register clicked! Proceed to email verification.");
+//    
+//    // Example: Open email verification screen here
+//    // EmailVerification emailVerification = new EmailVerification(email);
+//    // emailVerification.setVisible(true);
+//    // this.dispose();
+//}
+
 }

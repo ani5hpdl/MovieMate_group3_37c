@@ -84,4 +84,25 @@ public class UserDao {
         return null;
         
     }
+    
+    public boolean save(User user) {
+    Connection conn = mysql.openConnection();
+    String sql = "INSERT INTO users (full_name, email, address, contact_number, password) VALUES (?, ?, ?, ?, ?)";
+    try (PreparedStatement ps = conn.prepareStatement(sql)) {
+        ps.setString(1, user.getFullName());
+        ps.setString(2, user.getEmail());
+        ps.setString(3, user.getAddress());
+        ps.setString(4, user.getContactNumber());
+        ps.setString(5, user.getPassword());
+
+        int rowsInserted = ps.executeUpdate();
+        return rowsInserted > 0;
+    } catch (SQLException ex) {
+        Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
+    } finally {
+        mysql.closeConnection(conn);
+    }
+    return false;
+}
+
 }
