@@ -3,17 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/momlo/OneDrive/Desktop/test/MovieMate_group3_37c/src/Doa/UserDAO.java</file>
-            <file>file:/C:/Users/momlo/OneDrive/Desktop/test/MovieMate_group3_37c/src/Controller/UserRegisterController.java</file>
-            <file>file:/C:/Users/momlo/OneDrive/Desktop/test/MovieMate_group3_37c/src/view/Emailverification.java</file>
-            <file>file:/C:/Users/momlo/OneDrive/Desktop/test/MovieMate_group3_37c/src/util/EmailUtil.java</file>
-            <file>file:/C:/Users/momlo/OneDrive/Desktop/test/MovieMate_group3_37c/src/Doa/DbConfig.java</file>
-            <file>file:/C:/Users/momlo/OneDrive/Desktop/test/MovieMate_group3_37c/src/Controller/VerificationTokenDAO.java</file>
-            <file>file:/C:/Users/momlo/OneDrive/Desktop/test/MovieMate_group3_37c/src/Doa/VerificationTokenDAO.java</file>
-            <file>file:/C:/Users/momlo/OneDrive/Desktop/test/MovieMate_group3_37c/src/Model/UserRegisterModel.java</file>
-            <file>file:/C:/Users/momlo/OneDrive/Desktop/test/MovieMate_group3_37c/src/Model/VerificationToken.java</file>
-            <file>file:/C:/Users/momlo/OneDrive/Desktop/test/MovieMate_group3_37c/test/Model/VerificationTokenTest.java</file>
-            <file>file:/C:/Users/momlo/OneDrive/Desktop/test/MovieMate_group3_37c/src/view/sendOtpButton.java</file>
+            <file>file:/C:/Users/momlo/OneDrive/Desktop/New%20folder%20(3)/MovieMate_group3_37c/src/view/UserRegister.java</file>
         </group>
     </open-files>
 </project-private>
