@@ -11,6 +11,6 @@ import com.stripe.Stripe;
  */
 public class StripeConfig {
     public static void init(){
-        Stripe.apiKey = "sk_test_51Rg7xZH10ti4Cm4n3zBj2Ji2kwxqqbhkzLSjDB2FZV9vxjUgLrAlLv8tfZxrbd2kIOaO0JLN51N1o3RlJhqcl5Y000J79AYhy1";
+        Stripe.apiKey = "Stripe_api_key";
     }
 }
