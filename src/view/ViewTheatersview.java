@@ -107,14 +107,14 @@ public class ViewTheatersview extends javax.swing.JFrame {
         secondpanelLayout.setHorizontalGroup(
             secondpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(secondpanelLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(secondpanelLayout.createSequentialGroup()
                 .addComponent(jButton5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton6)
                 .addGap(0, 10, Short.MAX_VALUE))
+            .addGroup(secondpanelLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         secondpanelLayout.setVerticalGroup(
             secondpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,14 +179,14 @@ public class ViewTheatersview extends javax.swing.JFrame {
         jPanel1.add(Parent);
         Parent.setBounds(6, 550, 160, 100);
 
-        jButton2.setText("June 18");
+        jButton2.setText("Tommorrow");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(120, 240, 75, 23);
+        jButton2.setBounds(120, 240, 100, 23);
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel6.setText("Select Cinemas");
@@ -207,7 +207,12 @@ public class ViewTheatersview extends javax.swing.JFrame {
         jPanel1.add(jLabel7);
         jLabel7.setBounds(40, 340, 110, 20);
 
-        jButton8.setText("Hindi");
+        jButton8.setText("All");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton8);
         jButton8.setBounds(50, 370, 75, 23);
 
@@ -233,7 +238,7 @@ public class ViewTheatersview extends javax.swing.JFrame {
 
         jButton9.setText("City Center");
         jPanel1.add(jButton9);
-        jButton9.setBounds(160, 300, 90, 23);
+        jButton9.setBounds(150, 300, 90, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -279,6 +284,10 @@ public class ViewTheatersview extends javax.swing.JFrame {
     private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SearchActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
