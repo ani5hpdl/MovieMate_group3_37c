@@ -8,16 +8,40 @@ import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import java.util.Date;
+
 
 /**
  *
  * @author ACER
  */
 public class CheckSeatAvailability extends javax.swing.JFrame {
+    
+    
+        private String location;
+    private String time;
+    private Date date;
+    private Assignseat parentPanel;
 
-    public CheckSeatAvailability() {
+      public CheckSeatAvailability(String location, String time, Date date, Assignseat parentPanel) {
+        this.location = location;
+        this.time = time;
+        this.date = date;
+        this.parentPanel = parentPanel;
+
         initComponents();
-       
+
+        // After initComponents, you can update UI elements with the passed data
+        movieTitle.setText("Movie Location: " + location);
+        showTitle.setText("Show Time: " + time);
+        title.setText("Date: " + date.toString());
+
+        // Setup frame properties
+        setTitle("Check Seat Availability");
+        setSize(800, 600);
+        setLocationRelativeTo(null); // center on screen
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setVisible(true);
     }
 
 
@@ -1001,12 +1025,18 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
 
     public static void main(String args[]) {
-
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CheckSeatAvailability().setVisible(true);
-            }
-        });
+    public void run() {
+        // Provide proper values here
+        String location = "Kamal pokhari";
+        String time = "9:00 AM";
+        Date date = new Date();
+        Assignseat parentPanel = null; // or pass a valid reference if you have one
+
+        new CheckSeatAvailability(location, time, date, parentPanel).setVisible(true);
+    }
+});
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
