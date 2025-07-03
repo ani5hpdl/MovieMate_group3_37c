@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Doa;
-import Model.TicketModel;
+import Model.Ticket;
 import database.MySqlConnection;
 
 import java.sql.Connection;
@@ -33,18 +33,22 @@ public class TicketDao {
             stmt.setString(7, ticket.getVat());
             stmt.setString(8, ticket.getTotalAmount());
             
-            int rows = stmt. ExecuteUpdate();
+            int rows = stmt.executeUpdate();
             
             return rows > 0;
             
-        } catch (Exception e) {
+        } 
+        catch (Exception e) {
             e.printStackTrace();
             return false;
             
         }
     }
+    
+   
     public static void main(String[] args){
-        TicketDao dao =new TicketDao();
+        TicketDao Dao = new TicketDao();
     }
     
 }
+
