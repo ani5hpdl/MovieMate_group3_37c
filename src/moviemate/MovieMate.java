@@ -14,18 +14,23 @@ import Controller.AdminPanelController;
 import Controller.BookingHistoryController;
 import Controller.DashboardController;
 import Controller.EditMovieController;
+import Controller.PaymentController;
 import Controller.ProfileController;
 import Controller.ResetPasswordController;
 import Controller.SeatAvailabilityController;
 import Controller.TheaterandHallController;
 import Controller.UserMngmtController;
 import Database.*;
+import Model.MovieSession;
+import Model.PaymentModel;
+import Model.UserSession;
 import view.AdminPanel;
 import view.AdminPannel2;
 import view.AdminPannel3;
 import view.AdminUserr;
 import view.CheckSeatAvailability;
 import view.MainProfile;
+import view.PaymentMethod;
 import view.ResetPassword;
 import view.TheatersandHall;
 import view.UpdateProfile;
@@ -48,9 +53,9 @@ public class MovieMate {
         }
 //        
 
-        UserRegister UserRegisterForm = new UserRegister();
-        UserRegisterController controller = new UserRegisterController(UserRegisterForm);
-        controller.open();
+//        UserRegister UserRegisterForm = new UserRegister();
+//        UserRegisterController controller = new UserRegisterController(UserRegisterForm);
+//        controller.open();
         
 
 //        AdminPannel2 myprojform = new AdminPannel2();
@@ -97,6 +102,10 @@ public class MovieMate {
 //            CheckSeatAvailability seat = new CheckSeatAvailability();
 //            SeatAvailabilityController controller = new SeatAvailabilityController(seat);
 //            controller.open();
+
+               MovieSession.setMovieId(7);
+               UserSession.setUserId(5);
+
     }
             
 }

@@ -2,17 +2,22 @@
 package Controller;
 
 import Doa.MovieDao;
+import Doa.ProfileDao;
 import Doa.SeatDao;
 import Model.MovieData;
 import Model.MovieSession;
+import Model.PaymentModel;
+import Model.ProfileModel;
 import Model.Seat;
 import Model.TheaterandHall;
+import Model.UserSession;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
 import javax.swing.JButton;
 import view.CheckSeatAvailability;
+import view.PaymentMethod;
 
 public class SeatAvailabilityController {
     private final SeatDao seatDao;
@@ -20,6 +25,7 @@ public class SeatAvailabilityController {
     private TheaterandHall hall;
     public MovieDao movie;
     private MovieData moviedata;
+    private ProfileModel profile;
 
 
     private Map<String, JButton> seatButtonMap = new HashMap<>();
@@ -306,10 +312,28 @@ class ConfirmButtonListener implements ActionListener {
         for (Seat s : confirmedSeats) {
             System.out.println(s);
         }
+        
+        seatView.showMessage("Seats selected successfully: " + selectedSeatNumbers);
+        
+        MovieDao movie = new MovieDao();
+        moviedata = movie.getMovieById(MovieSession.getMovieId());
+        
+        ProfileDao ppdao = new ProfileDao();
+        profile = ppdao.getUserById(UserSession.getUserId());
+                
+        PaymentMethod pay = new PaymentMethod();
+        PaymentModel model = new PaymentModel(1,selectedSeatNumbers,350,moviedata.getTitle(),hall.getLocation(),hall.getHall(),
+                                                hall.getTime(),moviedata.getPosterPath(),profile.getFullname(),profile.getEmail(),
+                                                profile.getContactNumber());
+        PaymentController controller = new PaymentController(model,pay);
+        controller.open();
 
         // Clear UI selection
-        seatView.showMessage("Seats selected successfully: " + selectedSeatNumbers);
         selectedSeatNumbers.clear();
+        
+
+        
+        
     }
 }
 

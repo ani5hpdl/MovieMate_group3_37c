@@ -1,5 +1,6 @@
 package Controller;
 
+import util.EmailUtil;
 import Doa.UserDao;
 import Model.OTP;
 import view.ResetPassword;

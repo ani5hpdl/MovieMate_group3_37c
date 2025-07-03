@@ -1,5 +1,5 @@
 
-package Controller;
+package util;
 
 import jakarta.mail.Authenticator;
 import jakarta.mail.Message;

@@ -9,7 +9,10 @@ import com.sun.net.httpserver.HttpServer;
 import com.sun.net.httpserver.HttpExchange;
 import java.io.IOException;
 import java.io.OutputStream;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import view.PaymentMethod;
+import view.Ticket;
 
 /**
  *
@@ -20,7 +23,7 @@ import javax.swing.JOptionPane;
 
 public class StripeRedirectListener {
 
-    public static void startServer() {
+    public static void startServer(JFrame paymentFrame) {
         try {
             HttpServer server = HttpServer.create(new java.net.InetSocketAddress(4242), 0);
 
@@ -31,9 +34,20 @@ public class StripeRedirectListener {
                 os.write(response.getBytes());
                 os.close();
 
+
                 // ✅ Notify user inside your app
                 javax.swing.SwingUtilities.invokeLater(() -> {
+                     // Close PaymentMethod window
+                    if (paymentFrame != null) {
+                        paymentFrame.dispose();
+                    }
+
+                    // Show Ticket window
+                    Ticket ticketWindow = new Ticket();
+                    ticketWindow.setVisible(true);
+
                     JOptionPane.showMessageDialog(null, "Payment Successful!");
+                    
                 });
 
                 server.stop(1); // Stop server after handling
