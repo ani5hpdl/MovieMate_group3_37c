@@ -3,6 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import Controller.TicketController;
+import java.net.URL;
+import javax.swing.ImageIcon;
+
+
+
 
 /**
  *
@@ -13,9 +19,63 @@ public class Ticket extends javax.swing.JFrame {
     /**
      * Creates new form Ticket
      */
+    
     public Ticket() {
-        initComponents();
-    }
+    initComponents();
+    
+    jLabel3 = new javax.swing.JLabel();
+
+URL imgUrl = getClass().getResource("/view/Assests/movie.png");
+if (imgUrl != null) {
+    jLabel3.setIcon(new ImageIcon(imgUrl));
+    jLabel3.setText("");
+} else {
+    jLabel3.setText("Image not found");
+    System.err.println("Failed to load image: /view/Assests/movie.png");
+}
+
+
+
+    pdf.addActionListener(evt -> TicketController.saveTicketAsPDF(this));
+}
+
+    
+    public String getMovieNameText() {
+    return jLabel1.getText(); // Replace with actual label for movie name
+}
+
+public String getDurationText() {
+    return Duration.getText();
+}
+
+public String getDateText() {
+    return Date.getText();
+}
+
+public String getTimeText() {
+    return Time.getText();
+}
+
+public String getSeatText() {
+    return Seat.getText();
+}
+
+public String getTicketIdText() {
+    return TickedId.getText();
+}
+
+public String getTheaterNoText() {
+    return threaterNo.getText();
+}
+
+public String getVatText() {
+    return vat.getText();
+}
+
+public String getTotalText() {
+    return Total.getText();
+}
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -66,7 +126,6 @@ public class Ticket extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/MOVIEMAT.png"))); // NOI18N
         jLabel2.setText("jLabel2");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/barcode.png"))); // NOI18N
         jLabel4.setText("jLabel4");
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/movie.png"))); // NOI18N
@@ -303,7 +362,11 @@ public class Ticket extends javax.swing.JFrame {
                 new Ticket().setVisible(true);
             }
         });
+        
+        
     }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Date;
