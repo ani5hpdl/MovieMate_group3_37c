@@ -175,7 +175,7 @@ public class UpdateProfile extends javax.swing.JFrame {
         jPanel1.add(detail);
         detail.setBounds(30, 400, 190, 25);
         jPanel1.add(DOB);
-        DOB.setBounds(320, 180, 165, 24);
+        DOB.setBounds(320, 180, 162, 24);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/background1.png"))); // NOI18N
         background.setText("jLabel1");

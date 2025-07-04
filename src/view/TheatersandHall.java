@@ -27,6 +27,7 @@ public class TheatersandHall extends javax.swing.JFrame {
      */
     public TheatersandHall() {
         initComponents();
+        setLocationRelativeTo(null);
 //        SelectHall.setVisible(false);s
         HallAShowTime.setVisible(false);
         HallBShowTime.setVisible(false);
@@ -1097,6 +1098,7 @@ public class TheatersandHall extends javax.swing.JFrame {
                         TheaterandHall hall = new TheaterandHall(Location,TheaterName.getText(),HallName,button[index].getText());
                         CheckSeatAvailability seat = new CheckSeatAvailability();
                         SeatAvailabilityController controller = new SeatAvailabilityController(seat,hall);
+                        new TheatersandHall().setVisible(false);
                         controller.open();
                     }
                 });

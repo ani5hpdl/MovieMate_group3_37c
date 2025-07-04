@@ -19,9 +19,10 @@ public class TheaterandHallController {
     private final TheaterandHallDao dao = new TheaterandHallDao();
     public TheaterandHallController(TheatersandHall view){
         this.view = view;
-        MovieSession.setMovieId(5);
+//        MovieSession.setMovieId(5);
         int showtime = dao.getShowTime();
-        System.out.println("showtime");
+        System.out.println(MovieSession.getMovieId());
+        System.out.println(showtime);
         view.highlightBookedButton(showtime);
     }
     public void open(){

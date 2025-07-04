@@ -53,9 +53,9 @@ public class MovieMate {
         }
 //        
 
-//        UserRegister UserRegisterForm = new UserRegister();
-//        UserRegisterController controller = new UserRegisterController(UserRegisterForm);
-//        controller.open();
+        UserRegister UserRegisterForm = new UserRegister();
+        UserRegisterController controller = new UserRegisterController(UserRegisterForm);
+        controller.open();
         
 
 //        AdminPannel2 myprojform = new AdminPannel2();
@@ -103,8 +103,8 @@ public class MovieMate {
 //            SeatAvailabilityController controller = new SeatAvailabilityController(seat);
 //            controller.open();
 
-               MovieSession.setMovieId(7);
-               UserSession.setUserId(5);
+//               MovieSession.setMovieId(7);
+//               UserSession.setUserId(5);
 
     }
             

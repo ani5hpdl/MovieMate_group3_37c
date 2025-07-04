@@ -8,6 +8,7 @@ public class UserLogin extends javax.swing.JFrame {
 
     public UserLogin() {
         initComponents();
+        setLocationRelativeTo(null);
         transparent.setBackground(new Color(255,255,255,100));
     }
 

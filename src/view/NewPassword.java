@@ -24,11 +24,10 @@ public class NewPassword extends javax.swing.JFrame {
         mainLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(500, 400));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/Logo.png"))); // NOI18N
+        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Assests/MOVIEMAT.png"))); // NOI18N
         getContentPane().add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
 
         title.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
@@ -47,7 +46,6 @@ public class NewPassword extends javax.swing.JFrame {
         reEnterPassword.setText("Re-enter Password");
         getContentPane().add(reEnterPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, -1, -1));
 
-        txtPassword.setText("Enter your new Password");
         txtPassword.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtPasswordFocusGained(evt);
@@ -58,7 +56,6 @@ public class NewPassword extends javax.swing.JFrame {
         });
         getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 252, -1));
 
-        txtReEnterPassword.setText("Re-enter your new password");
         txtReEnterPassword.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtReEnterPasswordFocusGained(evt);

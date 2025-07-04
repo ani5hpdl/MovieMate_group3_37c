@@ -18,6 +18,7 @@ public class PaymentMethod extends javax.swing.JFrame {
      */
     public PaymentMethod() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

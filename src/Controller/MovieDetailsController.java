@@ -6,6 +6,7 @@ package Controller;
 
 import Doa.MovieDao;
 import Model.MovieData;
+import Model.MovieSession;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -47,6 +48,8 @@ public class MovieDetailsController {
         }
         movieId = moviedata.getId();
 //        System.out.println(movie.getMovieById(movieId));
+        System.out.println(movieId);
+        MovieSession.setMovieId(movieId);
         return movie.getMovieById(movieId);
     }
     

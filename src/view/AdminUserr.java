@@ -22,6 +22,8 @@ public class AdminUserr extends javax.swing.JFrame {
      */
     public AdminUserr() {
         initComponents();
+        setLocationRelativeTo(null);
+
     }
 
     /**
@@ -41,7 +43,7 @@ public class AdminUserr extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(51, 102, 255));
+        jPanel2.setBackground(new java.awt.Color(0, 0, 51));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -65,6 +67,7 @@ public class AdminUserr extends javax.swing.JFrame {
         );
 
         userTable.setAutoCreateRowSorter(true);
+        userTable.setBackground(new java.awt.Color(230, 235, 245));
         userTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         userTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -110,7 +113,7 @@ public class AdminUserr extends javax.swing.JFrame {
             userTable.getColumnModel().getColumn(7).setPreferredWidth(60);
         }
 
-        jButton1.setBackground(new java.awt.Color(51, 102, 255));
+        jButton1.setBackground(new java.awt.Color(0, 0, 51));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Refresh");

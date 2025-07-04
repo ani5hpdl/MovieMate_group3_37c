@@ -19,6 +19,7 @@ public class MovieDetails extends javax.swing.JFrame {
      */
     public MovieDetails() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -54,7 +55,7 @@ public class MovieDetails extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(230, 235, 245));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 

@@ -17,7 +17,7 @@ public class CheckSeatAvailability extends javax.swing.JFrame {
 
     public CheckSeatAvailability() {
         initComponents();
-       
+        setLocationRelativeTo(null);
     }
 
 

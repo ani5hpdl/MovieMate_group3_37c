@@ -31,7 +31,7 @@
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/AdminPannel3.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/AdminPannel.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Controller/EditMovieController.java</file>
-            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Controller/EmailUtil.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/util/EmailUtil.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Controller/OTPEntryController.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/NewPassword.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/AdminUserr.java</file>
@@ -68,8 +68,19 @@
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/Assignseat.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/CheckSeatAvailability.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Doa/SeatDao.java</file>
-            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/ChooseSeats.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Controller/SeatAvailabilityController.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Doa/PaymentMethodDao.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Database/Database.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/Assiests/Frame%2037297.png</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/Seat.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/util/StripeConfig.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Controller/CheckoutController.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/PaymentMethod.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/util/StripeRedirectListener.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Controller/PaymentController.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Model/PaymentModel.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/view/Ticket.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/MovieMate/src/Controller/New.java</file>
         </group>
     </open-files>
 </project-private>

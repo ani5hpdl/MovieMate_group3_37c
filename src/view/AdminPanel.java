@@ -4,6 +4,7 @@
  */
 package view;
 
+import Controller.UserMngmtController;
 import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
@@ -19,6 +20,7 @@ public class AdminPanel extends javax.swing.JFrame {
      */
     public AdminPanel() {
         initComponents();
+        setLocationRelativeTo(null);
         MoviePanelReal.setLayout(new BoxLayout(MoviePanelReal,BoxLayout.Y_AXIS));
         jScrollPane1.setViewportView(MoviePanelReal);
     }
@@ -258,6 +260,9 @@ public class AdminPanel extends javax.swing.JFrame {
 
     private void Dashboard1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dashboard1ActionPerformed
         // TODO add your handling code here:
+        AdminUserr user = new AdminUserr();
+        UserMngmtController controller = new UserMngmtController(user);
+        controller.open();
         
     }//GEN-LAST:event_Dashboard1ActionPerformed
 

@@ -317,12 +317,13 @@ class ConfirmButtonListener implements ActionListener {
         
         MovieDao movie = new MovieDao();
         moviedata = movie.getMovieById(MovieSession.getMovieId());
+        System.out.println(MovieSession.getMovieId());
         
         ProfileDao ppdao = new ProfileDao();
         profile = ppdao.getUserById(UserSession.getUserId());
                 
         PaymentMethod pay = new PaymentMethod();
-        PaymentModel model = new PaymentModel(1,selectedSeatNumbers,350,moviedata.getTitle(),hall.getLocation(),hall.getHall(),
+        PaymentModel model = new PaymentModel(1,selectedSeatNumbers,350,moviedata.getTitle(),hall.getTheater(),hall.getHall(),
                                                 hall.getTime(),moviedata.getPosterPath(),profile.getFullname(),profile.getEmail(),
                                                 profile.getContactNumber());
         PaymentController controller = new PaymentController(model,pay);
